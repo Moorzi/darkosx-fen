@@ -1,6 +1,6 @@
 # dArkOSX — a fresher experience for R36S and R36XX
 
-[Project website](https://moorzi.github.io/darkosx-fen/) · [Alpha release](https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha) · [Built on dArkOS](https://github.com/christianhaitian/dArkOS)
+[Project website](https://moorzi.github.io/darkosx-fen/) · [Release](https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha) · [Built on dArkOS](https://github.com/christianhaitian/dArkOS)
 
 dArkOSX turns your **R36S or R36XX** into something that feels finished the moment it wakes — a refreshed look, smoother everyday use, and stronger play on demanding games. Built on **dArkOS**, Fen brings a redesigned menu, a tiled Control Centre, **dynamic boot** visuals, **RAM Plus**, **MSX out of the box**, and an optional lock screen with a **device PIN** you will not find on other handheld OSes. The polish on the surface is backed by real system work underneath.
 
@@ -10,11 +10,9 @@ Feedback: [site comments](https://moorzi.github.io/darkosx-fen/#feedback)
 
 ## Get dArkOSX
 
-The [project website](https://moorzi.github.io/darkosx-fen/) download button stays **Coming Soon**. A verified **two-part** public alpha is on GitHub as [v0.1.0-alpha](https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha).
+The finished Fen image is a verified **two-part** download on GitHub: [v0.1.0-alpha](https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha). The website download button opens when we promote it. Read the release notes and **back up your memory card** before installing.
 
-This is an alpha — expect rough edges. Read the release notes and **back up your memory card** before installing.
-
-### Install the alpha (GitHub)
+### Install from GitHub
 
 1. Download both `dArkOSX-Fen_R36S_v0.1.0-alpha.img.xz.zip.001` and `.002`, plus `PARTS.sha256`, `SHA256SUMS`, and the zip / xz `.sha256` files.
 2. **Join** the parts (`cat …001 …002 > …img.xz.zip` on Linux/macOS, or `copy /b …001+…002 …img.xz.zip` on Windows).
@@ -36,7 +34,7 @@ Fen reaches the games menu **faster** than stock while showing those dynamic vis
 
 ### Demanding games
 
-Fen is **faster** on demanding titles — especially **Dreamcast** — with **PlayStation** and **Nintendo 64** ahead too. Lighter classics already run full speed on both builds, so this is not a blanket “everything is faster” claim.
+Fen is **faster** on demanding titles — especially **Dreamcast** — with **PlayStation** and **Nintendo 64** ahead too. Lighter classics stay silky; the heavy games are where Fen shines.
 
 **RAM Plus** adds extra working memory when the handheld’s built-in 1 GB fills up — useful for heavy games like N64 and Dreamcast. It is not extra physical RAM.
 
