@@ -152,7 +152,7 @@
           "name": "Can I download the R36S / R36XX image?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Download both zip parts from the GitHub release, join them, verify the checksums, unzip to the .img.xz, then flash with balenaEtcher or dd. Back up your card first. The website download button opens when we promote it."
+            "text": "Yes. Use the Download image button on the website or open the GitHub release, grab both zip parts, join them, verify the checksums, unzip to the .img.xz, then flash with balenaEtcher or dd. Back up your card first."
           }
         },
         {
@@ -363,12 +363,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <div class="pill"><i></i>dArkOSX Fen · Available soon</div>
+  <div class="pill"><i></i>dArkOSX Fen · Download live</div>
   <h1><span class="glitch" data-t="dArkOSX">dArk<span class="x">OSX</span></span></h1>
   <div class="tag">Built to feel special the second it wakes.<span class="cursor" aria-hidden="true"></span></div>
   <p class="sub">Your R36S / R36XX, turned up. Fen is a custom build on dArkOS with a <b style="color:var(--g2);font-weight:400">dynamic boot logo and background</b>, a redesigned menu, and <b style="color:var(--g2);font-weight:400">faster play on the heavy hitters</b> — Dreamcast leads, PlayStation and N64 follow. Classics stay silky. Add <b style="color:var(--g2);font-weight:400">RAM Plus</b>, <b style="color:var(--g2);font-weight:400">MSX ready out of the box</b>, and a <b style="color:var(--g2);font-weight:400">lock screen with device PIN</b> you will not find on other handheld OSes. <span style="color:var(--dim)">Codename Fen. Independent community build — not an official upstream release.</span></p>
   <div class="cta">
-    <a class="btn disabled" href="#status" aria-disabled="true" title="Download opens here soon">Get the image · Soon</a>
+    <a class="btn" href="https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha">Download image</a>
     <a class="btn" href="https://github.com/Moorzi/darkosx-fen">Repository</a>
     <a class="btn ghost" href="#overview">Read on</a>
   </div>
@@ -435,7 +435,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
 <section id="status"><div class="wrap">
   <div class="reveal"><div class="kick">// 04 · status</div>
   <h2>Get Fen.</h2>
-  <p class="lead">The finished Fen image is ready as a clean <b style="color:var(--g2);font-weight:400">two-part download</b> on <a href="https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha">GitHub</a>. The big website button opens when we promote it — until then, use the install steps below. Status covers boot UI, systems, and flash guidance.</p></div>
+  <p class="lead">The finished Fen image is live — a clean <b style="color:var(--g2);font-weight:400">two-part download</b> on <a href="https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha">GitHub</a>. Hit <b>Download image</b> above, then follow the join / verify / flash steps below.</p></div>
 
   <div class="bench reveal" id="bench">
     <div class="head">
@@ -488,7 +488,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
     <div>
       <h3>Before you flash.</h3>
       <ul>
-        <li>Two-part image is ready on GitHub — website download opens when promoted</li>
+        <li>Two-part image is live — use <b>Download image</b> or the GitHub release</li>
         <li>Fen is faster on demanding titles (especially Dreamcast) — see <a href="#fps">systems</a></li>
         <li>Verify checksums before you flash</li>
         <li>Back up your card; change default <code>ark</code> / <code>ark</code> credentials before sharing Wi-Fi</li>
@@ -501,7 +501,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
       <div class="step done"><span>On-device probes</span><em>Recorded</em></div>
       <div class="step done"><span>Systems vs stock</span><em><a href="#fps" style="color:inherit;text-decoration:underline">Verified</a></em></div>
       <div class="step done"><span>Two-part zip on GitHub</span><em>Verified</em></div>
-      <div class="step"><span>Website download</span><em>Opens on promote</em></div>
+      <div class="step done"><span>Website download</span><em>Live</em></div>
     </div>
   </div>
   
@@ -527,7 +527,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
 <h3 style="margin-top:24px">Does MSX work without adding BIOS?</h3>
 <p class="lead">Yes on this build — free C-BIOS is included, so MSX loads out of the box. Stock dArkOS MSX typically does not. Copyrighted BIOS for other systems (GB, GBC, GBA, PSX, NDS and similar) are not included.</p>
 <h3 style="margin-top:24px">Can I download the R36S / R36XX image?</h3>
-<p class="lead">The finished two-part image is on the <a href="https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha">GitHub release</a>. The website download button opens when we promote it.</p>
+<p class="lead">Yes — the finished two-part image is live on the <a href="https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha">GitHub release</a>. Use the <b>Download image</b> button at the top of this page.</p>
 <h3 style="margin-top:24px">How do I install from GitHub?</h3>
 <p class="lead">See <a href="#install">Install from GitHub</a>: join <code>.zip.001</code> + <code>.zip.002</code>, verify checksums, unzip and decompress to <code>.img</code>, then flash with balenaEtcher or <code>dd</code>. Back up your card first. Change the default <code>ark</code> / <code>ark</code> credentials before sharing Wi-Fi.</p>
 </div></section>
@@ -589,7 +589,7 @@ const ck=()=>{const d=new Date();document.getElementById('clk').textContent=d.to
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);if(e.target.classList.contains('term'))type()}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
 document.querySelectorAll('.card').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')},{passive:true}));
-document.getElementById('term').textContent='Fen · ready\n\nSystems: faster on demanding titles (Dreamcast standout)\nBoot UI: dynamic logo + background; faster to menu\nLock screen: ten backgrounds + device PIN\nMSX: free C-BIOS out of the box\nRAM Plus: extra headroom for heavy games\nImage: two-part download verified on GitHub\nWebsite download: opens on promotion';
+document.getElementById('term').textContent='Fen · ready\n\nSystems: faster on demanding titles (Dreamcast standout)\nBoot UI: dynamic logo + background; faster to menu\nLock screen: ten backgrounds + device PIN\nMSX: free C-BIOS out of the box\nRAM Plus: extra headroom for heavy games\nImage: two-part download verified on GitHub\nWebsite download: live';
 
 (()=>{const repo='Moorzi/darkosx-fen';
 const titleEl=document.getElementById('fb-title');

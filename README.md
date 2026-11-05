@@ -10,7 +10,7 @@ Feedback: [site comments](https://moorzi.github.io/darkosx-fen/#feedback)
 
 ## Get dArkOSX
 
-The finished Fen image is a verified **two-part** download on GitHub: [v0.1.0-alpha](https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha). The website download button opens when we promote it. Read the release notes and **back up your memory card** before installing.
+The finished Fen image is live — a verified **two-part** download on [GitHub](https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha) and via **Download image** on the [project website](https://moorzi.github.io/darkosx-fen/). Read the release notes and **back up your memory card** before installing.
 
 ### Install from GitHub
 
