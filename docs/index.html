@@ -373,8 +373,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
     <div class="card reveal"><div class="ic">01</div><h3>First power-on</h3><p>A guided first-boot wizard presents the initial settings. Use A to confirm each step.</p></div>
     <div class="card reveal"><div class="ic">◐</div><h3>Lock backgrounds</h3><p>Choose from ten backgrounds under Display &amp; Sound. The selection is saved across sleep and restart.</p></div>
     <div class="card reveal"><div class="ic">⚡</div><h3>MSX, ready to play</h3><p>Free C-BIOS ships in the image, so MSX works out of the box. Stock does not include the BIOS MSX needs. Copyrighted GB / GBC / GBA / PSX / NDS BIOS stay user-supplied; first-boot help lists what is missing.</p></div>
-    <div class="card reveal"><div class="ic">◎</div><h3>Performance foundations</h3><p>Ground-up work on kernel, hardware communication and audio. Paired stock performance benchmarks are pending — no stock FPS claims until those numbers land.</p></div>
-    <div class="card reveal"><div class="ic">⇄</div><h3>Network transfer</h3><p>Samba sharing and the web file browser are retained for file transfers over Wi-Fi.</p></div>
+    <div class="card reveal"><div class="ic">◎</div><h3>Verified rootfs fixes</h3><p>Root btrfs remounts with working compression (stock’s <code>zlib:1</code> is rejected on this kernel). zram boot-order cycle fixed; IPv6 NetworkManager flood off; <code>udev-settle</code> deps removed; stray <code>continue</code> in perf scripts fixed. Paired FPS still pending.</p></div>
+    <div class="card reveal"><div class="ic">⇄</div><h3>Network transfer</h3><p>Samba sharing and the web file browser stay available for Wi-Fi transfers — the same stock networking model (change the default password before sharing a network).</p></div>
     <div class="card reveal"><div class="ic">⛨</div><h3>Public package</h3><p>No ROMs. Free MSX C-BIOS is included; copyrighted GB / GBC / GBA / PSX / NDS BIOS are not — supply your own where required. First-boot help explains what is needed.</p></div>
   </div>
 </div></section>
@@ -415,19 +415,19 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
 <section id="status"><div class="wrap">
   <div class="reveal"><div class="kick">// 04 · status</div>
   <h2>Coming soon.</h2>
-  <p class="lead">An alpha release exists with seven image parts and checksums. The public image CTA remains Coming Soon pending approval to promote the download. The release instructions also need reconciliation with the uploaded part names. The readings below describe one R36S; a paired stock dArkOS comparison is still pending.</p></div>
+  <p class="lead">A public alpha is on GitHub. The download is being re-packed into a ≤2-part zip; the site CTA stays Coming Soon until that package is complete and approved. Readings below are this build’s; FPS tables are still landing. No claim that this build is gentler on SD cards or that power-off scripts differ from stock.</p></div>
 
   <div class="bench reveal" id="bench">
     <div class="head">
       <h3>Instrument readings</h3>
-      <p class="note">R36S · 5 Nov 2026 (Europe/London) · battery charging, capacity about 48–53% · this build only. Probes are read-only samples of <code>/proc</code> and <code>/sys</code>. Idle statistics exclude the first sixty seconds of the run.</p>
+      <p class="note">R36S · 5 Nov 2026 (Europe/London) · battery charging, capacity about 48–53% · this build only. EmulationStation menu start (~11.4 s after boot) is the useful “ready to play” figure — multi-user time includes background services that do not block the menu. Do not compare against inflated Samba/Wi-Fi waits. Paired stock menu start is ~12.3 s (≈1–1.6 s gap). Idle stats skip the first sixty seconds.</p>
     </div>
     <div class="bench-scroll">
       <table class="bench-table">
         <thead><tr><th>Metric</th><th>Method</th><th>Result</th></tr></thead>
         <tbody id="bench-body">
-          <tr><td>Boot to multi-user</td><td><code>systemd-analyze</code></td><td>15.446 s (kernel 3.224 + userspace 12.221)</td></tr>
-          <tr><td>EmulationStation process start</td><td>seconds after boot</td><td>11.42 s</td></tr>
+          <tr><td>systemd multi-user (not menu)</td><td><code>systemd-analyze</code></td><td>15.446 s (kernel 3.224 + userspace 12.221)</td></tr>
+          <tr><td>EmulationStation menu start</td><td>seconds after boot</td><td>11.42 s (stock paired ≈12.3 s)</td></tr>
           <tr><td>EmulationStation RSS (menu)</td><td><code>/proc</code> VmRSS</td><td>183 MB</td></tr>
           <tr><td>CPU policy</td><td>sysfs</td><td>ondemand · 1008–1512 MHz</td></tr>
           <tr><td>Idle SoC temperature</td><td>180 s sample, skip first 60 s</td><td>~66 °C median (charging)</td></tr>
@@ -444,10 +444,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
     <div>
       <h3>Before installing.</h3>
       <ul>
-        <li>Complete image parts and matching installation instructions</li>
-        <li>Paired stock-card comparison: still pending</li>
+        <li>≤2-part zip package and matching install steps</li>
+        <li>Paired FPS tables: still landing</li>
         <li>Verify the reconstructed image against its checksum</li>
-        <li>Back up your card and confirm hardware compatibility</li>
+        <li>Back up your card; change the default password before sharing a network</li>
       </ul>
     </div>
     <div class="steps">
