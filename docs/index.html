@@ -69,9 +69,10 @@
         {"@type": "ListItem", "position": 1, "name": "dArkOSX", "item": "https://moorzi.github.io/darkosx-fen/"},
         {"@type": "ListItem", "position": 2, "name": "Overview", "item": "https://moorzi.github.io/darkosx-fen/#overview"},
         {"@type": "ListItem", "position": 3, "name": "Lock backgrounds", "item": "https://moorzi.github.io/darkosx-fen/#lock"},
-        {"@type": "ListItem", "position": 4, "name": "Status", "item": "https://moorzi.github.io/darkosx-fen/#status"},
-        {"@type": "ListItem", "position": 5, "name": "FAQ", "item": "https://moorzi.github.io/darkosx-fen/#faq"},
-        {"@type": "ListItem", "position": 6, "name": "Feedback", "item": "https://moorzi.github.io/darkosx-fen/#feedback"}
+        {"@type": "ListItem", "position": 4, "name": "Paired FPS", "item": "https://moorzi.github.io/darkosx-fen/#fps"},
+        {"@type": "ListItem", "position": 5, "name": "Status", "item": "https://moorzi.github.io/darkosx-fen/#status"},
+        {"@type": "ListItem", "position": 6, "name": "FAQ", "item": "https://moorzi.github.io/darkosx-fen/#faq"},
+        {"@type": "ListItem", "position": 7, "name": "Feedback", "item": "https://moorzi.github.io/darkosx-fen/#feedback"}
       ]
     },
     {
@@ -84,7 +85,7 @@
       "applicationCategory": "GameApplication",
       "operatingSystem": "Linux",
       "softwareVersion": "0.1.0-alpha",
-      "description": "dArkOSX (repository darkosx-fen) is a custom firmware build for the R36S and R36XX retro handhelds. It is based on dArkOS and is not a replacement for, or official release of, upstream dArkOS. Its ground-up rebuild programme encompasses kernel work, bug fixes, audio and hardware communication paths, plus free MSX C-BIOS so MSX works out of the box. Paired stock performance benchmarks are pending.",
+      "description": "dArkOSX (repository darkosx-fen) is a custom firmware build for the R36S and R36XX retro handhelds. It is based on dArkOS and is not a replacement for, or official release of, upstream dArkOS. Its ground-up rebuild programme encompasses kernel work, bug fixes, audio and hardware communication paths, plus free MSX C-BIOS so MSX works out of the box. Paired on-device FPS across 37 titles shows most systems near a tie (median Fen +0.4%); Dreamcast Crazy Taxi 2 is about +27%; not a blanket faster-than-stock claim. Fen is this build’s codename.",
       "url": "https://moorzi.github.io/darkosx-fen/",
       "codeRepository": "https://github.com/Moorzi/darkosx-fen",
       "isBasedOn": {
@@ -143,7 +144,7 @@
           "name": "Can I download the R36S / R36XX image?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "An alpha release exists with seven image parts and checksums. The website keeps the image marked Coming Soon pending approval to promote the download; its instructions also need reconciliation with the uploaded part names."
+            "text": "A public alpha exists on GitHub. The site download button stays Coming Soon until the easy ≤2-part zip package is complete and approved for promotion. Do not treat partial uploads as the final install path."
           }
         }
       ]
@@ -349,7 +350,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
   <div class="pill"><i></i>Coming Soon · v0.1 alpha</div>
   <h1><span class="glitch" data-t="dArkOSX">dArk<span class="x">OSX</span></span></h1>
   <div class="tag">Built for demanding games.<span class="cursor" aria-hidden="true"></span></div>
-  <p class="sub">Where stock struggles, this build pulls ahead — especially Dreamcast, with clearer gains on PS1 and N64. Classics stay locked at full speed. <b style="color:var(--g2);font-weight:400">Dreamcast hits up to ~27% higher frame rates</b> in paired tests; PlayStation and N64 run ahead. <span style="color:var(--dim)">Paired on-device tests across 37 games — most titles already full-speed on both; the edge shows up on the heavy hitters.</span> MSX works out of the box with free C-BIOS. Independent build on dArkOS for R36S / R36XX — not an official upstream release.</p>
+  <p class="sub">Where the hardware is pushed hardest, this build pulls ahead — especially Dreamcast, with clearer gains on PS1 and N64. Classics stay locked at full speed. <b style="color:var(--g2);font-weight:400">Dreamcast hits up to ~27% higher frame rates</b> in paired tests; PlayStation and N64 run ahead. <span style="color:var(--dim)">Paired on-device tests across 37 games — most titles already full-speed on both; the edge shows up on the heavy hitters. Fen is this build’s codename.</span> MSX works out of the box with free C-BIOS. Independent build on dArkOS for R36S / R36XX — not an official upstream release.</p>
   <div class="cta">
     <a class="btn disabled" href="#status" aria-disabled="true" title="Image download guidance is being checked">Image · Coming soon</a>
     <a class="btn" href="https://github.com/Moorzi/darkosx-fen">Repository</a>
@@ -376,7 +377,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
     <div class="card reveal"><div class="ic">◎</div><h3>Verified rootfs fixes</h3><p>Root btrfs remounts with working compression (stock’s <code>zlib:1</code> is rejected on this kernel). zram boot-order cycle fixed; IPv6 NetworkManager flood off; <code>udev-settle</code> deps removed; stray <code>continue</code> in perf scripts fixed. Paired FPS (37 titles) is below.</p></div>
     <div class="card reveal"><div class="ic">▣</div><h3>RAM Plus</h3><p><b style="color:var(--g2);font-weight:400">2 GB of extended memory</b> — virtual RAM that kicks in when onboard memory runs out. Extra headroom for demanding games like N64 and Dreamcast on a 1 GB handheld.</p></div>
 
-    <div class="card reveal"><div class="ic">⇄</div><h3>Network transfer</h3><p>Samba sharing and the web file browser stay available for Wi-Fi transfers — the same stock networking model (change the default password before sharing a network).</p></div>
+    <div class="card reveal"><div class="ic">⇄</div><h3>Network transfer</h3><p>Samba sharing and the web file browser stay available for Wi-Fi transfers — the same stock networking model. Change the default SSH/Samba password (<code>ark</code> / <code>ark</code>) before sharing a network.</p></div>
     <div class="card reveal"><div class="ic">⛨</div><h3>Public package</h3><p>No ROMs. Free MSX C-BIOS is included; copyrighted GB / GBC / GBA / PSX / NDS BIOS are not — supply your own where required. First-boot help explains what is needed.</p></div>
   </div>
 </div></section>
@@ -406,7 +407,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
 <section id="lock"><div class="wrap">
   <div class="reveal"><div class="kick">// 03 · lock screen</div>
   <h2>Ten lock backgrounds.</h2>
-  <p class="lead">Open <b style="color:var(--g)">Display &amp; Sound → Lock Background</b>. Select a tile here to preview how it will sit behind the clock.</p></div>
+  <p class="lead">Open <b style="color:var(--g)">Display &amp; Sound → Lock Background</b>. Select a tile here to preview how it will sit behind the clock.</p>
+  <p class="lead" style="margin-top:10px">Unlock is an optional <b style="color:var(--g2);font-weight:400">button-combo PIN</b> — a convenience lock, not encryption and not your Linux user-account password. SSH/Samba still use the default <code>ark</code> / <code>ark</code> credentials until you change them.</p></div>
   <div class="preview reveal"><picture>
     <source id="pvsrc" type="image/webp" srcset="assets/locks/emerald-nebula.webp">
     <img id="pv" src="assets/locks/emerald-nebula.jpg" alt="dArkOSX Emerald Nebula lock background preview for R36S custom firmware" width="800" height="600" loading="lazy" decoding="async" fetchpriority="low">
@@ -422,7 +424,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
   <div class="bench reveal" id="bench">
     <div class="head">
       <h3>Instrument readings</h3>
-      <p class="note">R36S · 5 Nov 2026 (Europe/London) · battery charging, capacity about 48–53% · this build only. EmulationStation menu start (~11.4 s after boot) is the useful “ready to play” figure — multi-user time includes background services that do not block the menu. Do not compare against inflated Samba/Wi-Fi waits. Paired stock menu start is ~12.3 s (≈1–1.6 s gap). Idle stats skip the first sixty seconds.</p>
+      <p class="note">R36S specifically (not a separate R36XX validation) · 5 Nov 2026 (Europe/London) · battery charging, capacity about 48–53% · this build only. EmulationStation menu start (~11.4 s after boot) is the useful “ready to play” figure — multi-user time includes background services that do not block the menu. Do not compare against inflated Samba/Wi-Fi waits. Paired stock menu start is ~12.3 s (≈1–1.6 s gap). Idle stats skip the first sixty seconds.</p>
     </div>
     <div class="bench-scroll">
       <table class="bench-table">
@@ -445,7 +447,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
   <div class="bench reveal" id="fps">
     <div class="head">
       <h3>Paired FPS · Fen vs stock</h3>
-      <p class="note">5 Nov 2026 · 37 titles · same ROMs · RetroArch <code>--max-frames=1920</code> (frames 120–1920) · screensaver/lock off. Most systems ~tie. Do not read the mean (+1.35%) as a blanket win — Dreamcast skews it. Full table in the repo as <code>docs/COMPARE.md</code>.</p>
+      <p class="note">5 Nov 2026 · 37 titles · same ROMs · RetroArch <code>--max-frames=1920</code> (frames 120–1920) · screensaver/lock off. Fen is this build’s codename. Most systems ~tie. Do not read the mean (+1.35%) as a blanket win — Dreamcast skews it. Full table in the repo as <code>docs/COMPARE.md</code>.</p>
     </div>
     <div class="bench-scroll">
       <table class="bench-table">
@@ -467,17 +469,18 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
     <div>
       <h3>Before installing.</h3>
       <ul>
-        <li>≤2-part zip package and matching install steps</li>
-        <li>Paired FPS (37 titles): published below — mostly a tie; Dreamcast is the standout</li>
+        <li>≤2-part zip package and matching install steps (site CTA stays Coming Soon until both parts land)</li>
+        <li>Paired FPS (37 titles): published in <a href="#fps">#fps</a> — mostly a tie; Dreamcast is the standout</li>
         <li>Verify the reconstructed image against its checksum</li>
-        <li>Back up your card; change the default password before sharing a network</li>
+        <li>Back up your card; change default SSH/Samba <code>ark</code> / <code>ark</code> before sharing a network</li>
+        <li>Optional lock unlock is a button PIN — not the Linux account password</li>
       </ul>
     </div>
     <div class="steps">
       <div class="step done"><span>Firmware build</span><em>Complete</em></div>
       <div class="step done"><span>Repository &amp; site</span><em>Live</em></div>
       <div class="step done"><span>On-device probes</span><em>Recorded</em></div>
-      <div class="step"><span>Stock card pair</span><em>Pending</em></div>
+      <div class="step done"><span>Paired FPS · 37 titles</span><em><a href="#fps" style="color:inherit;text-decoration:underline">Measured</a></em></div>
       <div class="step"><span>Public image</span><em>Coming soon</em></div>
     </div>
   </div>

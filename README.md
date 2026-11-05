@@ -2,7 +2,7 @@
 
 [Project website](https://moorzi.github.io/darkosx-fen/) · [Release status](https://github.com/Moorzi/darkosx-fen/releases) · [Upstream dArkOS](https://github.com/christianhaitian/dArkOS)
 
-dArkOSX is an independent Linux **custom firmware** build for **R36S** and **R36XX** handhelds, built **on dArkOS**. It is a **ground-up rebuild, not a skin on stock firmware** — kernel work, bug fixes, hardware communication paths and audio, plus a revised EmulationStation experience. **MSX works out of the box** with free **C-BIOS** (stock typically does not ship that BIOS). Paired stock performance benchmarks are pending. Independent community project — not stock dArkOS or an official upstream release.
+dArkOSX is an independent Linux **custom firmware** build for **R36S** and **R36XX** handhelds, built **on dArkOS**. It is a **ground-up rebuild, not a skin on stock firmware** — kernel work, bug fixes, hardware communication paths and audio, plus a revised EmulationStation experience. **MSX works out of the box** with free **C-BIOS** (stock typically does not ship that BIOS). **Paired FPS on 37 titles** is published ([site #fps](https://moorzi.github.io/darkosx-fen/#fps), [`docs/COMPARE.md`](docs/COMPARE.md)): median Fen +0.4%; Dreamcast Crazy Taxi 2 +27%; not a blanket faster-than-stock claim. Fen is this build’s codename. Independent community project — not stock dArkOS or an official upstream release.
 
 **Site:** [moorzi.github.io/darkosx-fen](https://moorzi.github.io/darkosx-fen/) · Feedback: [site #feedback](https://moorzi.github.io/darkosx-fen/#feedback)
 
@@ -23,9 +23,9 @@ NDS retail BIOS are stripped; free MSX C-BIOS is included. No ROMs or copyrighte
 
 - **EmulationStation:** a terminal-style theme, tiled Control Centre and revised system panel.
 - **First boot:** guided settings, confirmed with A.
-- **Lock screen:** ten backgrounds selected under **Display & Sound → Lock Background**, saved across sleep and restart.
+- **Lock screen:** ten backgrounds selected under **Display & Sound → Lock Background**, saved across sleep and restart. Unlock is an optional **button-combo PIN** (convenience lock — not encryption, not the Linux account password).
 - **Frequency policy:** settings within the published hardware clock range, without overvolting.
-- **File transfer:** Samba sharing and the web file browser are retained.
+- **File transfer:** Samba sharing and the web file browser are retained. Change default SSH/Samba credentials (`ark` / `ark`) before sharing a network.
 - **Public package:** no ROMs or copyrighted console BIOS. Supply only files you are legally entitled to use.
 
 These describe the current build. The first release targets R36S and R36XX; the recorded device readings below are specifically from an R36S, not a separate R36XX validation.
@@ -40,7 +40,7 @@ The [website gallery](https://moorzi.github.io/darkosx-fen/#look) adapts to phon
 
 ## Instrument readings
 
-Recorded on one R36S on **5 November 2026 (Europe/London)**. The battery was charging at roughly 48–53% capacity. Read-only probes sampled `/proc` and `/sys`; idle figures exclude the first sixty seconds of a 180-second sample. These readings document the current build. Paired stock-card benchmarks will quantify the performance gains when measured; no comparative FPS figures are available yet.
+Recorded on one R36S on **5 November 2026 (Europe/London)**. The battery was charging at roughly 48–53% capacity. Read-only probes sampled `/proc` and `/sys`; idle figures exclude the first sixty seconds of a 180-second sample. These readings document the current build on an **R36S** (not a separate R36XX validation). Paired Fen vs stock FPS across 37 titles is published on the [site #fps](https://moorzi.github.io/darkosx-fen/#fps) and in [`docs/COMPARE.md`](docs/COMPARE.md).
 
 | Metric | Method | Result |
 |---|---|---|
@@ -52,7 +52,7 @@ Recorded on one R36S on **5 November 2026 (Europe/London)**. The battery was cha
 | Idle SoC temperature | 180 s sample | **~66 °C** median (charging) |
 | Idle ES CPU share | % of one core | **~22%** median |
 | System RAM | MemTotal | 895 MB |
-| Stock dArkOS comparison | paired spare card | pending |
+| Paired FPS (37 titles) | same ROMs · RetroArch | median Fen **+0.4%**; Dreamcast Crazy Taxi 2 **+27%** — see [#fps](https://moorzi.github.io/darkosx-fen/#fps) / [`docs/COMPARE.md`](docs/COMPARE.md) |
 
 ## dArkOSX vs dArkOS vs darkos
 
@@ -66,8 +66,7 @@ Recorded on one R36S on **5 November 2026 (Europe/London)**. The battery was cha
 
 ## Outstanding validation
 
-- Measure a stock-card comparison on the same handheld before publishing comparative results.
-- FPS and battery-drain testing remain pending. Publish only observed figures, with their test conditions.
+- Paired FPS (37 titles) is published — see [`docs/COMPARE.md`](docs/COMPARE.md). Battery-drain testing remains pending. Publish only observed figures, with their test conditions.
 
 ## Website
 
