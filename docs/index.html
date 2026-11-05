@@ -424,14 +424,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
   <div class="bench reveal" id="bench">
     <div class="head">
       <h3>Instrument readings</h3>
-      <p class="note">R36S specifically (not a separate R36XX validation) · 5 Nov 2026 (Europe/London) · battery charging, capacity about 48–53% · this build only. EmulationStation menu start (~11.4 s after boot) is the useful “ready to play” figure — multi-user time includes background services that do not block the menu. Do not compare against inflated Samba/Wi-Fi waits. Paired stock menu start is ~12.3 s (≈1–1.6 s gap). Idle stats skip the first sixty seconds.</p>
+      <p class="note">R36S specifically (not a separate R36XX validation) · 5 Nov 2026 (Europe/London) · battery charging, capacity about 48–53% · this build only. Boot comparison is time until EmulationStation is ready to browse games: Fen <b>11.42 s</b> vs stock <b>12.3 s</b> (≈1 s gap). The multi-user row is system ready for background services — not the menu. Idle stats skip the first sixty seconds.</p>
     </div>
     <div class="bench-scroll">
       <table class="bench-table">
         <thead><tr><th>Metric</th><th>Method</th><th>Result</th></tr></thead>
         <tbody id="bench-body">
           <tr><td>systemd multi-user (not menu)</td><td><code>systemd-analyze</code></td><td>15.446 s (kernel 3.224 + userspace 12.221)</td></tr>
-          <tr><td>EmulationStation menu start</td><td>seconds after boot</td><td>11.42 s (stock paired ≈12.3 s)</td></tr>
+          <tr><td>Ready to browse games (EmulationStation)</td><td>seconds after boot</td><td>Fen 11.42 s · stock 12.3 s (≈1 s)</td></tr>
           <tr><td>EmulationStation RSS (menu)</td><td><code>/proc</code> VmRSS</td><td>183 MB</td></tr>
           <tr><td>CPU policy</td><td>sysfs</td><td>ondemand · 1008–1512 MHz</td></tr>
           <tr><td>Idle SoC temperature</td><td>180 s sample, skip first 60 s</td><td>~66 °C median (charging)</td></tr>
