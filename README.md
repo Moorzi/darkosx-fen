@@ -2,16 +2,17 @@
 
 [Project website](https://moorzi.github.io/darkosx-fen/) · [Release status](https://github.com/Moorzi/darkosx-fen/releases) · [Upstream dArkOS](https://github.com/christianhaitian/dArkOS)
 
-dArkOSX is an independent Linux custom firmware build for R36S and R36XX handhelds, built **on dArkOS**. It is a **ground-up rebuild, not a skin on stock firmware**: kernel rebuilds, bug fixes, audio and MSX fixes, and changes to how the software communicates with the hardware underpin a revised EmulationStation experience. It is built for **better performance than stock dArkOS**, not merely a different appearance. This remains an independent community project, not stock dArkOS or an official upstream release.
+dArkOSX is an independent Linux custom firmware build for R36S and R36XX handhelds, built **on dArkOS**. It is a **ground-up rebuild, not a skin on stock firmware**: a rebuilt stack encompassing kernel work, bug fixes, hardware communication paths, and audio and MSX work aimed at a faster handheld underpin a revised EmulationStation experience. It is built for **better performance than stock dArkOS**, not merely a different appearance. This remains an independent community project, not stock dArkOS or an official upstream release.
 
 ## Image availability
 
-**Coming Soon on the project website.** An alpha release now exists, but its notes describe two `.001`/`.002` pieces while the uploaded image has seven `.part01`–`.part07` pieces. Installation guidance must be reconciled before this page recommends a download. Do not flash a partial image. Check [the release](https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha) for updates, back up your card, confirm hardware compatibility and verify the reconstructed image checksum before installation.
+**Coming Soon on the project website pending approval to promote the download.** An alpha release now exists, but its notes describe two `.001`/`.002` pieces while the uploaded image has seven `.part01`–`.part07` pieces. Installation guidance must be reconciled before this page recommends a download. Do not flash a partial image. Check [the release](https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha) for updates, back up your card, confirm hardware compatibility and verify the reconstructed image checksum before installation.
 
 ## What changes
 
-- **Core rebuild:** kernel rebuilds, bug fixes and revised hardware communication paths, with better performance as a central design goal.
-- **Audio and MSX:** fixes to audio behaviour and MSX support alongside the core rebuild.
+- **Core rebuild:** kernel work, bug fixes and hardware communication paths form the ground-up rebuild programme, with better performance as a central design goal.
+- **Audio and MSX work:** part of the performance-focused rebuild programme. The current image includes free MSX C-BIOS.
+- **Verified image details:** NDS retail BIOS stripped; free `drastic_bios` retained; A/B swap off by default; lock-background selection-save fix included. Mowgli is excluded from v1.
 
 - **EmulationStation:** a terminal-style theme, tiled Control Centre and revised system panel.
 - **First boot:** guided settings, confirmed with A.
@@ -59,7 +60,7 @@ Recorded on one R36S on **5 November 2026 (Europe/London)**. The battery was cha
 
 - Reconcile image parts, checksums and installation guidance.
 - Measure a stock-card comparison on the same handheld before publishing comparative results.
-- Publish only observed performance figures, with their test conditions.
+- FPS and battery-drain testing remain pending. Publish only observed figures, with their test conditions.
 
 ## Website
 

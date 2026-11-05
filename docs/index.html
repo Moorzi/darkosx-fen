@@ -84,7 +84,7 @@
           "name": "What is dArkOSX?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "dArkOSX is an independent, ground-up R36S and R36XX firmware rebuild based on dArkOS. It includes kernel rebuilds, bug fixes, audio and MSX fixes, and changes to how the software communicates with the hardware, alongside its revised interface."
+            "text": "dArkOSX is an independent, ground-up R36S and R36XX firmware rebuild based on dArkOS. It includes a rebuilt stack encompassing kernel work, bug fixes, hardware communication paths, and audio and MSX work aimed at a faster handheld, alongside its revised interface."
           }
         },
         {
@@ -108,7 +108,7 @@
           "name": "Can I download the R36S / R36XX image?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "An alpha release exists, but its instructions and uploaded image parts need reconciliation. The website keeps the image marked Coming Soon until that is resolved."
+            "text": "An alpha release exists with seven image parts and checksums. The website keeps the image marked Coming Soon pending approval to promote the download; its instructions also need reconciliation with the uploaded part names."
           }
         }
       ]
@@ -294,7 +294,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
   <div class="pill"><i></i>Coming Soon · v0.1 alpha</div>
   <h1><span class="glitch" data-t="dArkOSX">dArk<span class="x">OSX</span></span></h1>
   <div class="tag">Built on dArkOS. Made for your handheld.<span class="cursor" aria-hidden="true"></span></div>
-  <p class="sub">A ground-up firmware rebuild for the R36S and R36XX, based on dArkOS and built for better performance than stock. Kernel rebuilds, bug fixes, audio and MSX fixes, and revised hardware communication paths sit beneath the new interface. This is an independent community build, not an official upstream release.</p>
+  <p class="sub">A ground-up firmware rebuild for the R36S and R36XX, based on dArkOS and built for better performance than stock. The rebuild targets kernel, hardware communication, audio and MSX improvements beneath the new interface. The current image includes free MSX C-BIOS, guided first boot and ten saved lock backgrounds. This is an independent community build, not an official upstream release.</p>
   <div class="cta">
     <a class="btn disabled" href="#status" aria-disabled="true" title="Image download guidance is being checked">Image · Coming soon</a>
     <a class="btn" href="https://github.com/Moorzi/darkosx-fen">Repository</a>
@@ -312,12 +312,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
 <section id="overview"><div class="wrap">
   <div class="reveal"><div class="kick">// 01 · overview</div>
   <h2>Rebuilt from the kernel up.</h2>
-  <p class="lead">dArkOSX is a ground-up rebuild based on dArkOS, not a skin on stock firmware. The work includes kernel rebuilds, bug fixes, audio and MSX fixes, and changes to how the software communicates with the hardware. Better performance than stock is a core goal of the rebuild, alongside the revised EmulationStation interface and setup experience. Paired stock-card benchmarks will quantify the gains when measured.</p></div>
+  <p class="lead">dArkOSX is a ground-up rebuild based on dArkOS, not a skin on stock firmware. The work includes a rebuilt stack encompassing kernel work, bug fixes, hardware communication paths, and audio and MSX work aimed at a faster handheld. Better performance than stock is a core goal of the rebuild, alongside the revised EmulationStation interface and setup experience. Paired stock-card benchmarks will quantify the gains when measured.</p></div>
   <div class="grid">
     <div class="card reveal"><div class="ic">&gt;_</div><h3>Front end</h3><p>A terminal-style EmulationStation theme adds a tiled Control Centre and a revised system panel while retaining familiar navigation.</p></div>
     <div class="card reveal"><div class="ic">01</div><h3>First power-on</h3><p>A guided first-boot wizard presents the initial settings. Use A to confirm each step.</p></div>
     <div class="card reveal"><div class="ic">◐</div><h3>Lock backgrounds</h3><p>Choose from ten backgrounds under Display &amp; Sound. The selection is saved across sleep and restart.</p></div>
-    <div class="card reveal"><div class="ic">⚡</div><h3>Performance foundations</h3><p>Kernel rebuilds and revised hardware communication paths underpin the performance work. Audio and MSX fixes address specific problems; frequency settings remain within the published clock range, without overvolting.</p></div>
+    <div class="card reveal"><div class="ic">⚡</div><h3>Performance foundations</h3><p>The rebuild targets kernel, hardware communication, audio and MSX improvements for a faster handheld. Free MSX C-BIOS is included in the current image. Paired stock, FPS and battery-drain tests remain pending.</p></div>
     <div class="card reveal"><div class="ic">⇄</div><h3>Network transfer</h3><p>Samba sharing and the web file browser are retained for file transfers over Wi-Fi.</p></div>
     <div class="card reveal"><div class="ic">⛨</div><h3>Public package</h3><p>The public package excludes ROMs and copyrighted console BIOS. Supply only files you are legally entitled to use.</p></div>
   </div>
@@ -359,7 +359,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
 <section id="status"><div class="wrap">
   <div class="reveal"><div class="kick">// 04 · status</div>
   <h2>Coming soon.</h2>
-  <p class="lead">An alpha release exists, but its instructions do not yet match the uploaded image parts. The image remains Coming Soon here until that is resolved. The readings below describe one R36S; a paired stock dArkOS comparison is still pending.</p></div>
+  <p class="lead">An alpha release exists with seven image parts and checksums. The public image CTA remains Coming Soon pending approval to promote the download. The release instructions also need reconciliation with the uploaded part names. The readings below describe one R36S; a paired stock dArkOS comparison is still pending.</p></div>
 
   <div class="bench reveal" id="bench">
     <div class="head">
@@ -413,7 +413,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
 
   <p class="legal"><b style="color:var(--amber)">No games, ROMs, or copyrighted BIOS files are included, and none will be.</b> Supply only dumps taken from hardware you own. This is an unofficial community build atop dArkOS; it is not affiliated with or endorsed by any console manufacturer.</p>
 </div></section>
-<section id="faq"><div class="wrap"><div class="kick">Questions and answers</div><h2>Before you choose a build.</h2><h3 style="margin-top:24px">What is dArkOSX?</h3><p class="lead">dArkOSX is an independent, ground-up R36S and R36XX firmware rebuild based on dArkOS. It includes kernel rebuilds, bug fixes, audio and MSX fixes, and changes to how the software communicates with the hardware, alongside its revised interface.</p><h3 style="margin-top:24px">Is dArkOSX the same as dArkOS or dark OS?</h3><p class="lead">No. dArkOS is the upstream Linux handheld firmware. dArkOSX is a separate community build based on it, not an official upstream release. The similarly named Android darkos project is unrelated.</p><h3 style="margin-top:24px">Is dArkOSX faster than stock dArkOS?</h3><p class="lead">dArkOSX is built for better performance than stock dArkOS, with a ground-up rebuild that reaches beyond the interface into the kernel and hardware communication paths. A paired stock-card benchmark will quantify the difference when measured; the current readings are from this build only.</p><h3 style="margin-top:24px">Can I download the R36S / R36XX image?</h3><p class="lead">An alpha release exists, but its instructions and uploaded image parts need reconciliation. The website keeps the image marked Coming Soon until that is resolved.</p></div></section>
+<section id="faq"><div class="wrap"><div class="kick">Questions and answers</div><h2>Before you choose a build.</h2><h3 style="margin-top:24px">What is dArkOSX?</h3><p class="lead">dArkOSX is an independent, ground-up R36S and R36XX firmware rebuild based on dArkOS. It includes a rebuilt stack encompassing kernel work, bug fixes, hardware communication paths, and audio and MSX work aimed at a faster handheld, alongside its revised interface.</p><h3 style="margin-top:24px">Is dArkOSX the same as dArkOS or dark OS?</h3><p class="lead">No. dArkOS is the upstream Linux handheld firmware. dArkOSX is a separate community build based on it, not an official upstream release. The similarly named Android darkos project is unrelated.</p><h3 style="margin-top:24px">Is dArkOSX faster than stock dArkOS?</h3><p class="lead">dArkOSX is built for better performance than stock dArkOS, with a ground-up rebuild that reaches beyond the interface into the kernel and hardware communication paths. A paired stock-card benchmark will quantify the difference when measured; the current readings are from this build only.</p><h3 style="margin-top:24px">Can I download the R36S / R36XX image?</h3><p class="lead">An alpha release exists with seven image parts and checksums. The website keeps the image marked Coming Soon pending approval to promote the download; its instructions also need reconciliation with the uploaded part names.</p></div></section>
 </main>
 
 <footer><div class="wrap">
