@@ -1,20 +1,30 @@
-# dArkOSX — a fresh experience for R36S and R36XX
+# dArkOSX — a fresher experience for R36S and R36XX
 
 [Project website](https://moorzi.github.io/darkosx-fen/) · [Alpha release](https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha) · [Built on dArkOS](https://github.com/christianhaitian/dArkOS)
 
-dArkOSX gives your **R36S or R36XX** a refreshed look, smoother everyday use, and better performance in demanding games. Built on **dArkOS**, it brings a redesigned menu, a tiled Control Centre, dynamic boot visuals, and an optional lock screen with a **device PIN**. There are fixes and improvements behind the scenes too — not just a new theme.
+**dArkOSX** gives your **R36S or R36XX** a refreshed look, smoother everyday use, and better performance where it counts. Built on **dArkOS**, it brings a redesigned menu, a tiled Control Centre, dynamic boot visuals, **RAM Plus**, MSX out of the box, and an optional lock screen with a **device PIN** — a feature no other handheld OS we know of ships. Fixes and improvements under the hood too, not just a new theme.
 
-**Fen** is this build’s codename. This is an independent community project, not an official dArkOS release.
+**Fen** is this build’s codename. Independent community project — not an official dArkOS release.
 
 Feedback: [site comments](https://moorzi.github.io/darkosx-fen/#feedback)
 
 ## Get dArkOSX
 
-The [project website](https://moorzi.github.io/darkosx-fen/) currently says **Coming Soon**. An early public release is on GitHub as [v0.1.0-alpha](https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha) (two zip parts).
+The [project website](https://moorzi.github.io/darkosx-fen/) download button stays **Coming Soon**. A verified **two-part** public alpha is on GitHub as [v0.1.0-alpha](https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha).
 
-This is an alpha, so expect rough edges. Read the release notes and **back up your memory card** before installing.
+This is an alpha — expect rough edges. Read the release notes and **back up your memory card** before installing.
 
-**No games, ROMs, or copyrighted console BIOS are included.** Retail Nintendo DS BIOS files have been removed. **MSX** includes free **C-BIOS**, so it works out of the box without adding a BIOS. Other systems that need copyrighted BIOS stay user-supplied.
+### Install the alpha (GitHub)
+
+1. Download both `dArkOSX-Fen_R36S_v0.1.0-alpha.img.xz.zip.001` and `.002`, plus `PARTS.sha256`, `SHA256SUMS`, and the zip / xz `.sha256` files.
+2. **Join** the parts (`cat …001 …002 > …img.xz.zip` on Linux/macOS, or `copy /b …001+…002 …img.xz.zip` on Windows).
+3. **Verify** the joined zip hash, unzip to `.img.xz`, verify that hash, then decompress to `.img`.
+4. **Flash** with [balenaEtcher](https://etcher.balena.io/) or `dd` (double-check the target device).
+5. Change the default `ark` / `ark` Wi-Fi credentials before sharing a network. Optional lock uses a **device PIN**.
+
+Full join / verify / flash wording also lives on the [website status section](https://moorzi.github.io/darkosx-fen/#install).
+
+**No games, ROMs, or copyrighted console BIOS are included.** Retail Nintendo DS BIOS files have been removed. **MSX** includes free **C-BIOS**, so it works out of the box. Other systems that need copyrighted BIOS stay user-supplied.
 
 ## What’s different?
 
@@ -34,7 +44,7 @@ Fen is **faster** on demanding titles — especially **Dreamcast** — with **Pl
 
 No other handheld OS we know of ships a lock screen like this. Turn on the optional lock screen, pick from **ten backgrounds** under **Display & Sound → Lock Background**, and set a **device PIN** with a button combo when you want to keep casual eyes off the menu. Your background choice stays across sleep and restart.
 
-### File transfer
+### Wi-Fi file transfer
 
 Wi-Fi file sharing and the web file browser stay available, same as the community expects. Change the default `ark` / `ark` credentials before sharing a network.
 
@@ -54,7 +64,7 @@ More on the [website gallery](https://moorzi.github.io/darkosx-fen/#look), inclu
 
 ## Notes
 
-Recorded checks so far are on an **R36S** (not a separate R36XX validation). Battery-life testing is still pending. Detailed stopwatch and frame-rate tables stay private; the site stays qualitative.
+Recorded checks so far are on an **R36S** (not a separate R36XX validation). Battery-life testing is still pending. Detailed stopwatch and frame-rate tables stay private; public copy stays qualitative.
 
 ## Legal and credits
 
