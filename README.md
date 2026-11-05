@@ -2,7 +2,7 @@
 
 [Project website](https://moorzi.github.io/darkosx-fen/) · [Release status](https://github.com/Moorzi/darkosx-fen/releases) · [Upstream dArkOS](https://github.com/christianhaitian/dArkOS)
 
-dArkOSX is an independent Linux **custom firmware** build for **R36S** and **R36XX** handhelds, built **on dArkOS**. It is a **ground-up rebuild, not a skin on stock firmware** — kernel work, bug fixes, hardware communication paths and audio, plus a revised EmulationStation experience. **MSX works out of the box** with free **C-BIOS** (stock typically does not ship that BIOS). On demanding titles — especially **Dreamcast** — Fen is **faster** than stock; PlayStation and N64 run ahead; classics stay full speed (not a blanket faster-than-stock claim). An **optional lock screen** with a cycle of ten backgrounds and a button-combo PIN is unique among handheld OSes we know of (convenience lock — not encryption). Fen is this build’s codename. Independent community project — not stock dArkOS or an official upstream release.
+dArkOSX is an independent Linux **custom firmware** build for **R36S** and **R36XX** handhelds, built **on dArkOS**. It is a **ground-up rebuild, not a skin on stock firmware** — kernel work, bug fixes, hardware communication paths and audio, plus a revised EmulationStation experience. **MSX works out of the box** with free **C-BIOS** (stock typically does not ship that BIOS). On demanding titles — especially **Dreamcast** — Fen is **faster** than stock; PlayStation and N64 run ahead; classics stay full speed (not a blanket faster-than-stock claim). An **optional lock screen** with a cycle of ten backgrounds and a **device PIN** is unique among handheld OSes we know of. Fen is this build’s codename. Independent community project — not stock dArkOS or an official upstream release.
 
 **Site:** [moorzi.github.io/darkosx-fen](https://moorzi.github.io/darkosx-fen/) · Feedback: [site #feedback](https://moorzi.github.io/darkosx-fen/#feedback)
 
@@ -23,7 +23,7 @@ NDS retail BIOS are stripped; free MSX C-BIOS is included. No ROMs or copyrighte
 
 - **EmulationStation:** a terminal-style theme, tiled Control Centre and revised system panel.
 - **First boot:** guided settings, confirmed with A.
-- **Lock screen (unique among handheld OSes we know of):** cycle of ten backgrounds under **Display & Sound → Lock Background**, saved across sleep and restart. Unlock is an optional **button-combo PIN** — a convenience lock for the front end, **not encryption** and **not** the Linux account password.
+- **Lock screen (unique among handheld OSes we know of):** cycle of ten backgrounds under **Display & Sound → Lock Background**, saved across sleep and restart. Set an optional **device PIN** with a button combo to keep casual eyes off your menu.
 - **Frequency policy:** settings within the published hardware clock range, without overvolting.
 - **File transfer:** Samba sharing and the web file browser are retained. Change default SSH/Samba credentials (`ark` / `ark`) before sharing a network.
 - **Public package:** no ROMs or copyrighted console BIOS. Supply only files you are legally entitled to use.

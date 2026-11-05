@@ -85,7 +85,7 @@
       "applicationCategory": "GameApplication",
       "operatingSystem": "Linux",
       "softwareVersion": "0.1.0-alpha",
-      "description": "dArkOSX (repository darkosx-fen) is a custom firmware build for the R36S and R36XX retro handhelds. It is based on dArkOS and is not a replacement for, or official release of, upstream dArkOS. Its ground-up rebuild programme encompasses kernel work, bug fixes, audio and hardware communication paths, plus free MSX C-BIOS so MSX works out of the box. On demanding titles — especially Dreamcast — Fen is faster than stock; classics stay full speed. An optional lock screen with cycling backgrounds and a button-combo PIN is unique among handheld custom firmwares we know of (convenience lock, not encryption). Fen is this build’s codename.",
+      "description": "dArkOSX (repository darkosx-fen) is a custom firmware build for the R36S and R36XX retro handhelds. It is based on dArkOS and is not a replacement for, or official release of, upstream dArkOS. Its ground-up rebuild programme encompasses kernel work, bug fixes, audio and hardware communication paths, plus free MSX C-BIOS so MSX works out of the box. On demanding titles — especially Dreamcast — Fen is faster than stock; classics stay full speed. An optional lock screen with cycling backgrounds and a device PIN is unique among handheld custom firmwares we know of. Fen is this build’s codename.",
       "url": "https://moorzi.github.io/darkosx-fen/",
       "codeRepository": "https://github.com/Moorzi/darkosx-fen",
       "isBasedOn": {
@@ -136,7 +136,7 @@
           "name": "What about the lock screen?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "dArkOSX includes an optional lock screen with a cycle of ten backgrounds — a feature we have not seen on any other handheld OS. Unlock is a button-combo PIN: a convenience lock for the front end, not encryption and not your Linux account password."
+            "text": "dArkOSX includes an optional lock screen with a cycle of ten backgrounds — a feature we have not seen on any other handheld OS. Set an optional device PIN with a button combo to keep casual eyes off your menu."
           }
         },
         {
@@ -416,7 +416,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
   <div class="reveal"><div class="kick">// 03 · lock screen</div>
   <h2>Ten lock backgrounds.</h2>
   <p class="lead">No other handheld OS we know of ships a lock screen like this. Pick from a <b style="color:var(--g2);font-weight:400">cycle of ten lock backgrounds</b> under <b style="color:var(--g)">Display &amp; Sound → Lock Background</b> — Signal Fall through Ghost Wave — and the choice sticks across sleep and restart. Tap a tile below to preview how it sits behind the clock.</p>
-  <p class="lead" style="margin-top:10px">Unlock is an optional <b style="color:var(--g2);font-weight:400">button-combo PIN</b>: a convenience lock for the front end, <b>not encryption</b> and <b>not</b> your Linux user-account password. It keeps casual eyes off the menu; it does not secure the card or network. Network access still uses the default <code>ark</code> / <code>ark</code> credentials until you change them.</p></div>
+  <p class="lead" style="margin-top:10px">Set an optional <b style="color:var(--g2);font-weight:400">device PIN</b> with a button combo to keep casual eyes off your menu. Network sharing still uses the default <code>ark</code> / <code>ark</code> credentials until you change them.</p></div>
   <div class="preview reveal"><picture>
     <source id="pvsrc" type="image/webp" srcset="assets/locks/emerald-nebula.webp">
     <img id="pv" src="assets/locks/emerald-nebula.jpg" alt="dArkOSX Emerald Nebula lock background preview for R36S custom firmware" width="800" height="600" loading="lazy" decoding="async" fetchpriority="low">
@@ -468,7 +468,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
         <li>Systems: Fen is faster on demanding titles (especially Dreamcast) — see <a href="#fps">#fps</a></li>
         <li>Verify the reconstructed image against its checksum</li>
         <li>Back up your card; change default network-access credentials <code>ark</code> / <code>ark</code> before sharing a network</li>
-        <li>Optional lock unlock is a button PIN — not the Linux account password</li>
+        <li>Optional lock uses a device PIN</li>
       </ul>
     </div>
     <div class="steps">
@@ -490,7 +490,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
 
   <p class="legal"><b style="color:var(--amber)">No games, ROMs, or copyrighted BIOS files are included, and none will be.</b> Supply only dumps taken from hardware you own. This is an unofficial community build atop dArkOS; it is not affiliated with or endorsed by any console manufacturer.</p>
 </div></section>
-<section id="faq"><div class="wrap"><div class="kick">Questions and answers</div><h2>Before you choose a build.</h2><h3 style="margin-top:24px">What is dArkOSX?</h3><p class="lead">dArkOSX is an independent, ground-up R36S and R36XX firmware rebuild based on dArkOS. It includes kernel work, bug fixes, hardware communication paths and audio work, plus free MSX C-BIOS so MSX works out of the box, alongside its revised interface.</p><h3 style="margin-top:24px">Is dArkOSX the same as dArkOS or dark OS?</h3><p class="lead">No. dArkOS is the upstream Linux handheld firmware. dArkOSX is a separate community build based on it, not an official upstream release. The similarly named Android darkos project is unrelated.</p><h3 style="margin-top:24px">Is dArkOSX faster than stock dArkOS?</h3><p class="lead">Where it matters most, yes: Fen is faster on demanding titles — especially Dreamcast — with PlayStation and N64 ahead too. Lighter classics already run full speed on both, so this is not a blanket faster-than-stock claim. MSX also works out of the box with free C-BIOS.</p><h3 style="margin-top:24px">What about the lock screen?</h3><p class="lead">dArkOSX includes an optional lock screen with a cycle of ten backgrounds — a feature we have not seen on any other handheld OS. Unlock is a button-combo PIN: a convenience lock for the front end, not encryption and not your Linux account password.</p><h3 style="margin-top:24px">Does MSX work without adding BIOS?</h3><p class="lead">Yes on this build — free C-BIOS is included, so MSX loads out of the box. Stock dArkOS MSX typically does not, because it ships without that BIOS. Copyrighted BIOS for other systems (GB, GBC, GBA, PSX, NDS and similar) are not included.</p><h3 style="margin-top:24px">Can I download the R36S / R36XX image?</h3><p class="lead">A public alpha is on GitHub. The site download button stays Coming Soon until the ≤2-part zip package is complete and Connor approves promoting it.</p></div></section>
+<section id="faq"><div class="wrap"><div class="kick">Questions and answers</div><h2>Before you choose a build.</h2><h3 style="margin-top:24px">What is dArkOSX?</h3><p class="lead">dArkOSX is an independent, ground-up R36S and R36XX firmware rebuild based on dArkOS. It includes kernel work, bug fixes, hardware communication paths and audio work, plus free MSX C-BIOS so MSX works out of the box, alongside its revised interface.</p><h3 style="margin-top:24px">Is dArkOSX the same as dArkOS or dark OS?</h3><p class="lead">No. dArkOS is the upstream Linux handheld firmware. dArkOSX is a separate community build based on it, not an official upstream release. The similarly named Android darkos project is unrelated.</p><h3 style="margin-top:24px">Is dArkOSX faster than stock dArkOS?</h3><p class="lead">Where it matters most, yes: Fen is faster on demanding titles — especially Dreamcast — with PlayStation and N64 ahead too. Lighter classics already run full speed on both, so this is not a blanket faster-than-stock claim. MSX also works out of the box with free C-BIOS.</p><h3 style="margin-top:24px">What about the lock screen?</h3><p class="lead">dArkOSX includes an optional lock screen with a cycle of ten backgrounds — a feature we have not seen on any other handheld OS. Set an optional device PIN with a button combo to keep casual eyes off your menu.</p><h3 style="margin-top:24px">Does MSX work without adding BIOS?</h3><p class="lead">Yes on this build — free C-BIOS is included, so MSX loads out of the box. Stock dArkOS MSX typically does not, because it ships without that BIOS. Copyrighted BIOS for other systems (GB, GBC, GBA, PSX, NDS and similar) are not included.</p><h3 style="margin-top:24px">Can I download the R36S / R36XX image?</h3><p class="lead">A public alpha is on GitHub. The site download button stays Coming Soon until the ≤2-part zip package is complete and Connor approves promoting it.</p></div></section>
 
 <section id="feedback"><div class="wrap">
   <div class="reveal"><div class="kick">// 06 · feedback</div>
