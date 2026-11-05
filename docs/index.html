@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>dArkOSX — R36S &amp; R36XX Custom Firmware Built on dArkOS</title>
-<meta name="description" content="dArkOSX: a ground-up R36S and R36XX firmware rebuild based on dArkOS. Kernel, hardware communication, audio — and MSX that works out of the box with free C-BIOS.">
-<meta name="keywords" content="dArkOSX, darkosx-fen, dArkOS, dark OS, darkos, R36S, R36XX, custom firmware, EmulationStation, retro handheld, ArkOS alternative build">
+<title>dArkOSX — R36S / R36XX Custom Firmware on dArkOS (MSX Out of the Box)</title>
+<meta name="description" content="dArkOSX is custom firmware for R36S and R36XX handhelds, built on dArkOS. Ground-up rebuild (kernel, hardware, audio). MSX works out of the box with free C-BIOS. Image Coming Soon.">
+<meta name="keywords" content="dArkOSX, darkosx-fen, dArkOS, dark OS, darkos, R36S, R36XX, R36S custom firmware, R36XX custom firmware, dArkOS custom firmware, EmulationStation, MSX C-BIOS, retro handheld">
 <meta name="author" content="Moorzi">
 <meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="theme-color" content="#020805">
 <link rel="canonical" href="https://moorzi.github.io/darkosx-fen/">
 <link rel="sitemap" type="application/xml" href="https://moorzi.github.io/darkosx-fen/sitemap.xml">
@@ -16,7 +17,7 @@
 <meta property="og:site_name" content="dArkOSX">
 <meta property="og:locale" content="en_GB">
 <meta property="og:url" content="https://moorzi.github.io/darkosx-fen/">
-<meta property="og:title" content="dArkOSX — dArkOS custom firmware for R36S / R36XX">
+<meta property="og:title" content="dArkOSX — R36S / R36XX custom firmware on dArkOS">
 <meta property="og:description" content="A ground-up, performance-focused R36S / R36XX rebuild based on dArkOS. MSX works out of the box with free C-BIOS. Image Coming Soon.">
 <meta property="og:image" content="https://moorzi.github.io/darkosx-fen/assets/locks/emerald-nebula.jpg">
 <meta property="og:image:type" content="image/jpeg">
@@ -25,7 +26,7 @@
 <meta property="og:image:alt" content="dArkOSX Emerald Nebula lock background on R36S custom firmware">
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="dArkOSX — dArkOS custom firmware for R36S / R36XX">
+<meta name="twitter:title" content="dArkOSX — R36S / R36XX custom firmware on dArkOS">
 <meta name="twitter:description" content="dArkOSX: a ground-up, performance-focused R36S / R36XX rebuild. MSX works out of the box with free C-BIOS. Image Coming Soon.">
 <meta name="twitter:image" content="https://moorzi.github.io/darkosx-fen/assets/locks/emerald-nebula.jpg">
 <meta name="twitter:image:alt" content="dArkOSX Emerald Nebula lock background for R36S / R36XX">
@@ -46,6 +47,32 @@
       "publisher": {
         "@id": "https://github.com/Moorzi#org"
       }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://moorzi.github.io/darkosx-fen/#webpage",
+      "url": "https://moorzi.github.io/darkosx-fen/",
+      "name": "dArkOSX — R36S / R36XX custom firmware on dArkOS",
+      "description": "Custom firmware for R36S and R36XX handhelds built on dArkOS. MSX works out of the box with free C-BIOS. Image Coming Soon.",
+      "isPartOf": {"@id": "https://moorzi.github.io/darkosx-fen/#website"},
+      "about": {"@id": "https://moorzi.github.io/darkosx-fen/#app"},
+      "inLanguage": "en-GB",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://moorzi.github.io/darkosx-fen/assets/locks/emerald-nebula.jpg"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://moorzi.github.io/darkosx-fen/#breadcrumb",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "dArkOSX", "item": "https://moorzi.github.io/darkosx-fen/"},
+        {"@type": "ListItem", "position": 2, "name": "Overview", "item": "https://moorzi.github.io/darkosx-fen/#overview"},
+        {"@type": "ListItem", "position": 3, "name": "Lock backgrounds", "item": "https://moorzi.github.io/darkosx-fen/#lock"},
+        {"@type": "ListItem", "position": 4, "name": "Status", "item": "https://moorzi.github.io/darkosx-fen/#status"},
+        {"@type": "ListItem", "position": 5, "name": "FAQ", "item": "https://moorzi.github.io/darkosx-fen/#faq"},
+        {"@type": "ListItem", "position": 6, "name": "Feedback", "item": "https://moorzi.github.io/darkosx-fen/#feedback"}
+      ]
     },
     {
       "@type": "SoftwareApplication",
@@ -339,7 +366,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
 <main>
 <section id="overview"><div class="wrap">
   <div class="reveal"><div class="kick">// 01 · overview</div>
-  <h2>Rebuilt from the kernel up.</h2>
+  <h2>R36S / R36XX custom firmware, rebuilt from the kernel up.</h2>
   <p class="lead">dArkOSX is a ground-up rebuild based on dArkOS, not a skin on stock firmware. The work reaches kernel, bug fixes, hardware communication paths and audio, with a performance-focused aim. <b style="color:var(--g2);font-weight:400">MSX works out of the box</b> because this image ships free C-BIOS — stock MSX does not. Paired stock performance benchmarks are pending. The revised EmulationStation interface and setup experience sit on top of that stack.</p></div>
   <div class="grid">
     <div class="card reveal"><div class="ic">&gt;_</div><h3>Front end</h3><p>A terminal-style EmulationStation theme adds a tiled Control Centre and a revised system panel while retaining familiar navigation.</p></div>
@@ -360,14 +387,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
     <figure class="frame reveal">
       <a href="assets/screens/control-centre.png" aria-label="Open full-size interface capture"><picture>
         <source type="image/webp" srcset="assets/screens/control-centre.webp">
-        <img src="assets/screens/control-centre.png" alt="dArkOSX Control Centre on an R36S handheld running custom firmware built on dArkOS" width="640" height="480" loading="lazy" decoding="async">
+        <img src="assets/screens/control-centre.png" alt="dArkOSX Control Centre on an R36S handheld — custom firmware built on dArkOS for R36S / R36XX" width="640" height="480" loading="lazy" decoding="async" sizes="(max-width:768px) 100vw, 640px">
       </picture></a>
       <figcaption>Control Centre · R36S · dArkOSX</figcaption>
     </figure>
     <figure class="frame reveal">
       <a href="assets/screens/systems-grid.jpg" aria-label="Open full-size interface capture"><picture>
         <source type="image/webp" srcset="assets/screens/systems-grid.webp">
-        <img src="assets/screens/systems-grid.jpg" alt="dArkOSX EmulationStation system list on R36S / R36XX custom firmware" width="960" height="480" loading="lazy" decoding="async">
+        <img src="assets/screens/systems-grid.jpg" alt="dArkOSX EmulationStation system list — R36S / R36XX custom firmware on dArkOS" width="960" height="480" loading="lazy" decoding="async" sizes="(max-width:768px) 100vw, 960px">
       </picture></a>
       <figcaption>System views · EmulationStation · R36S / R36XX</figcaption>
     </figure>
@@ -380,7 +407,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
   <p class="lead">Open <b style="color:var(--g)">Display &amp; Sound → Lock Background</b>. Select a tile here to preview how it will sit behind the clock.</p></div>
   <div class="preview reveal"><picture>
     <source id="pvsrc" type="image/webp" srcset="assets/locks/emerald-nebula.webp">
-    <img id="pv" src="assets/locks/emerald-nebula.jpg" alt="dArkOSX Emerald Nebula lock background preview for R36S custom firmware" width="800" height="600" decoding="async">
+    <img id="pv" src="assets/locks/emerald-nebula.jpg" alt="dArkOSX Emerald Nebula lock background preview for R36S custom firmware" width="800" height="600" loading="lazy" decoding="async" fetchpriority="low">
   </picture><div class="clock"><div><b id="clk">--:--</b><small id="pvn">EMERALD NEBULA</small></div></div></div>
   <div class="locks" id="locks" role="group" aria-label="Lock background options"></div>
 </div></section>
