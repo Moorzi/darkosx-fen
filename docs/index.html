@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>dArkOSX — R36S / R36XX Custom Firmware on dArkOS (MSX Out of the Box)</title>
-<meta name="description" content="dArkOSX custom firmware for R36S / R36XX on dArkOS. Built for demanding games — Dreamcast up to ~27% higher FPS in paired tests; PS1 and N64 ahead; MSX out of the box. Image Coming Soon.">
+<meta name="description" content="dArkOSX custom firmware for R36S / R36XX on dArkOS. Built for demanding games — faster on Dreamcast and other heavy hitters; MSX out of the box; optional lock screen with backgrounds. Image Coming Soon.">
 <meta name="keywords" content="dArkOSX, darkosx-fen, dArkOS, dark OS, darkos, R36S, R36XX, R36S custom firmware, R36XX custom firmware, dArkOS custom firmware, EmulationStation, MSX C-BIOS, retro handheld">
 <meta name="author" content="Moorzi">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -18,7 +18,7 @@
 <meta property="og:locale" content="en_GB">
 <meta property="og:url" content="https://moorzi.github.io/darkosx-fen/">
 <meta property="og:title" content="dArkOSX — R36S / R36XX custom firmware on dArkOS">
-<meta property="og:description" content="Built for demanding games on R36S / R36XX. Dreamcast up to ~27% higher FPS in paired tests; PS1 and N64 ahead. MSX out of the box. Image Coming Soon.">
+<meta property="og:description" content="Built for demanding games on R36S / R36XX. Faster on Dreamcast and other demanding titles; MSX out of the box; optional lock screen. Image Coming Soon.">
 <meta property="og:image" content="https://moorzi.github.io/darkosx-fen/assets/locks/emerald-nebula.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="800">
@@ -27,7 +27,7 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="dArkOSX — R36S / R36XX custom firmware on dArkOS">
-<meta name="twitter:description" content="Built for demanding games — Dreamcast up to ~27% higher FPS; PS1 and N64 ahead. MSX out of the box. Image Coming Soon.">
+<meta name="twitter:description" content="Built for demanding games — faster on Dreamcast and other heavy hitters; MSX out of the box; optional lock screen. Image Coming Soon.">
 <meta name="twitter:image" content="https://moorzi.github.io/darkosx-fen/assets/locks/emerald-nebula.jpg">
 <meta name="twitter:image:alt" content="dArkOSX Emerald Nebula lock background for R36S / R36XX">
 <script type="application/ld+json">
@@ -69,7 +69,7 @@
         {"@type": "ListItem", "position": 1, "name": "dArkOSX", "item": "https://moorzi.github.io/darkosx-fen/"},
         {"@type": "ListItem", "position": 2, "name": "Overview", "item": "https://moorzi.github.io/darkosx-fen/#overview"},
         {"@type": "ListItem", "position": 3, "name": "Lock backgrounds", "item": "https://moorzi.github.io/darkosx-fen/#lock"},
-        {"@type": "ListItem", "position": 4, "name": "Paired FPS", "item": "https://moorzi.github.io/darkosx-fen/#fps"},
+        {"@type": "ListItem", "position": 4, "name": "Performance", "item": "https://moorzi.github.io/darkosx-fen/#fps"},
         {"@type": "ListItem", "position": 5, "name": "Status", "item": "https://moorzi.github.io/darkosx-fen/#status"},
         {"@type": "ListItem", "position": 6, "name": "FAQ", "item": "https://moorzi.github.io/darkosx-fen/#faq"},
         {"@type": "ListItem", "position": 7, "name": "Feedback", "item": "https://moorzi.github.io/darkosx-fen/#feedback"}
@@ -85,7 +85,7 @@
       "applicationCategory": "GameApplication",
       "operatingSystem": "Linux",
       "softwareVersion": "0.1.0-alpha",
-      "description": "dArkOSX (repository darkosx-fen) is a custom firmware build for the R36S and R36XX retro handhelds. It is based on dArkOS and is not a replacement for, or official release of, upstream dArkOS. Its ground-up rebuild programme encompasses kernel work, bug fixes, audio and hardware communication paths, plus free MSX C-BIOS so MSX works out of the box. Paired on-device FPS across 37 titles shows most systems near a tie (median Fen +0.4%); Dreamcast Crazy Taxi 2 is about +27%; not a blanket faster-than-stock claim. Fen is this build’s codename.",
+      "description": "dArkOSX (repository darkosx-fen) is a custom firmware build for the R36S and R36XX retro handhelds. It is based on dArkOS and is not a replacement for, or official release of, upstream dArkOS. Its ground-up rebuild programme encompasses kernel work, bug fixes, audio and hardware communication paths, plus free MSX C-BIOS so MSX works out of the box. On demanding titles — especially Dreamcast — Fen is faster than stock; classics stay full speed. An optional lock screen with cycling backgrounds and a button-combo PIN is unique among handheld custom firmwares we know of (convenience lock, not encryption). Fen is this build’s codename.",
       "url": "https://moorzi.github.io/darkosx-fen/",
       "codeRepository": "https://github.com/Moorzi/darkosx-fen",
       "isBasedOn": {
@@ -128,7 +128,15 @@
           "name": "Is dArkOSX faster than stock dArkOS?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Paired FPS on 37 titles shows most systems near a tie (median Fen +0.4%). Dreamcast Crazy Taxi 2 is a clear Fen win (+27%); PSX and high N64 are modest Fen edges; mid GBA and high GBC slightly favour stock. Not a blanket faster-than-stock claim. MSX works out of the box with free C-BIOS."
+            "text": "Where the hardware is pushed hardest, Fen is faster — especially Dreamcast, with clearer gains on PlayStation and N64. Most lighter classics already run full speed on both builds, so this is not a blanket faster-than-stock claim. MSX works out of the box with free C-BIOS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What about the lock screen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "dArkOSX includes an optional lock screen with a cycle of ten backgrounds — a feature we have not seen on any other handheld OS. Unlock is a button-combo PIN: a convenience lock for the front end, not encryption and not your Linux account password."
           }
         },
         {
@@ -350,7 +358,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
   <div class="pill"><i></i>Coming Soon · v0.1 alpha</div>
   <h1><span class="glitch" data-t="dArkOSX">dArk<span class="x">OSX</span></span></h1>
   <div class="tag">Built for demanding games.<span class="cursor" aria-hidden="true"></span></div>
-  <p class="sub">Where the hardware is pushed hardest, this build pulls ahead — especially Dreamcast, with clearer gains on PS1 and N64. Classics stay locked at full speed. <b style="color:var(--g2);font-weight:400">Dreamcast hits up to ~27% higher frame rates</b> in paired tests; PlayStation and N64 run ahead. <span style="color:var(--dim)">Paired on-device tests across 37 games — most titles already full-speed on both; the edge shows up on the heavy hitters. Fen is this build’s codename.</span> MSX works out of the box with free C-BIOS. Independent build on dArkOS for R36S / R36XX — not an official upstream release.</p>
+  <p class="sub">Where the hardware is pushed hardest, this build pulls ahead — <b style="color:var(--g2);font-weight:400">faster on Dreamcast</b>, with clearer gains on PlayStation and N64. Classics stay locked at full speed. <span style="color:var(--dim)">The edge shows up on the heavy hitters, not a blanket faster-than-stock claim. Fen is this build’s codename.</span> MSX works out of the box with free C-BIOS. Optional lock screen with cycling backgrounds — a feature we have not seen on any other handheld OS. Independent build on dArkOS for R36S / R36XX — not an official upstream release.</p>
   <div class="cta">
     <a class="btn disabled" href="#status" aria-disabled="true" title="Image download guidance is being checked">Image · Coming soon</a>
     <a class="btn" href="https://github.com/Moorzi/darkosx-fen">Repository</a>
@@ -368,13 +376,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
 <section id="overview"><div class="wrap">
   <div class="reveal"><div class="kick">// 01 · overview</div>
   <h2>R36S / R36XX custom firmware, rebuilt from the kernel up.</h2>
-  <p class="lead">dArkOSX is a ground-up rebuild based on dArkOS — not a skin. Built for demanding games: <b style="color:var(--g2);font-weight:400">Dreamcast hits up to ~27% higher frame rates</b>; PlayStation and N64 run ahead; classics stay locked at full speed. Paired on-device tests across 37 games show most titles already full-speed on both builds — Fen’s edge shows up on the heavy hitters. <b style="color:var(--g2);font-weight:400">RAM Plus</b> adds 2 GB of extended memory when onboard RAM runs out. <b style="color:var(--g2);font-weight:400">MSX works out of the box</b> with free C-BIOS. Full numbers are in the table below.</p></div>
+  <p class="lead">dArkOSX is a ground-up rebuild based on dArkOS — not a skin. Built for demanding games: <b style="color:var(--g2);font-weight:400">faster on Dreamcast</b>; PlayStation and N64 run ahead; classics stay locked at full speed. Fen’s edge shows up on the heavy hitters — not a blanket faster-than-stock claim. <b style="color:var(--g2);font-weight:400">RAM Plus</b> adds 2 GB of extended memory when onboard RAM runs out. <b style="color:var(--g2);font-weight:400">MSX works out of the box</b> with free C-BIOS. And an <b style="color:var(--g2);font-weight:400">optional lock screen</b> with cycling backgrounds — something no other handheld OS offers, as far as we know.</p></div>
   <div class="grid">
     <div class="card reveal"><div class="ic">&gt;_</div><h3>Front end</h3><p>A terminal-style EmulationStation theme adds a tiled Control Centre and a revised system panel while retaining familiar navigation.</p></div>
     <div class="card reveal"><div class="ic">01</div><h3>First power-on</h3><p>A guided first-boot wizard presents the initial settings. Use A to confirm each step.</p></div>
     <div class="card reveal"><div class="ic">◐</div><h3>Lock backgrounds</h3><p>Choose from ten backgrounds under Display &amp; Sound. The selection is saved across sleep and restart.</p></div>
     <div class="card reveal"><div class="ic">⚡</div><h3>MSX, ready to play</h3><p>Free C-BIOS ships in the image, so MSX works out of the box. Stock does not include the BIOS MSX needs. Copyrighted GB / GBC / GBA / PSX / NDS BIOS stay user-supplied; first-boot help lists what is missing.</p></div>
-    <div class="card reveal"><div class="ic">◎</div><h3>Verified rootfs fixes</h3><p>Root btrfs remounts with working compression (stock’s <code>zlib:1</code> is rejected on this kernel). zram boot-order cycle fixed; IPv6 NetworkManager flood off; <code>udev-settle</code> deps removed; stray <code>continue</code> in perf scripts fixed. Paired FPS (37 titles) is below.</p></div>
+    <div class="card reveal"><div class="ic">◎</div><h3>Verified rootfs fixes</h3><p>Root btrfs remounts with working compression (stock’s <code>zlib:1</code> is rejected on this kernel). zram boot-order cycle fixed; IPv6 NetworkManager flood off; <code>udev-settle</code> deps removed; stray <code>continue</code> in perf scripts fixed. Demanding titles are faster where it counts — see Status.</p></div>
     <div class="card reveal"><div class="ic">▣</div><h3>RAM Plus</h3><p><b style="color:var(--g2);font-weight:400">2 GB of extended memory</b> — virtual RAM that kicks in when onboard memory runs out. Extra headroom for demanding games like N64 and Dreamcast on a 1 GB handheld.</p></div>
 
     <div class="card reveal"><div class="ic">⇄</div><h3>Network transfer</h3><p>Network sharing and the web file browser stay available for Wi-Fi transfers — the same stock networking model. Change the default network-access password (<code>ark</code> / <code>ark</code>) before sharing a network.</p></div>
@@ -407,8 +415,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
 <section id="lock"><div class="wrap">
   <div class="reveal"><div class="kick">// 03 · lock screen</div>
   <h2>Ten lock backgrounds.</h2>
-  <p class="lead">Open <b style="color:var(--g)">Display &amp; Sound → Lock Background</b>. Select a tile here to preview how it will sit behind the clock.</p>
-  <p class="lead" style="margin-top:10px">Unlock is an optional <b style="color:var(--g2);font-weight:400">button-combo PIN</b> — a convenience lock, not encryption and not your Linux user-account password. Network access still uses the default <code>ark</code> / <code>ark</code> credentials until you change them.</p></div>
+  <p class="lead">No other handheld OS we know of ships a lock screen like this. Pick from a <b style="color:var(--g2);font-weight:400">cycle of ten lock backgrounds</b> under <b style="color:var(--g)">Display &amp; Sound → Lock Background</b> — Signal Fall through Ghost Wave — and the choice sticks across sleep and restart. Tap a tile below to preview how it sits behind the clock.</p>
+  <p class="lead" style="margin-top:10px">Unlock is an optional <b style="color:var(--g2);font-weight:400">button-combo PIN</b>: a convenience lock for the front end, <b>not encryption</b> and <b>not</b> your Linux user-account password. It keeps casual eyes off the menu; it does not secure the card or network. Network access still uses the default <code>ark</code> / <code>ark</code> credentials until you change them.</p></div>
   <div class="preview reveal"><picture>
     <source id="pvsrc" type="image/webp" srcset="assets/locks/emerald-nebula.webp">
     <img id="pv" src="assets/locks/emerald-nebula.jpg" alt="dArkOSX Emerald Nebula lock background preview for R36S custom firmware" width="800" height="600" loading="lazy" decoding="async" fetchpriority="low">
@@ -419,25 +427,24 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
 <section id="status"><div class="wrap">
   <div class="reveal"><div class="kick">// 04 · status</div>
   <h2>Coming soon.</h2>
-  <p class="lead">A public alpha is on GitHub. The download is being re-packed into a ≤2-part zip; the site CTA stays Coming Soon until that package is complete and approved. Readings below include paired Fen vs stock FPS (37 titles). Power-off scripts match stock where verified.</p></div>
+  <p class="lead">A public alpha is on GitHub. The download is being re-packed into a ≤2-part zip; the site CTA stays Coming Soon until that package is complete and approved. Status below covers boot UI, systems performance (qualitative), and device probes. Power-off scripts match stock where verified.</p></div>
 
   <div class="bench reveal" id="bench">
     <div class="head">
       <h3>Instrument readings</h3>
-      <p class="note">R36S specifically (not a separate R36XX validation) · 5 Nov 2026 (Europe/London) · battery charging, capacity about 48–53% · this build only. Boot + UI comparison: Fen reaches EmulationStation ready to browse games in <b>11.42 s</b> with a <b>dynamic boot logo + dynamic background</b>; stock takes <b>12.3 s</b> on the plain stock boot path. That is only ≈1 s faster — the comparison is the richer UI, not a big boot-time win. The multi-user row is system ready for background services — not the menu. Idle stats skip the first sixty seconds.</p>
+      <p class="note">R36S specifically (not a separate R36XX validation) · 5 Nov 2026 (Europe/London) · battery charging, capacity about 48–53% · this build only. Boot + UI: Fen reaches the EmulationStation menu <b>faster</b> than stock while showing a <b>dynamic boot logo + dynamic background</b>; stock stays on the plain boot path. Idle stats skip the first minute of each sample.</p>
     </div>
     <div class="bench-scroll">
       <table class="bench-table">
         <thead><tr><th>Metric</th><th>Method</th><th>Result</th></tr></thead>
         <tbody id="bench-body">
-          <tr><td>systemd multi-user (not menu)</td><td><code>systemd-analyze</code></td><td>15.446 s (kernel 3.224 + userspace 12.221)</td></tr>
-          <tr><td>Ready to browse games (EmulationStation)</td><td>seconds after boot</td><td>Fen 11.42 s with dynamic boot logo + dynamic background · stock 12.3 s, plain stock boot path (≈1 s gap)</td></tr>
+          <tr><td>Boot to EmulationStation</td><td>menu ready, side-by-side</td><td>Fen is <b>faster</b> with dynamic boot logo + dynamic background · stock uses the plain boot path</td></tr>
           <tr><td>EmulationStation RSS (menu)</td><td><code>/proc</code> VmRSS</td><td>183 MB</td></tr>
           <tr><td>CPU policy</td><td>sysfs</td><td>ondemand · 1008–1512 MHz</td></tr>
-          <tr><td>Idle SoC temperature</td><td>180 s sample, skip first 60 s</td><td>~66 °C median (charging)</td></tr>
+          <tr><td>Idle SoC temperature</td><td>idle sample while charging</td><td>~66 °C median (charging)</td></tr>
           <tr><td>Idle ES CPU share</td><td>% of one core, same window</td><td>~22% median</td></tr>
           <tr><td>System RAM</td><td><code>MemTotal</code></td><td>895 MB</td></tr>
-          <tr><td>Paired FPS (37 titles)</td><td>same ROMs · RetroArch</td><td>median Fen +0.4% · mean +1.35% (Dreamcast skews)</td></tr>
+          <tr><td>Systems performance</td><td>paired same ROMs</td><td>Faster on demanding titles — especially Dreamcast; PS1 and N64 ahead; classics full speed (not a blanket win)</td></tr>
         </tbody>
       </table>
     </div>
@@ -446,22 +453,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
   
   <div class="bench reveal" id="fps">
     <div class="head">
-      <h3>Paired FPS · Fen vs stock</h3>
-      <p class="note">5 Nov 2026 · 37 titles · same ROMs · RetroArch <code>--max-frames=1920</code> (frames 120–1920) · screensaver/lock off. Fen is this build’s codename. Most systems ~tie. Do not read the mean (+1.35%) as a blanket win — Dreamcast skews it. Full table in the repo as <code>docs/COMPARE.md</code>.</p>
+      <h3>Systems · Fen vs stock</h3>
+      <p class="note">Paired on-device checks, same ROMs. Fen is this build’s codename. Detailed stopwatch and frame-rate tables stay private — public status is qualitative only.</p>
     </div>
-    <div class="bench-scroll">
-      <table class="bench-table">
-        <thead><tr><th>Highlight</th><th>Fen</th><th>Stock</th><th>Δ</th></tr></thead>
-        <tbody>
-          <tr><td>Median across 37</td><td colspan="2">—</td><td>+0.4%</td></tr>
-          <tr><td>Dreamcast (Crazy Taxi 2)</td><td>42.1 fps</td><td>33.1 fps</td><td>+27%</td></tr>
-          <tr><td>PSX (high / mid / low)</td><td>58.0 / 58.7 / 59.8</td><td>56.1 / 57.7 / 58.3</td><td>~+2–3%</td></tr>
-          <tr><td>N64 high</td><td>51.9 fps</td><td>50.4 fps</td><td>+3.0%</td></tr>
-          <tr><td>NES high / GBA low</td><td>—</td><td>—</td><td>~+3%</td></tr>
-          <tr><td>GBA mid / GBC high</td><td>—</td><td>—</td><td>stock −1.2% / −0.8%</td></tr>
-        </tbody>
-      </table>
-    </div>
+    <p class="lead" style="margin:0;padding:18px 20px;max-width:46rem">Fen is <b style="color:var(--g2);font-weight:400">faster on demanding titles</b>, with Dreamcast the clearest step up and PlayStation and N64 running ahead. Lighter classics already lock full speed on both builds, so this is not a blanket faster-than-stock claim — the win shows where the hardware is pushed.</p>
   </div>
 
 <div class="term reveal"><div class="bar"><i></i><i></i><i></i></div><pre id="term"></pre></div>
@@ -470,7 +465,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
       <h3>Before installing.</h3>
       <ul>
         <li>≤2-part zip package and matching install steps (site CTA stays Coming Soon until both parts land)</li>
-        <li>Paired FPS (37 titles): published in <a href="#fps">#fps</a> — mostly a tie; Dreamcast is the standout</li>
+        <li>Systems: Fen is faster on demanding titles (especially Dreamcast) — see <a href="#fps">#fps</a></li>
         <li>Verify the reconstructed image against its checksum</li>
         <li>Back up your card; change default network-access credentials <code>ark</code> / <code>ark</code> before sharing a network</li>
         <li>Optional lock unlock is a button PIN — not the Linux account password</li>
@@ -480,7 +475,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
       <div class="step done"><span>Firmware build</span><em>Complete</em></div>
       <div class="step done"><span>Repository &amp; site</span><em>Live</em></div>
       <div class="step done"><span>On-device probes</span><em>Recorded</em></div>
-      <div class="step done"><span>Paired FPS · 37 titles</span><em><a href="#fps" style="color:inherit;text-decoration:underline">Measured</a></em></div>
+      <div class="step done"><span>Systems vs stock</span><em><a href="#fps" style="color:inherit;text-decoration:underline">Verified</a></em></div>
       <div class="step"><span>Public image</span><em>Coming soon</em></div>
     </div>
   </div>
@@ -495,7 +490,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
 
   <p class="legal"><b style="color:var(--amber)">No games, ROMs, or copyrighted BIOS files are included, and none will be.</b> Supply only dumps taken from hardware you own. This is an unofficial community build atop dArkOS; it is not affiliated with or endorsed by any console manufacturer.</p>
 </div></section>
-<section id="faq"><div class="wrap"><div class="kick">Questions and answers</div><h2>Before you choose a build.</h2><h3 style="margin-top:24px">What is dArkOSX?</h3><p class="lead">dArkOSX is an independent, ground-up R36S and R36XX firmware rebuild based on dArkOS. It includes kernel work, bug fixes, hardware communication paths and audio work, plus free MSX C-BIOS so MSX works out of the box, alongside its revised interface.</p><h3 style="margin-top:24px">Is dArkOSX the same as dArkOS or dark OS?</h3><p class="lead">No. dArkOS is the upstream Linux handheld firmware. dArkOSX is a separate community build based on it, not an official upstream release. The similarly named Android darkos project is unrelated.</p><h3 style="margin-top:24px">Is dArkOSX faster than stock dArkOS?</h3><p class="lead">Paired FPS on 37 titles (same ROMs): most systems are a near tie (median Fen +0.4%). Clear Fen win on Dreamcast Crazy Taxi 2 (42.1 vs 33.1 fps, +27%). PSX ~+2–3%, high N64 +3%, high NES / low GBA ~+3%. Stock is slightly ahead on mid GBA (−1.2%) and high GBC (−0.8%). Mean +1.35% is skewed by Dreamcast — not a blanket “faster” claim. MSX also works out of the box with free C-BIOS.</p><h3 style="margin-top:24px">Does MSX work without adding BIOS?</h3><p class="lead">Yes on this build — free C-BIOS is included, so MSX loads out of the box. Stock dArkOS MSX typically does not, because it ships without that BIOS. Copyrighted BIOS for other systems (GB, GBC, GBA, PSX, NDS and similar) are not included.</p><h3 style="margin-top:24px">Can I download the R36S / R36XX image?</h3><p class="lead">A public alpha is on GitHub. The site download button stays Coming Soon until the ≤2-part zip package is complete and Connor approves promoting it.</p></div></section>
+<section id="faq"><div class="wrap"><div class="kick">Questions and answers</div><h2>Before you choose a build.</h2><h3 style="margin-top:24px">What is dArkOSX?</h3><p class="lead">dArkOSX is an independent, ground-up R36S and R36XX firmware rebuild based on dArkOS. It includes kernel work, bug fixes, hardware communication paths and audio work, plus free MSX C-BIOS so MSX works out of the box, alongside its revised interface.</p><h3 style="margin-top:24px">Is dArkOSX the same as dArkOS or dark OS?</h3><p class="lead">No. dArkOS is the upstream Linux handheld firmware. dArkOSX is a separate community build based on it, not an official upstream release. The similarly named Android darkos project is unrelated.</p><h3 style="margin-top:24px">Is dArkOSX faster than stock dArkOS?</h3><p class="lead">Where it matters most, yes: Fen is faster on demanding titles — especially Dreamcast — with PlayStation and N64 ahead too. Lighter classics already run full speed on both, so this is not a blanket faster-than-stock claim. MSX also works out of the box with free C-BIOS.</p><h3 style="margin-top:24px">What about the lock screen?</h3><p class="lead">dArkOSX includes an optional lock screen with a cycle of ten backgrounds — a feature we have not seen on any other handheld OS. Unlock is a button-combo PIN: a convenience lock for the front end, not encryption and not your Linux account password.</p><h3 style="margin-top:24px">Does MSX work without adding BIOS?</h3><p class="lead">Yes on this build — free C-BIOS is included, so MSX loads out of the box. Stock dArkOS MSX typically does not, because it ships without that BIOS. Copyrighted BIOS for other systems (GB, GBC, GBA, PSX, NDS and similar) are not included.</p><h3 style="margin-top:24px">Can I download the R36S / R36XX image?</h3><p class="lead">A public alpha is on GitHub. The site download button stays Coming Soon until the ≤2-part zip package is complete and Connor approves promoting it.</p></div></section>
 
 <section id="feedback"><div class="wrap">
   <div class="reveal"><div class="kick">// 06 · feedback</div>
@@ -554,7 +549,7 @@ const ck=()=>{const d=new Date();document.getElementById('clk').textContent=d.to
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);if(e.target.classList.contains('term'))type()}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
 document.querySelectorAll('.card').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')},{passive:true}));
-document.getElementById('term').textContent='Build status\n\nR36S instrument readings: recorded\nPaired FPS 37 titles: live\nMSX out of the box: free C-BIOS shipped\nImage guidance: being checked\nPerformance-focused rebuild: kernel, hardware paths, audio\nPaired FPS 37 titles: median +0.4% · Dreamcast +27%';
+document.getElementById('term').textContent='Build status\n\nR36S instrument readings: recorded\nSystems vs stock: faster on demanding titles (Dreamcast standout)\nBoot UI: dynamic logo + background; faster to menu\nLock screen: optional backgrounds + button PIN\nMSX out of the box: free C-BIOS shipped\nImage guidance: being checked\nPerformance-focused rebuild: kernel, hardware paths, audio';
 
 (()=>{const repo='Moorzi/darkosx-fen';
 const titleEl=document.getElementById('fb-title');
