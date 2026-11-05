@@ -2,7 +2,7 @@
 
 [Project website](https://moorzi.github.io/darkosx-fen/) · [Release status](https://github.com/Moorzi/darkosx-fen/releases) · [Upstream dArkOS](https://github.com/christianhaitian/dArkOS)
 
-dArkOSX is an independent Linux custom firmware build for R36S and R36XX handhelds, built **on dArkOS**. It is a **ground-up rebuild, not a skin on stock firmware**: a rebuilt stack encompassing kernel work, bug fixes, hardware communication paths, and audio and MSX work aimed at a faster handheld underpin a revised EmulationStation experience. It is built for **better performance than stock dArkOS**, not merely a different appearance. This remains an independent community project, not stock dArkOS or an official upstream release.
+dArkOSX is an independent Linux custom firmware build for R36S and R36XX handhelds, built **on dArkOS**. It is a **ground-up rebuild, not a skin on stock firmware**. The rebuild programme encompasses kernel work, bug fixes, hardware communication paths, and audio and MSX improvements aimed at a faster handheld, alongside a revised EmulationStation experience. It is built for **better performance than stock dArkOS**, not merely a different appearance. This remains an independent community project, not stock dArkOS or an official upstream release.
 
 ## Image availability
 
