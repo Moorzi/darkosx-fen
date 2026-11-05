@@ -2,225 +2,310 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>dArkOSX Fen — Custom firmware for the R36S / R36XX · Coming Soon</title>
-<meta name="description" content="dArkOSX Fen: custom firmware for the R36S / R36XX. Neon EmulationStation, first-boot setup, lock backgrounds and performance-minded defaults. Coming soon.">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>dArkOSX — Custom firmware for the R36S and R36XX</title>
+<meta name="description" content="dArkOSX is a custom firmware build for the R36S and R36XX handhelds. It preserves the community base, then revises the front end, first-boot path, and everyday defaults. Coming soon.">
 <meta name="theme-color" content="#020805">
-<meta property="og:title" content="dArkOSX Fen — Coming Soon">
-<meta property="og:description" content="Custom firmware for the R36S / R36XX. Your handheld. Reprogrammed.">
+<meta property="og:title" content="dArkOSX — Coming Soon">
+<meta property="og:description" content="Custom firmware for the R36S and R36XX. Your handheld. Reprogrammed.">
 <meta property="og:image" content="https://moorzi.github.io/darkosx-fen/assets/locks/emerald-nebula.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23020805'/%3E%3Cpath d='M12 50 L20 14 L32 30 L44 14 L52 50 L32 40 Z' fill='none' stroke='%2339ff6a' stroke-width='4' stroke-linejoin='round'/%3E%3C/svg%3E">
 <style>
 @font-face{font-family:VT;src:url(assets/fonts/VT323-Regular.ttf) format("truetype");font-display:swap}
 @font-face{font-family:STM;src:url(assets/fonts/ShareTechMono-Regular.ttf) format("truetype");font-display:swap}
-:root{--bg:#020805;--bg2:#06130b;--g:#39ff6a;--g2:#2de2c4;--dim:#1c7a3a;--txt:#c9f7d6;--mut:#6fa583;--amber:#ffb347;--line:rgba(57,255,106,.18)}
+:root{
+  --bg:#020805;--bg2:#06130b;--g:#39ff6a;--g2:#2de2c4;--dim:#1c7a3a;
+  --txt:#c9f7d6;--mut:#6fa583;--amber:#ffb347;--line:rgba(57,255,106,.18);
+  --pad:clamp(16px,4vw,24px);--nav-h:56px;--touch:44px;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--txt);font-family:STM,ui-monospace,Menlo,Consolas,monospace;line-height:1.6;overflow-x:hidden}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{background:var(--bg);color:var(--txt);font-family:STM,ui-monospace,Menlo,Consolas,monospace;line-height:1.65;overflow-x:hidden;min-width:0}
+img,video,canvas,svg{max-width:100%;height:auto;display:block}
 a{color:var(--g);text-decoration:none}
-#rain{position:fixed;inset:0;z-index:0;opacity:.35;pointer-events:none}
-.scan{position:fixed;inset:0;z-index:1;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.22) 0 1px,transparent 1px 3px);mix-blend-mode:multiply}
-.vig{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at center,transparent 45%,rgba(0,0,0,.85) 100%)}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+#rain{position:fixed;inset:0;z-index:0;opacity:.11;pointer-events:none}
+.scan{position:fixed;inset:0;z-index:1;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.16) 0 1px,transparent 1px 3px);mix-blend-mode:multiply}
+.vig{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at center,transparent 42%,rgba(0,0,0,.88) 100%)}
 main,header,footer,nav{position:relative;z-index:2}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-nav{position:sticky;top:0;backdrop-filter:blur(10px);background:rgba(2,8,5,.7);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-.brand{font-family:VT;font-size:28px;color:var(--g);letter-spacing:1px;text-shadow:0 0 12px rgba(57,255,106,.6)}
-.brand span{color:var(--g2)}
-nav ul{display:flex;gap:26px;list-style:none;font-size:14px;text-transform:uppercase;letter-spacing:2px}
-nav ul a{color:var(--mut);transition:.2s}nav ul a:hover{color:var(--g);text-shadow:0 0 8px var(--g)}
-@media(max-width:720px){nav ul{display:none}}@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}@media(max-width:600px){.grid{grid-template-columns:1fr}}
-.hero{min-height:calc(100vh - 60px);display:grid;place-items:center;text-align:center;padding:60px 0 80px}
-.pill{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--amber);color:var(--amber);padding:6px 16px;border-radius:999px;font-size:13px;letter-spacing:3px;text-transform:uppercase;background:rgba(255,179,71,.06);box-shadow:0 0 24px rgba(255,179,71,.15)}
-.pill i{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 10px var(--amber);animation:blink 1.2s steps(2) infinite}
-@keyframes blink{50%{opacity:.15}}
-h1{font-family:VT;font-weight:400;font-size:clamp(64px,13vw,168px);line-height:.9;margin:28px 0 8px;color:#eafff0;letter-spacing:2px;text-shadow:0 0 6px var(--g),0 0 26px rgba(57,255,106,.55),0 0 80px rgba(57,255,106,.3);position:relative}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 var(--pad)}
+nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(2,8,5,.84);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:var(--nav-h);gap:12px}
+.brand{font-family:VT;font-size:clamp(22px,5vw,28px);color:var(--g);letter-spacing:1px;text-shadow:0 0 12px rgba(57,255,106,.45);line-height:1;padding:8px 0;flex-shrink:0}
+.brand .hint{color:var(--g2);opacity:.42;font-size:.7em;margin-left:2px}
+.nav-toggle{display:none;width:var(--touch);height:var(--touch);align-items:center;justify-content:center;border:1px solid var(--line);border-radius:6px;color:var(--g);flex-shrink:0}
+.nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{display:block;width:18px;height:2px;background:currentColor;position:relative;transition:.2s}
+.nav-toggle span::before,.nav-toggle span::after{content:"";position:absolute;left:0}
+.nav-toggle span::before{top:-6px}.nav-toggle span::after{top:6px}
+.nav-toggle[aria-expanded="true"] span{background:transparent}
+.nav-toggle[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+nav ul{display:flex;align-items:center;gap:clamp(12px,2.5vw,26px);list-style:none;font-size:13px;text-transform:uppercase;letter-spacing:1.5px}
+nav ul a{color:var(--mut);transition:color .2s,text-shadow .2s;display:inline-flex;align-items:center;min-height:var(--touch);padding:0 2px}
+nav ul a:hover,nav ul a:focus-visible{color:var(--g);text-shadow:0 0 8px var(--g);outline:none}
+.hero{min-height:calc(100svh - var(--nav-h));display:grid;place-items:center;text-align:center;padding:clamp(36px,8vw,72px) 0 clamp(48px,10vw,88px)}
+.pill{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--amber);color:var(--amber);padding:8px 16px;border-radius:999px;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;background:rgba(255,179,71,.06);box-shadow:0 0 24px rgba(255,179,71,.1);min-height:var(--touch)}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 10px var(--amber);animation:blink 1.6s steps(2) infinite;flex-shrink:0}
+@keyframes blink{50%{opacity:.2}}
+h1{font-family:VT;font-weight:400;font-size:clamp(52px,16vw,148px);line-height:.88;margin:24px 0 10px;color:#eafff0;letter-spacing:1px;text-shadow:0 0 6px var(--g),0 0 26px rgba(57,255,106,.4),0 0 70px rgba(57,255,106,.18);word-break:break-word}
 h1 .x{color:var(--g)}
-.glitch{position:relative;display:inline-block}
-.glitch::before,.glitch::after{content:attr(data-t);position:absolute;left:0;top:0;width:100%;overflow:hidden}
-.glitch::before{color:var(--g2);transform:translate(2px,0);clip-path:inset(0 0 60% 0);animation:g1 3.5s infinite steps(1);opacity:.7}
-.glitch::after{color:#ff3b6b;transform:translate(-2px,0);clip-path:inset(60% 0 0 0);animation:g2 4.2s infinite steps(1);opacity:.45}
-@keyframes g1{0%,92%,100%{transform:none;clip-path:inset(0 0 100% 0)}93%{transform:translate(4px,-2px);clip-path:inset(10% 0 55% 0)}96%{transform:translate(-3px,1px);clip-path:inset(40% 0 30% 0)}}
-@keyframes g2{0%,88%,100%{transform:none;clip-path:inset(100% 0 0 0)}89%{transform:translate(-4px,2px);clip-path:inset(65% 0 5% 0)}94%{transform:translate(3px,0);clip-path:inset(20% 0 60% 0)}}
-.tag{font-family:VT;font-size:clamp(26px,4vw,40px);color:var(--g);letter-spacing:6px;text-transform:uppercase}
-.cursor{display:inline-block;width:.55em;height:.9em;background:var(--g);vertical-align:-2px;margin-left:6px;animation:blink 1s steps(2) infinite;box-shadow:0 0 10px var(--g)}
-.sub{max-width:640px;margin:18px auto 0;color:var(--mut);font-size:16px}
-.cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:38px}
-.btn{font-family:STM;font-size:14px;letter-spacing:2px;text-transform:uppercase;padding:14px 26px;border:1px solid var(--g);color:var(--g);border-radius:4px;position:relative;transition:.2s;background:rgba(57,255,106,.04)}
-.btn:hover{background:var(--g);color:#021;box-shadow:0 0 30px rgba(57,255,106,.5)}
+.glitch{position:relative;display:inline-block;max-width:100%}
+.glitch::before,.glitch::after{content:attr(data-t);position:absolute;left:0;top:0;width:100%;overflow:hidden;pointer-events:none}
+.glitch::before{color:var(--g2);transform:translate(2px,0);clip-path:inset(0 0 60% 0);animation:g1 7s infinite steps(1);opacity:.4}
+.glitch::after{color:#ff3b6b;transform:translate(-2px,0);clip-path:inset(60% 0 0 0);animation:g2 8.5s infinite steps(1);opacity:.25}
+@keyframes g1{0%,94%,100%{transform:none;clip-path:inset(0 0 100% 0)}95%{transform:translate(3px,-1px);clip-path:inset(10% 0 55% 0)}97%{transform:translate(-2px,1px);clip-path:inset(40% 0 30% 0)}}
+@keyframes g2{0%,93%,100%{transform:none;clip-path:inset(100% 0 0 0)}94%{transform:translate(-3px,1px);clip-path:inset(65% 0 5% 0)}96%{transform:translate(2px,0);clip-path:inset(20% 0 60% 0)}}
+.tag{font-family:VT;font-size:clamp(22px,5.5vw,36px);color:var(--g);letter-spacing:clamp(2px,1.2vw,6px);text-transform:uppercase}
+.cursor{display:inline-block;width:.5em;height:.85em;background:var(--g);vertical-align:-2px;margin-left:6px;animation:blink 1.4s steps(2) infinite;box-shadow:0 0 10px var(--g)}
+.sub{max-width:38rem;margin:18px auto 0;color:var(--mut);font-size:clamp(14.5px,3.6vw,16.5px);padding:0 2px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:32px}
+.btn{font-family:STM;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;padding:12px 20px;min-height:var(--touch);border:1px solid var(--g);color:var(--g);border-radius:4px;transition:.2s;background:rgba(57,255,106,.04);display:inline-flex;align-items:center;justify-content:center;text-align:center;touch-action:manipulation}
+.btn:hover,.btn:focus-visible{background:var(--g);color:#021;box-shadow:0 0 28px rgba(57,255,106,.4);outline:none}
 .btn.ghost{border-color:var(--line);color:var(--mut)}
-.btn.ghost:hover{background:transparent;color:var(--g);border-color:var(--g);box-shadow:none}
-.btn.disabled{cursor:not-allowed;opacity:.55;border-style:dashed}
-.btn.disabled:hover{background:rgba(57,255,106,.04);color:var(--g);box-shadow:none}
-.meta{margin-top:34px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.meta span{font-size:12px;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--line);padding:4px 12px;border-radius:3px;color:var(--mut);background:rgba(6,19,11,.6)}
+.btn.ghost:hover,.btn.ghost:focus-visible{background:transparent;color:var(--g);border-color:var(--g);box-shadow:none}
+.btn.disabled{cursor:not-allowed;opacity:.55;border-style:dashed;pointer-events:none}
+.meta{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.meta span{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;border:1px solid var(--line);padding:6px 10px;border-radius:3px;color:var(--mut);background:rgba(6,19,11,.6);line-height:1.3}
 .meta b{color:var(--g2);font-weight:400}
-section{padding:110px 0;border-top:1px solid var(--line)}
-.kick{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--g2)}
-h2{font-family:VT;font-weight:400;font-size:clamp(40px,6vw,64px);color:#eafff0;line-height:1;margin:10px 0 14px;text-shadow:0 0 18px rgba(57,255,106,.35)}
-.lead{color:var(--mut);max-width:640px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}
-.card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(10,30,18,.75),rgba(3,10,6,.75));padding:26px;border-radius:8px;position:relative;overflow:hidden;transition:.25s}
-.card::before{content:"";position:absolute;inset:0;background:radial-gradient(400px circle at var(--mx,50%) var(--my,0%),rgba(57,255,106,.12),transparent 40%);opacity:0;transition:.3s}
-.card:hover{border-color:rgba(57,255,106,.5);transform:translateY(-3px)}
-.card:hover::before{opacity:1}
-.card .ic{font-family:VT;font-size:30px;color:var(--g);text-shadow:0 0 10px var(--g)}
-.card h3{font-family:VT;font-weight:400;font-size:28px;color:#eafff0;margin:6px 0 6px;letter-spacing:1px}
-.card p{color:var(--mut);font-size:14.5px}
-.shots{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:46px}
-@media(max-width:820px){.shots{grid-template-columns:1fr}}
-.frame{border:1px solid rgba(57,255,106,.35);border-radius:14px;padding:12px;background:#030b06;box-shadow:0 0 0 1px #000,0 30px 80px -30px rgba(57,255,106,.35)}
-.frame img{width:100%;display:block;border-radius:6px;image-rendering:auto}
-.frame figcaption{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--mut);padding:10px 4px 2px}
-.locks{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:40px}
-@media(max-width:900px){.locks{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:560px){.locks{grid-template-columns:repeat(2,1fr)}}
-.lk{position:relative;border-radius:8px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;cursor:pointer;transition:.25s}
-.lk img{width:100%;height:100%;object-fit:cover;transition:.5s;filter:saturate(1.1)}
-.lk span{position:absolute;left:0;right:0;bottom:0;padding:18px 10px 8px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#eafff0;background:linear-gradient(transparent,rgba(0,0,0,.85))}
-.lk:hover{border-color:var(--g);box-shadow:0 0 24px rgba(57,255,106,.35)}
-.lk:hover img{transform:scale(1.07)}
-.lk.on{border-color:var(--g);box-shadow:0 0 0 1px var(--g),0 0 30px rgba(57,255,106,.4)}
-.preview{margin-top:26px;border-radius:14px;overflow:hidden;border:1px solid rgba(57,255,106,.35);position:relative;aspect-ratio:16/7;background:#000}
-.preview img{width:100%;height:100%;object-fit:cover;transition:opacity .5s}
-.preview .clock{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font-family:VT;color:#eafff0;text-shadow:0 0 20px rgba(57,255,106,.7)}
-.preview .clock b{font-weight:400;font-size:clamp(56px,10vw,120px);line-height:1;display:block}
-.preview .clock small{font-size:20px;letter-spacing:6px;color:var(--g)}
-.term{margin-top:46px;border:1px solid var(--line);border-radius:10px;background:rgba(2,10,5,.85);overflow:hidden}
+section{padding:clamp(64px,12vw,104px) 0;border-top:1px solid var(--line)}
+.kick{font-size:11px;letter-spacing:3.5px;text-transform:uppercase;color:var(--g2)}
+h2{font-family:VT;font-weight:400;font-size:clamp(34px,8vw,58px);color:#eafff0;line-height:1.02;margin:8px 0 12px;text-shadow:0 0 18px rgba(57,255,106,.25)}
+.lead{color:var(--mut);max-width:38rem;font-size:clamp(14.5px,3.6vw,16px)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:36px}
+.card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(10,30,18,.75),rgba(3,10,6,.75));padding:clamp(18px,4vw,24px);border-radius:8px;position:relative;overflow:hidden;transition:.25s;min-width:0}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(320px circle at var(--mx,50%) var(--my,0%),rgba(57,255,106,.08),transparent 40%);opacity:0;transition:.3s;pointer-events:none}
+.card:hover,.card:focus-within{border-color:rgba(57,255,106,.4);transform:translateY(-2px)}
+.card:hover::before,.card:focus-within::before{opacity:1}
+.card .ic{font-family:VT;font-size:26px;color:var(--g);text-shadow:0 0 10px var(--g)}
+.card h3{font-family:VT;font-weight:400;font-size:clamp(22px,5vw,26px);color:#eafff0;margin:6px 0;letter-spacing:.5px}
+.card p{color:var(--mut);font-size:14px;line-height:1.55}
+.shots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:36px}
+.frame{border:1px solid rgba(57,255,106,.28);border-radius:12px;padding:10px;background:#030b06;box-shadow:0 0 0 1px #000,0 24px 60px -28px rgba(57,255,106,.25);min-width:0}
+.frame img{width:100%;border-radius:6px}
+.frame figcaption{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mut);padding:10px 4px 2px}
+.locks{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:28px}
+.lk{position:relative;border-radius:8px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;cursor:pointer;transition:.25s;padding:0;min-height:var(--touch);touch-action:manipulation;-webkit-tap-highlight-color:transparent;background:#000}
+.lk img{width:100%;height:100%;object-fit:cover;transition:transform .5s;filter:saturate(1.05)}
+.lk span{position:absolute;left:0;right:0;bottom:0;padding:16px 8px 7px;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:#eafff0;background:linear-gradient(transparent,rgba(0,0,0,.88));text-align:left;line-height:1.2}
+.lk:hover,.lk:focus-visible{border-color:var(--g);box-shadow:0 0 20px rgba(57,255,106,.28);outline:none}
+.lk:hover img,.lk:focus-visible img,.lk.on img{transform:scale(1.04)}
+.lk.on{border-color:var(--g);box-shadow:0 0 0 1px var(--g),0 0 24px rgba(57,255,106,.3)}
+.preview{margin-top:20px;border-radius:12px;overflow:hidden;border:1px solid rgba(57,255,106,.28);position:relative;aspect-ratio:16/9;background:#000;min-width:0}
+.preview img{width:100%;height:100%;object-fit:cover;transition:opacity .45s}
+.preview .clock{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font-family:VT;color:#eafff0;text-shadow:0 0 18px rgba(57,255,106,.55);padding:12px;pointer-events:none}
+.preview .clock b{font-weight:400;font-size:clamp(40px,12vw,104px);line-height:1;display:block}
+.preview .clock small{font-size:clamp(14px,3.5vw,18px);letter-spacing:clamp(2px,.8vw,5px);color:var(--g)}
+.term{margin-top:36px;border:1px solid var(--line);border-radius:10px;background:rgba(2,10,5,.9);overflow:hidden;min-width:0}
 .term .bar{display:flex;gap:8px;padding:10px 14px;border-bottom:1px solid var(--line)}
-.term .bar i{width:11px;height:11px;border-radius:50%;background:#123d22}
+.term .bar i{width:10px;height:10px;border-radius:50%;background:#123d22}
 .term .bar i:first-child{background:var(--g)}
-.term pre{padding:22px;font-size:14px;color:var(--txt);white-space:pre-wrap;min-height:270px}
-.term .ok{color:var(--g)}.term .wait{color:var(--amber)}.term .c{color:var(--mut)}
-.soon{border:1px solid rgba(255,179,71,.45);background:linear-gradient(135deg,rgba(255,179,71,.07),rgba(57,255,106,.04));border-radius:12px;padding:40px;margin-top:46px;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center}
-@media(max-width:820px){.soon{grid-template-columns:1fr}}
-.soon h3{font-family:VT;font-weight:400;font-size:44px;color:var(--amber);line-height:1;text-shadow:0 0 18px rgba(255,179,71,.35)}
-.soon ul{list-style:none;margin-top:14px}
-.soon li{padding:6px 0;color:var(--txt);font-size:14.5px}
+.term pre{padding:16px;font-size:clamp(12px,3.2vw,14px);color:var(--txt);white-space:pre-wrap;word-break:break-word;min-height:220px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.term .ok{color:var(--g)}.term .wait{color:var(--amber)}.term .c{color:var(--mut)}.term .meas{color:var(--g2)}
+.soon{border:1px solid rgba(255,179,71,.4);background:linear-gradient(135deg,rgba(255,179,71,.06),rgba(57,255,106,.03));border-radius:12px;padding:clamp(22px,5vw,36px);margin-top:36px;display:grid;grid-template-columns:1.25fr 1fr;gap:22px;align-items:start;min-width:0}
+.soon h3{font-family:VT;font-weight:400;font-size:clamp(28px,7vw,40px);color:var(--amber);line-height:1.05;text-shadow:0 0 16px rgba(255,179,71,.25)}
+.soon ul{list-style:none;margin-top:12px}
+.soon li{padding:7px 0;color:var(--txt);font-size:14px;line-height:1.45}
 .soon li::before{content:"› ";color:var(--g)}
-.steps{display:grid;gap:10px}
-.step{display:flex;justify-content:space-between;gap:16px;border:1px solid var(--line);padding:12px 16px;border-radius:6px;font-size:13px;letter-spacing:1px;text-transform:uppercase;background:rgba(0,0,0,.35)}
-.step em{font-style:normal;color:var(--amber)}
+.steps{display:grid;gap:8px}
+.step{display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid var(--line);padding:12px 14px;border-radius:6px;font-size:12px;letter-spacing:1px;text-transform:uppercase;background:rgba(0,0,0,.35);min-height:var(--touch)}
+.step span{min-width:0}
+.step em{font-style:normal;color:var(--amber);white-space:nowrap}
 .step.done em{color:var(--g)}
-.legal{font-size:13px;color:var(--mut);border-left:2px solid var(--amber);padding:6px 0 6px 16px;margin-top:30px;max-width:760px}
-footer{border-top:1px solid var(--line);padding:40px 0;color:var(--mut);font-size:13px}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+.bench{margin-top:28px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:rgba(3,12,7,.72)}
+.bench .head{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;justify-content:space-between}
+.bench .head h3{font-family:VT;font-weight:400;font-size:26px;color:#eafff0}
+.bench .note{font-size:12px;color:var(--mut);max-width:42rem;line-height:1.5}
+.bench-table{width:100%;border-collapse:collapse;font-size:13px}
+.bench-table th,.bench-table td{padding:12px 14px;text-align:left;border-top:1px solid var(--line);vertical-align:top}
+.bench-table th{color:var(--g2);font-weight:400;letter-spacing:1px;text-transform:uppercase;font-size:11px;white-space:nowrap}
+.bench-table td:last-child{color:var(--g);font-variant-numeric:tabular-nums}
+.bench-table tr:nth-child(even) td{background:rgba(57,255,106,.03)}
+.bench-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.legal{font-size:13px;color:var(--mut);border-left:2px solid var(--amber);padding:8px 0 8px 14px;margin-top:28px;max-width:42rem;line-height:1.55}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .75s,transform .75s}
 .reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}#rain{display:none}}
+@media(max-width:900px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .locks{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:720px){
+  .nav-toggle{display:inline-flex}
+  nav ul{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;padding:8px var(--pad) 14px;background:rgba(2,8,5,.97);border-bottom:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.45)}
+  nav ul.open{display:flex}
+  nav ul a{min-height:48px;padding:12px 4px;border-bottom:1px solid rgba(57,255,106,.08);width:100%}
+  nav ul li:last-child a{border-bottom:0}
+  .grid,.shots,.soon{grid-template-columns:1fr}
+  .locks{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .preview{aspect-ratio:16/10}
+  .cta .btn{flex:1 1 calc(50% - 6px);min-width:140px}
+  .bench-table th,.bench-table td{padding:10px 12px}
+  section{padding:56px 0}
+}
+@media(max-width:380px){
+  .cta .btn{flex:1 1 100%}
+  h1{font-size:clamp(44px,18vw,64px)}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  #rain{display:none}
+  .glitch::before,.glitch::after{display:none}
+}
 </style>
 </head>
 <body>
 <canvas id="rain" aria-hidden="true"></canvas>
-<div class="scan"></div><div class="vig"></div>
+<div class="scan" aria-hidden="true"></div><div class="vig" aria-hidden="true"></div>
 
 <nav><div class="wrap">
-  <a class="brand" href="#">dArkOSX<span>//</span>Fen</a>
-  <ul><li><a href="#features">Features</a></li><li><a href="#look">Look</a></li><li><a href="#lock">Lock</a></li><li><a href="#status">Status</a></li><li><a href="https://github.com/Moorzi/darkosx-fen">GitHub</a></li></ul>
+  <a class="brand" href="#">dArkOSX<span class="hint"> //</span></a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navlinks" aria-label="Open menu"><span></span></button>
+  <ul id="navlinks">
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#look">Gallery</a></li>
+    <li><a href="#lock">Lock</a></li>
+    <li><a href="#status">Status</a></li>
+    <li><a href="https://github.com/Moorzi/darkosx-fen">GitHub</a></li>
+  </ul>
 </div></nav>
 
 <header class="hero"><div class="wrap">
   <div class="pill"><i></i>Coming Soon · v0.1 alpha</div>
-  <h1><span class="glitch" data-t="dArkOSX Fen">dArk<span class="x">OSX</span> Fen</span></h1>
-  <div class="tag">Your handheld. Reprogrammed.<span class="cursor"></span></div>
-  <p class="sub">Custom firmware for the R36S / R36XX. A neon-lit EmulationStation, a guided first boot, lock backgrounds you actually want to look at, and performance-minded defaults.</p>
+  <h1><span class="glitch" data-t="dArkOSX">dArk<span class="x">OSX</span></span></h1>
+  <div class="tag">Your handheld. Reprogrammed.<span class="cursor" aria-hidden="true"></span></div>
+  <p class="sub">A carefully revised firmware for the R36S and R36XX. The community foundation remains; the interface, first-boot experience, and day-to-day defaults are rewritten with restraint and precision.</p>
   <div class="cta">
-    <a class="btn disabled" href="#status" title="The image is not released yet">⬇ Image · Coming soon</a>
-    <a class="btn" href="https://github.com/Moorzi/darkosx-fen">★ Watch on GitHub</a>
-    <a class="btn ghost" href="#features">What's inside</a>
+    <a class="btn disabled" href="#status" aria-disabled="true" title="The image has not been released">Image · Coming soon</a>
+    <a class="btn" href="https://github.com/Moorzi/darkosx-fen">Repository</a>
+    <a class="btn ghost" href="#overview">Read on</a>
   </div>
-  <div class="meta"><span>Device <b>R36S</b> / <b>R36XX</b></span><span>Base <b>dArkOS</b></span><span>Status <b>Pre-release</b></span><span>ROMs &amp; BIOS <b>not included</b></span></div>
+  <div class="meta">
+    <span>Hardware <b>R36S</b> / <b>R36XX</b></span>
+    <span>Upstream <b>dArkOS</b></span>
+    <span>State <b>Pre-release</b></span>
+    <span>ROMs &amp; BIOS <b>excluded</b></span>
+  </div>
 </div></header>
 
 <main>
-<section id="features"><div class="wrap">
-  <div class="reveal"><div class="kick">// 01 · what's inside</div>
-  <h2>Built for the pocket.</h2>
-  <p class="lead">Everything you already rely on stays put. Fen adds the look, the polish and a careful tuning pass on top.</p></div>
+<section id="overview"><div class="wrap">
+  <div class="reveal"><div class="kick">// 01 · overview</div>
+  <h2>Substance before spectacle.</h2>
+  <p class="lead">This build does not chase novelty for its own sake. It keeps what the community already trusts, then improves the parts you meet every time you power on: menus, setup, lock screen, and the quiet choices behind performance.</p></div>
   <div class="grid">
-    <div class="card reveal"><div class="ic">&gt;_</div><h3>Neon EmulationStation</h3><p>A rebuilt front end with a terminal-style theme, tile Control Centre and a fresh system panel.</p></div>
-    <div class="card reveal"><div class="ic">01</div><h3>First-boot wizard</h3><p>A guided setup the first time you power on. Press A and go: no config files, no guesswork.</p></div>
-    <div class="card reveal"><div class="ic">◐</div><h3>Lock backgrounds</h3><p>Ten original lock screens, four of them deep-space. Cycle them from Display &amp; Sound.</p></div>
-    <div class="card reveal"><div class="ic">⚡</div><h3>Performance-minded</h3><p>Sensible defaults within the clocks the base already ships. No overvolting.</p></div>
-    <div class="card reveal"><div class="ic">⇄</div><h3>Samba &amp; file browser</h3><p>The community Samba share and web file browser are kept, so you can drop files over Wi-Fi.</p></div>
-    <div class="card reveal"><div class="ic">⛨</div><h3>Clean public image</h3><p>No ROMs and no copyrighted console BIOS in the public package. Bring your own dumps.</p></div>
+    <div class="card reveal"><div class="ic">&gt;_</div><h3>Front end</h3><p>EmulationStation is rebuilt with a terminal-leaning theme, a tile Control Centre, and a clearer system panel. Navigation stays familiar; the presentation is new.</p></div>
+    <div class="card reveal"><div class="ic">01</div><h3>First power-on</h3><p>A short wizard walks through the essentials on first boot. Confirm with A and continue. No hand-editing of configuration files is required.</p></div>
+    <div class="card reveal"><div class="ic">◐</div><h3>Lock backgrounds</h3><p>Ten original compositions, several of them celestial. Choose one under Display &amp; Sound; the selection persists across sleep and restart.</p></div>
+    <div class="card reveal"><div class="ic">⚡</div><h3>Measured policy</h3><p>Frequency defaults stay inside the clock ceiling the hardware already publishes. Nothing is overvolted. Claims wait on measurement.</p></div>
+    <div class="card reveal"><div class="ic">⇄</div><h3>Network transfer</h3><p>The Samba share and web file browser that the community relies on are retained, so libraries can still arrive over Wi-Fi.</p></div>
+    <div class="card reveal"><div class="ic">⛨</div><h3>Public package</h3><p>The release image carries neither ROMs nor copyrighted console BIOS. You supply dumps from hardware you own.</p></div>
   </div>
 </div></section>
 
 <section id="look"><div class="wrap">
-  <div class="reveal"><div class="kick">// 02 · the look</div>
-  <h2>Dark. Sharp. Green.</h2>
-  <p class="lead">Captured from a real R36S running the current Fen build.</p></div>
+  <div class="reveal"><div class="kick">// 02 · gallery</div>
+  <h2>Taken from the glass.</h2>
+  <p class="lead">Photographs of a production R36S running the present build. Colour and layout are as the device renders them at 640×480.</p></div>
   <div class="shots">
-    <figure class="frame reveal"><img src="assets/screens/control-centre.png" alt="Fen Control Centre on the R36S" loading="lazy"><figcaption>Control Centre · 640×480 on device</figcaption></figure>
-    <figure class="frame reveal"><img src="assets/screens/systems-grid.jpg" alt="Fen EmulationStation system views" loading="lazy"><figcaption>System views · EmulationStation</figcaption></figure>
+    <figure class="frame reveal"><img src="assets/screens/control-centre.png" alt="Control Centre on an R36S" width="640" height="480" loading="lazy"><figcaption>Control Centre · captured on device</figcaption></figure>
+    <figure class="frame reveal"><img src="assets/screens/systems-grid.jpg" alt="System list in EmulationStation" width="640" height="480" loading="lazy"><figcaption>System views · EmulationStation</figcaption></figure>
   </div>
 </div></section>
 
 <section id="lock"><div class="wrap">
   <div class="reveal"><div class="kick">// 03 · lock screen</div>
-  <h2>Ten ways to lock it.</h2>
-  <p class="lead">Pick one in <b style="color:var(--g)">Display &amp; Sound → Lock Background</b>. Tap a tile to preview it.</p></div>
-  <div class="preview reveal"><img id="pv" src="assets/locks/emerald-nebula.jpg" alt="Lock background preview"><div class="clock"><div><b id="clk">--:--</b><small id="pvn">EMERALD NEBULA</small></div></div></div>
-  <div class="locks" id="locks"></div>
+  <h2>Ten quiet backdrops.</h2>
+  <p class="lead">Open <b style="color:var(--g)">Display &amp; Sound → Lock Background</b>. Select a tile here to preview how it will sit behind the clock.</p></div>
+  <div class="preview reveal"><img id="pv" src="assets/locks/emerald-nebula.jpg" alt="Lock background preview" width="960" height="540"><div class="clock"><div><b id="clk">--:--</b><small id="pvn">EMERALD NEBULA</small></div></div></div>
+  <div class="locks" id="locks" role="listbox" aria-label="Lock background options"></div>
 </div></section>
 
 <section id="status"><div class="wrap">
-  <div class="reveal"><div class="kick">// 04 · release status</div>
+  <div class="reveal"><div class="kick">// 04 · status</div>
   <h2>Coming soon.</h2>
-  <p class="lead">The image isn't public yet. We're benchmarking stock vs Fen on real hardware first, and we'll only publish numbers we've actually measured.</p></div>
+  <p class="lead">The downloadable image is withheld until remaining checks finish. Figures in the table were read from a live handheld during this session. A stock-card comparison requires a second card and is not invented in its absence.</p></div>
+
+  <div class="bench reveal" id="bench">
+    <div class="head">
+      <h3>Instrument readings</h3>
+      <p class="note">R36S · 5 Nov 2026 (Europe/London) · battery charging, capacity about 48–53% · this build only. Probes are read-only samples of <code>/proc</code> and <code>/sys</code>. Idle statistics exclude the first sixty seconds of the run.</p>
+    </div>
+    <div class="bench-scroll">
+      <table class="bench-table">
+        <thead><tr><th>Metric</th><th>Method</th><th>Result</th></tr></thead>
+        <tbody id="bench-body">
+          <tr><td>Boot to multi-user</td><td><code>systemd-analyze</code></td><td>15.446 s (kernel 3.224 + userspace 12.221)</td></tr>
+          <tr><td>EmulationStation process start</td><td>seconds after boot</td><td>11.42 s</td></tr>
+          <tr><td>EmulationStation RSS (menu)</td><td><code>/proc</code> VmRSS</td><td>183 MB</td></tr>
+          <tr><td>CPU policy</td><td>sysfs</td><td>ondemand · 1008–1512 MHz</td></tr>
+          <tr><td>Idle SoC temperature</td><td>180 s sample, skip first 60 s</td><td>~66 °C median (charging)</td></tr>
+          <tr><td>Idle ES CPU share</td><td>% of one core, same window</td><td>~22% median</td></tr>
+          <tr><td>System RAM</td><td><code>MemTotal</code></td><td>895 MB</td></tr>
+          <tr><td>Stock comparison</td><td>paired spare card</td><td>pending</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
   <div class="term reveal"><div class="bar"><i></i><i></i><i></i></div><pre id="term"></pre></div>
   <div class="soon reveal">
     <div>
-      <h3>Image drops after benchmarks.</h3>
+      <h3>What remains before release.</h3>
       <ul>
-        <li>Download link and install guide will appear here</li>
-        <li>Stock vs Fen results, measured on device</li>
-        <li>Checksums published with every release</li>
-        <li>First release is R36S / R36XX only</li>
+        <li>Install guide and download link, published together</li>
+        <li>Stock comparison once a spare card is measured</li>
+        <li>Checksums beside every published image</li>
+        <li>First public target: R36S and R36XX only</li>
       </ul>
     </div>
     <div class="steps">
-      <div class="step done"><span>Firmware build</span><em>Done</em></div>
-      <div class="step done"><span>Repo &amp; site</span><em>Live</em></div>
-      <div class="step"><span>Benchmarks</span><em>Up next</em></div>
-      <div class="step"><span>Spare-card flash test</span><em>Pending</em></div>
+      <div class="step done"><span>Firmware build</span><em>Complete</em></div>
+      <div class="step done"><span>Repository &amp; site</span><em>Live</em></div>
+      <div class="step done"><span>On-device probes</span><em>Recorded</em></div>
+      <div class="step"><span>Stock card pair</span><em>Pending</em></div>
       <div class="step"><span>Public image</span><em>Coming soon</em></div>
     </div>
   </div>
-  <p class="legal"><b style="color:var(--amber)">No games, ROMs or copyrighted BIOS files are included, and none ever will be.</b> Use only files you've dumped from hardware you own. dArkOSX Fen is an unofficial community build on top of dArkOS and isn't affiliated with or endorsed by any console maker.</p>
+  <p class="legal"><b style="color:var(--amber)">No games, ROMs, or copyrighted BIOS files are included, and none will be.</b> Supply only dumps taken from hardware you own. This is an unofficial community build atop dArkOS; it is not affiliated with or endorsed by any console manufacturer.</p>
 </div></section>
 </main>
 
 <footer><div class="wrap">
-  <div><span class="brand" style="font-size:22px">dArkOSX<span>//</span>Fen</span><br>Custom firmware for the R36S / R36XX.</div>
-  <div>Built on <a href="https://github.com/christianhaitian/dArkOS">dArkOS</a> · <a href="https://github.com/Moorzi/darkosx-fen">github.com/Moorzi/darkosx-fen</a></div>
+  <div><span class="brand" style="font-size:22px">dArkOSX<span class="hint"> //</span></span><br>Custom firmware for the R36S and R36XX.</div>
+  <div>Built upon <a href="https://github.com/christianhaitian/dArkOS">dArkOS</a> · <a href="https://github.com/Moorzi/darkosx-fen">github.com/Moorzi/darkosx-fen</a></div>
 </div></footer>
 
 <script>
-// digital rain
-(()=>{const c=document.getElementById('rain'),x=c.getContext('2d');let w,h,cols,d,fs=16;
-const ch='アイウエオカキクケコサシスセソタチツテトナニヌネノ0123456789ABCDEF<>/\\=+*';
-function rs(){w=c.width=innerWidth;h=c.height=innerHeight;cols=Math.ceil(w/fs);d=Array(cols).fill(0).map(()=>Math.random()*-60)}
-rs();addEventListener('resize',rs);
-function f(){x.fillStyle='rgba(2,8,5,.09)';x.fillRect(0,0,w,h);x.font=fs+'px monospace';
-for(let i=0;i<cols;i++){const t=ch[Math.random()*ch.length|0];const y=d[i]*fs;
-x.fillStyle=Math.random()>.975?'#eafff0':'#39ff6a';x.fillText(t,i*fs,y);
-if(y>h&&Math.random()>.975)d[i]=0;d[i]+=.6}requestAnimationFrame(f)}f()})();
-// lock gallery
+(()=>{const t=document.querySelector('.nav-toggle'),u=document.getElementById('navlinks');
+if(t&&u){t.addEventListener('click',()=>{const o=t.getAttribute('aria-expanded')==='true';t.setAttribute('aria-expanded',String(!o));u.classList.toggle('open',!o);t.setAttribute('aria-label',o?'Open menu':'Close menu')});
+u.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{t.setAttribute('aria-expanded','false');u.classList.remove('open');t.setAttribute('aria-label','Open menu')}))}})();
+/* Calm vertical glyph drift — sparse columns, slow fall, low opacity */
+(()=>{const c=document.getElementById('rain'),x=c.getContext('2d');let w,h,cols,d,fs=22;
+const ch='01·+*';
+function rs(){w=c.width=innerWidth;h=c.height=innerHeight;cols=Math.ceil(w/(fs*1.85));d=Array(cols).fill(0).map(()=>Math.random()*-40)}
+rs();addEventListener('resize',rs,{passive:true});
+let last=0;
+function f(ts){if(ts-last<64){requestAnimationFrame(f);return}last=ts;
+x.fillStyle='rgba(2,8,5,.06)';x.fillRect(0,0,w,h);x.font=fs+'px monospace';
+for(let i=0;i<cols;i++){if(Math.random()>.55)continue;const t=ch[Math.random()*ch.length|0];const y=d[i]*fs;
+x.fillStyle=Math.random()>.92?'rgba(234,255,240,.55)':'rgba(57,255,106,.45)';x.fillText(t,i*fs*1.85,y);
+if(y>h&&Math.random()>.992)d[i]=0;d[i]+=.11}requestAnimationFrame(f)}
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches)requestAnimationFrame(f)})();
 const L=[['digital-rain','Digital Rain'],['emerald-nebula','Emerald Nebula'],['orbital-ghost','Orbital Ghost'],['deep-field','Deep Field'],['event-horizon','Event Horizon'],['circuit-noir','Circuit Noir'],['aurora-drift','Aurora Drift'],['vector-grid','Vector Grid'],['obsidian-signal','Obsidian Signal'],['ghost-wave','Ghost Wave']];
 const g=document.getElementById('locks'),pv=document.getElementById('pv'),pn=document.getElementById('pvn');
-L.forEach(([s,n],i)=>{const e=document.createElement('div');e.className='lk'+(i==1?' on':'');e.innerHTML=`<img src="assets/locks/${s}.jpg" alt="${n} lock background" loading="lazy"><span>${n}</span>`;
-e.onclick=()=>{document.querySelectorAll('.lk').forEach(k=>k.classList.remove('on'));e.classList.add('on');pv.style.opacity=0;setTimeout(()=>{pv.src=`assets/locks/${s}.jpg`;pn.textContent=n.toUpperCase();pv.style.opacity=1},250)};g.appendChild(e)});
+L.forEach(([s,n],i)=>{const e=document.createElement('button');e.type='button';e.className='lk'+(i===1?' on':'');e.setAttribute('role','option');e.setAttribute('aria-selected',i===1?'true':'false');e.setAttribute('aria-label',n);
+e.innerHTML=`<img src="assets/locks/${s}.jpg" alt="" loading="lazy" width="320" height="240"><span>${n}</span>`;
+e.addEventListener('click',()=>{document.querySelectorAll('.lk').forEach(k=>{k.classList.remove('on');k.setAttribute('aria-selected','false')});e.classList.add('on');e.setAttribute('aria-selected','true');pv.style.opacity=0;setTimeout(()=>{pv.src=`assets/locks/${s}.jpg`;pn.textContent=n.toUpperCase();pv.style.opacity=1},220)});
+g.appendChild(e)});
 const ck=()=>{const d=new Date();document.getElementById('clk').textContent=d.toTimeString().slice(0,5)};ck();setInterval(ck,10000);
-// reveal + card glow
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);if(e.target.classList.contains('term'))type()}}),{threshold:.15});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);if(e.target.classList.contains('term'))type()}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
-document.querySelectorAll('.card').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',e.clientX-r.left+'px');c.style.setProperty('--my',e.clientY-r.top+'px')}));
-// terminal
-const T=[['c','$ fen --status'],['ok','[ OK ] firmware build ............ ready'],['ok','[ OK ] first-boot wizard ......... ready'],['ok','[ OK ] lock backgrounds .......... 10 loaded'],['ok','[ OK ] samba + file browser ...... kept'],['ok','[ OK ] public image audit ........ no ROMs / no console BIOS'],['wait','[ .. ] benchmarks ................ queued'],['wait','[ .. ] release image ............. coming soon'],['c','$ _']];
+document.querySelectorAll('.card').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')},{passive:true}));
+const T=[['c','$ report'],['ok','[ OK ] firmware build ............ complete'],['ok','[ OK ] first-boot path ........... ready'],['ok','[ OK ] lock backgrounds .......... 10'],['ok','[ OK ] network transfer .......... retained'],['ok','[ OK ] public package audit ...... no ROMs / no console BIOS'],['meas','[ .. ] instrument readings ....... boot 15.4s · ES @ 11.4s'],['wait','[ .. ] stock card pair ........... pending'],['wait','[ .. ] public image .............. coming soon'],['c','$ _']];
 let typed=false;function type(){if(typed)return;typed=true;const p=document.getElementById('term');let i=0,j=0,html='';
-(function s(){if(i>=T.length)return;const [k,l]=T[i];j++;p.innerHTML=html+`<span class="${k}">${l.slice(0,j)}</span>`;if(j>=l.length){html+=`<span class="${k}">${l}</span>\n`;i++;j=0;setTimeout(s,220)}else setTimeout(s,14)})()}
+(function s(){if(i>=T.length)return;const [k,l]=T[i];j++;p.innerHTML=html+`<span class="${k}">${l.slice(0,j)}</span>`;if(j>=l.length){html+=`<span class="${k}">${l}</span>\n`;i++;j=0;setTimeout(s,240)}else setTimeout(s,16)})()}
 </script>
 </body>
 </html>

@@ -1,47 +1,53 @@
-<h1 align="center">dArkOSX Fen</h1>
+# dArkOSX
 
-<p align="center"><b><code>YOUR HANDHELD. REPROGRAMMED.</code></b></p>
+<p align="center"><code>YOUR HANDHELD. REPROGRAMMED.</code></p>
 
 <p align="center">
   <img alt="status: coming soon" src="https://img.shields.io/badge/status-coming%20soon-ffb347?style=for-the-badge&labelColor=0b1a10">
   <img alt="device: R36S / R36XX" src="https://img.shields.io/badge/device-R36S%20%2F%20R36XX-39ff6a?style=for-the-badge&labelColor=0b1a10">
-  <img alt="base: dArkOS" src="https://img.shields.io/badge/base-dArkOS-2de2c4?style=for-the-badge&labelColor=0b1a10">
-  <img alt="ROMs and console BIOS not included" src="https://img.shields.io/badge/ROMs%20%26%20BIOS-not%20included-ffb347?style=for-the-badge&labelColor=0b1a10">
+  <img alt="base: dArkOS" src="https://img.shields.io/badge/upstream-dArkOS-2de2c4?style=for-the-badge&labelColor=0b1a10">
+  <img alt="ROMs and console BIOS excluded" src="https://img.shields.io/badge/ROMs%20%26%20BIOS-excluded-ffb347?style=for-the-badge&labelColor=0b1a10">
 </p>
 
 <p align="center">
-  <a href="https://moorzi.github.io/darkosx-fen/"><b>🌐 Website</b></a> ·
-  <a href="#-whats-inside">What's inside</a> ·
-  <a href="#-coming-soon">Status</a>
+  <a href="https://moorzi.github.io/darkosx-fen/"><b>Website</b></a>
+  ·
+  <a href="#overview">Overview</a>
+  ·
+  <a href="#instrument-readings">Readings</a>
+  ·
+  <a href="#coming-soon">Status</a>
 </p>
 
 <p align="center">
   <img src="docs/assets/locks/emerald-nebula.jpg" width="32%" alt="Emerald Nebula lock background">
-  <img src="docs/assets/screens/control-centre.png" width="32%" alt="Fen Control Centre">
+  <img src="docs/assets/screens/control-centre.png" width="32%" alt="Control Centre on device">
   <img src="docs/assets/locks/event-horizon.jpg" width="32%" alt="Event Horizon lock background">
 </p>
 
 ---
 
 > [!IMPORTANT]
-> **🚧 Coming soon.** The image isn't released yet. We're benchmarking stock vs Fen on real hardware first. **Install instructions and the download will follow after the benchmarks**, and only measured numbers will be published.
+> **Coming soon.** The installable image is not published yet. On-device probes for this build are recorded below. A stock-card comparison will appear only after it is measured on the same handheld. Download links and install instructions will follow that work.
 
-## 🦊 What is dArkOSX Fen?
+## Overview
 
-Custom firmware for the **R36S / R36XX**: a neon EmulationStation, a guided first-boot setup and performance-minded defaults, built on [dArkOS](https://github.com/christianhaitian/dArkOS). The community Samba share and file browser are kept.
+**dArkOSX** is a custom firmware build for the **R36S** and **R36XX**. It rests on [dArkOS](https://github.com/christianhaitian/dArkOS) and keeps the network-transfer tools the community already uses. What changes is the surface you meet every day: the front end, the first-boot path, the lock screen, and the defaults that govern frequency policy.
 
-## ✨ What's inside
+The aim is revision, not reinvention. Claims about performance wait on measurement.
+
+## What ships
 
 | | |
 |---|---|
-| `>_` **Neon EmulationStation** | A rebuilt front end with a terminal-style theme and a tile Control Centre |
-| `01` **First-boot wizard** | A guided setup the first time you power on. Press A and go |
-| `◐` **Lock backgrounds** | 10 original lock screens (4 deep-space), cycled from *Display & Sound → Lock Background* |
-| `⚡` **Performance-minded** | Sensible defaults within the clocks the base already ships. No overvolting |
-| `⇄` **Samba & file browser** | Community Samba share and web file browser kept |
-| `⛨` **Clean public image** | No ROMs and no copyrighted console BIOS in the public package |
+| **Front end** | EmulationStation rebuilt with a terminal-leaning theme, a tile Control Centre, and a clearer system panel |
+| **First power-on** | A short guided wizard; confirm with A and continue |
+| **Lock backgrounds** | Ten original compositions (several celestial), selected under *Display & Sound → Lock Background* |
+| **Measured policy** | Frequency defaults within the published clock ceiling; no overvolting |
+| **Network transfer** | Samba share and web file browser retained |
+| **Public package** | No ROMs and no copyrighted console BIOS |
 
-## 🖼️ Lock backgrounds
+## Lock backgrounds
 
 <p>
   <img src="docs/assets/locks/digital-rain.jpg" width="19%" alt="Digital Rain">
@@ -56,24 +62,41 @@ Custom firmware for the **R36S / R36XX**: a neon EmulationStation, a guided firs
   <img src="docs/assets/locks/ghost-wave.jpg" width="19%" alt="Ghost Wave">
 </p>
 
-## 🚧 Coming soon
+## Instrument readings
+
+Recorded on one R36S running this build, 5 Nov 2026 (Europe/London). Battery was **charging** at about **48–53%** capacity. Probes read `/proc` and `/sys` only. Idle figures skip the first sixty seconds of a 180-second sample. **Stock comparison is pending** (no spare stock card was available this session).
+
+| Metric | Method | Result |
+|---|---|---|
+| Boot to multi-user | `systemd-analyze` | **15.446 s** (kernel 3.224 + userspace 12.221) |
+| EmulationStation process start | seconds after boot | **11.42 s** |
+| EmulationStation RSS (menu) | `/proc` VmRSS | **183 MB** |
+| CPU policy | sysfs | ondemand · 1008–1512 MHz |
+| Idle SoC temperature | 180 s sample | **~66 °C** median (charging) |
+| Idle ES CPU share | % of one core | **~22%** median |
+| System RAM | MemTotal | 895 MB |
+| Stock comparison | paired spare card | pending |
+
+Raw logs: retained locally for the release audit; summary will stay aligned with the [website status section](https://moorzi.github.io/darkosx-fen/#status).
+
+## Coming soon
 
 ```
-[ OK ] firmware build ............ ready
-[ OK ] first-boot wizard ......... ready
-[ OK ] lock backgrounds .......... 10 loaded
-[ OK ] samba + file browser ...... kept
-[ .. ] benchmarks ................ queued
-[ .. ] release image ............. coming soon
+[ OK ] firmware build ............ complete
+[ OK ] first-boot path ........... ready
+[ OK ] lock backgrounds .......... 10
+[ OK ] network transfer .......... retained
+[ .. ] stock card pair ........... pending
+[ .. ] public image .............. coming soon
 ```
 
-- **Download:** _link will be added here with the first release_
-- **Install guide:** _will follow after benchmarks_
-- **Benchmarks:** stock vs Fen, measured on device. _Not published yet_
-- **Checksums:** published with every release
+- **Download:** added with the first public image
+- **Install guide:** published with the download
+- **Checksums:** beside every release artefact
+- **Hardware:** R36S / R36XX for the first release
 
-## ⚖️ Legal
+## Legal
 
-**No games, ROMs or copyrighted BIOS files are included, and none ever will be.** Use only files you've dumped from hardware you own. Issues asking for ROMs or BIOS files will be closed.
+**No games, ROMs, or copyrighted BIOS files are included, and none will be.** Use only dumps taken from hardware you own. Requests for ROMs or BIOS files will be closed.
 
-dArkOSX Fen is an unofficial community build on top of [dArkOS](https://github.com/christianhaitian/dArkOS) and isn't affiliated with or endorsed by any console maker. Fonts on the site: VT323 and Share Tech Mono (SIL Open Font License, see `docs/assets/fonts/`).
+This is an unofficial community build atop [dArkOS](https://github.com/christianhaitian/dArkOS). It is not affiliated with or endorsed by any console manufacturer. Site fonts: VT323 and Share Tech Mono (SIL Open Font License; see `docs/assets/fonts/`).
