@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>dArkOSX Fen — Custom firmware for the R36S / R36XX · Coming Soon</title>
+<meta name="description" content="dArkOSX Fen: custom firmware for the R36S / R36XX. Neon EmulationStation, first-boot setup, lock backgrounds and performance-minded defaults. Coming soon.">
+<meta name="theme-color" content="#020805">
+<meta property="og:title" content="dArkOSX Fen — Coming Soon">
+<meta property="og:description" content="Custom firmware for the R36S / R36XX. Your handheld. Reprogrammed.">
+<meta property="og:image" content="https://moorzi.github.io/darkosx-fen/assets/locks/emerald-nebula.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23020805'/%3E%3Cpath d='M12 50 L20 14 L32 30 L44 14 L52 50 L32 40 Z' fill='none' stroke='%2339ff6a' stroke-width='4' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+@font-face{font-family:VT;src:url(assets/fonts/VT323-Regular.ttf) format("truetype");font-display:swap}
+@font-face{font-family:STM;src:url(assets/fonts/ShareTechMono-Regular.ttf) format("truetype");font-display:swap}
+:root{--bg:#020805;--bg2:#06130b;--g:#39ff6a;--g2:#2de2c4;--dim:#1c7a3a;--txt:#c9f7d6;--mut:#6fa583;--amber:#ffb347;--line:rgba(57,255,106,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:STM,ui-monospace,Menlo,Consolas,monospace;line-height:1.6;overflow-x:hidden}
+a{color:var(--g);text-decoration:none}
+#rain{position:fixed;inset:0;z-index:0;opacity:.35;pointer-events:none}
+.scan{position:fixed;inset:0;z-index:1;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.22) 0 1px,transparent 1px 3px);mix-blend-mode:multiply}
+.vig{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at center,transparent 45%,rgba(0,0,0,.85) 100%)}
+main,header,footer,nav{position:relative;z-index:2}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;backdrop-filter:blur(10px);background:rgba(2,8,5,.7);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-family:VT;font-size:28px;color:var(--g);letter-spacing:1px;text-shadow:0 0 12px rgba(57,255,106,.6)}
+.brand span{color:var(--g2)}
+nav ul{display:flex;gap:26px;list-style:none;font-size:14px;text-transform:uppercase;letter-spacing:2px}
+nav ul a{color:var(--mut);transition:.2s}nav ul a:hover{color:var(--g);text-shadow:0 0 8px var(--g)}
+@media(max-width:720px){nav ul{display:none}}@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}@media(max-width:600px){.grid{grid-template-columns:1fr}}
+.hero{min-height:calc(100vh - 60px);display:grid;place-items:center;text-align:center;padding:60px 0 80px}
+.pill{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--amber);color:var(--amber);padding:6px 16px;border-radius:999px;font-size:13px;letter-spacing:3px;text-transform:uppercase;background:rgba(255,179,71,.06);box-shadow:0 0 24px rgba(255,179,71,.15)}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 10px var(--amber);animation:blink 1.2s steps(2) infinite}
+@keyframes blink{50%{opacity:.15}}
+h1{font-family:VT;font-weight:400;font-size:clamp(64px,13vw,168px);line-height:.9;margin:28px 0 8px;color:#eafff0;letter-spacing:2px;text-shadow:0 0 6px var(--g),0 0 26px rgba(57,255,106,.55),0 0 80px rgba(57,255,106,.3);position:relative}
+h1 .x{color:var(--g)}
+.glitch{position:relative;display:inline-block}
+.glitch::before,.glitch::after{content:attr(data-t);position:absolute;left:0;top:0;width:100%;overflow:hidden}
+.glitch::before{color:var(--g2);transform:translate(2px,0);clip-path:inset(0 0 60% 0);animation:g1 3.5s infinite steps(1);opacity:.7}
+.glitch::after{color:#ff3b6b;transform:translate(-2px,0);clip-path:inset(60% 0 0 0);animation:g2 4.2s infinite steps(1);opacity:.45}
+@keyframes g1{0%,92%,100%{transform:none;clip-path:inset(0 0 100% 0)}93%{transform:translate(4px,-2px);clip-path:inset(10% 0 55% 0)}96%{transform:translate(-3px,1px);clip-path:inset(40% 0 30% 0)}}
+@keyframes g2{0%,88%,100%{transform:none;clip-path:inset(100% 0 0 0)}89%{transform:translate(-4px,2px);clip-path:inset(65% 0 5% 0)}94%{transform:translate(3px,0);clip-path:inset(20% 0 60% 0)}}
+.tag{font-family:VT;font-size:clamp(26px,4vw,40px);color:var(--g);letter-spacing:6px;text-transform:uppercase}
+.cursor{display:inline-block;width:.55em;height:.9em;background:var(--g);vertical-align:-2px;margin-left:6px;animation:blink 1s steps(2) infinite;box-shadow:0 0 10px var(--g)}
+.sub{max-width:640px;margin:18px auto 0;color:var(--mut);font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:38px}
+.btn{font-family:STM;font-size:14px;letter-spacing:2px;text-transform:uppercase;padding:14px 26px;border:1px solid var(--g);color:var(--g);border-radius:4px;position:relative;transition:.2s;background:rgba(57,255,106,.04)}
+.btn:hover{background:var(--g);color:#021;box-shadow:0 0 30px rgba(57,255,106,.5)}
+.btn.ghost{border-color:var(--line);color:var(--mut)}
+.btn.ghost:hover{background:transparent;color:var(--g);border-color:var(--g);box-shadow:none}
+.btn.disabled{cursor:not-allowed;opacity:.55;border-style:dashed}
+.btn.disabled:hover{background:rgba(57,255,106,.04);color:var(--g);box-shadow:none}
+.meta{margin-top:34px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.meta span{font-size:12px;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--line);padding:4px 12px;border-radius:3px;color:var(--mut);background:rgba(6,19,11,.6)}
+.meta b{color:var(--g2);font-weight:400}
+section{padding:110px 0;border-top:1px solid var(--line)}
+.kick{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--g2)}
+h2{font-family:VT;font-weight:400;font-size:clamp(40px,6vw,64px);color:#eafff0;line-height:1;margin:10px 0 14px;text-shadow:0 0 18px rgba(57,255,106,.35)}
+.lead{color:var(--mut);max-width:640px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}
+.card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(10,30,18,.75),rgba(3,10,6,.75));padding:26px;border-radius:8px;position:relative;overflow:hidden;transition:.25s}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(400px circle at var(--mx,50%) var(--my,0%),rgba(57,255,106,.12),transparent 40%);opacity:0;transition:.3s}
+.card:hover{border-color:rgba(57,255,106,.5);transform:translateY(-3px)}
+.card:hover::before{opacity:1}
+.card .ic{font-family:VT;font-size:30px;color:var(--g);text-shadow:0 0 10px var(--g)}
+.card h3{font-family:VT;font-weight:400;font-size:28px;color:#eafff0;margin:6px 0 6px;letter-spacing:1px}
+.card p{color:var(--mut);font-size:14.5px}
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:46px}
+@media(max-width:820px){.shots{grid-template-columns:1fr}}
+.frame{border:1px solid rgba(57,255,106,.35);border-radius:14px;padding:12px;background:#030b06;box-shadow:0 0 0 1px #000,0 30px 80px -30px rgba(57,255,106,.35)}
+.frame img{width:100%;display:block;border-radius:6px;image-rendering:auto}
+.frame figcaption{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--mut);padding:10px 4px 2px}
+.locks{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:40px}
+@media(max-width:900px){.locks{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.locks{grid-template-columns:repeat(2,1fr)}}
+.lk{position:relative;border-radius:8px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;cursor:pointer;transition:.25s}
+.lk img{width:100%;height:100%;object-fit:cover;transition:.5s;filter:saturate(1.1)}
+.lk span{position:absolute;left:0;right:0;bottom:0;padding:18px 10px 8px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#eafff0;background:linear-gradient(transparent,rgba(0,0,0,.85))}
+.lk:hover{border-color:var(--g);box-shadow:0 0 24px rgba(57,255,106,.35)}
+.lk:hover img{transform:scale(1.07)}
+.lk.on{border-color:var(--g);box-shadow:0 0 0 1px var(--g),0 0 30px rgba(57,255,106,.4)}
+.preview{margin-top:26px;border-radius:14px;overflow:hidden;border:1px solid rgba(57,255,106,.35);position:relative;aspect-ratio:16/7;background:#000}
+.preview img{width:100%;height:100%;object-fit:cover;transition:opacity .5s}
+.preview .clock{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font-family:VT;color:#eafff0;text-shadow:0 0 20px rgba(57,255,106,.7)}
+.preview .clock b{font-weight:400;font-size:clamp(56px,10vw,120px);line-height:1;display:block}
+.preview .clock small{font-size:20px;letter-spacing:6px;color:var(--g)}
+.term{margin-top:46px;border:1px solid var(--line);border-radius:10px;background:rgba(2,10,5,.85);overflow:hidden}
+.term .bar{display:flex;gap:8px;padding:10px 14px;border-bottom:1px solid var(--line)}
+.term .bar i{width:11px;height:11px;border-radius:50%;background:#123d22}
+.term .bar i:first-child{background:var(--g)}
+.term pre{padding:22px;font-size:14px;color:var(--txt);white-space:pre-wrap;min-height:270px}
+.term .ok{color:var(--g)}.term .wait{color:var(--amber)}.term .c{color:var(--mut)}
+.soon{border:1px solid rgba(255,179,71,.45);background:linear-gradient(135deg,rgba(255,179,71,.07),rgba(57,255,106,.04));border-radius:12px;padding:40px;margin-top:46px;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center}
+@media(max-width:820px){.soon{grid-template-columns:1fr}}
+.soon h3{font-family:VT;font-weight:400;font-size:44px;color:var(--amber);line-height:1;text-shadow:0 0 18px rgba(255,179,71,.35)}
+.soon ul{list-style:none;margin-top:14px}
+.soon li{padding:6px 0;color:var(--txt);font-size:14.5px}
+.soon li::before{content:"› ";color:var(--g)}
+.steps{display:grid;gap:10px}
+.step{display:flex;justify-content:space-between;gap:16px;border:1px solid var(--line);padding:12px 16px;border-radius:6px;font-size:13px;letter-spacing:1px;text-transform:uppercase;background:rgba(0,0,0,.35)}
+.step em{font-style:normal;color:var(--amber)}
+.step.done em{color:var(--g)}
+.legal{font-size:13px;color:var(--mut);border-left:2px solid var(--amber);padding:6px 0 6px 16px;margin-top:30px;max-width:760px}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--mut);font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}#rain{display:none}}
+</style>
+</head>
+<body>
+<canvas id="rain" aria-hidden="true"></canvas>
+<div class="scan"></div><div class="vig"></div>
+
+<nav><div class="wrap">
+  <a class="brand" href="#">dArkOSX<span>//</span>Fen</a>
+  <ul><li><a href="#features">Features</a></li><li><a href="#look">Look</a></li><li><a href="#lock">Lock</a></li><li><a href="#status">Status</a></li><li><a href="https://github.com/Moorzi/darkosx-fen">GitHub</a></li></ul>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="pill"><i></i>Coming Soon · v0.1 alpha</div>
+  <h1><span class="glitch" data-t="dArkOSX Fen">dArk<span class="x">OSX</span> Fen</span></h1>
+  <div class="tag">Your handheld. Reprogrammed.<span class="cursor"></span></div>
+  <p class="sub">Custom firmware for the R36S / R36XX. A neon-lit EmulationStation, a guided first boot, lock backgrounds you actually want to look at, and performance-minded defaults.</p>
+  <div class="cta">
+    <a class="btn disabled" href="#status" title="The image is not released yet">⬇ Image · Coming soon</a>
+    <a class="btn" href="https://github.com/Moorzi/darkosx-fen">★ Watch on GitHub</a>
+    <a class="btn ghost" href="#features">What's inside</a>
+  </div>
+  <div class="meta"><span>Device <b>R36S</b> / <b>R36XX</b></span><span>Base <b>dArkOS</b></span><span>Status <b>Pre-release</b></span><span>ROMs &amp; BIOS <b>not included</b></span></div>
+</div></header>
+
+<main>
+<section id="features"><div class="wrap">
+  <div class="reveal"><div class="kick">// 01 · what's inside</div>
+  <h2>Built for the pocket.</h2>
+  <p class="lead">Everything you already rely on stays put. Fen adds the look, the polish and a careful tuning pass on top.</p></div>
+  <div class="grid">
+    <div class="card reveal"><div class="ic">&gt;_</div><h3>Neon EmulationStation</h3><p>A rebuilt front end with a terminal-style theme, tile Control Centre and a fresh system panel.</p></div>
+    <div class="card reveal"><div class="ic">01</div><h3>First-boot wizard</h3><p>A guided setup the first time you power on. Press A and go: no config files, no guesswork.</p></div>
+    <div class="card reveal"><div class="ic">◐</div><h3>Lock backgrounds</h3><p>Ten original lock screens, four of them deep-space. Cycle them from Display &amp; Sound.</p></div>
+    <div class="card reveal"><div class="ic">⚡</div><h3>Performance-minded</h3><p>Sensible defaults within the clocks the base already ships. No overvolting.</p></div>
+    <div class="card reveal"><div class="ic">⇄</div><h3>Samba &amp; file browser</h3><p>The community Samba share and web file browser are kept, so you can drop files over Wi-Fi.</p></div>
+    <div class="card reveal"><div class="ic">⛨</div><h3>Clean public image</h3><p>No ROMs and no copyrighted console BIOS in the public package. Bring your own dumps.</p></div>
+  </div>
+</div></section>
+
+<section id="look"><div class="wrap">
+  <div class="reveal"><div class="kick">// 02 · the look</div>
+  <h2>Dark. Sharp. Green.</h2>
+  <p class="lead">Captured from a real R36S running the current Fen build.</p></div>
+  <div class="shots">
+    <figure class="frame reveal"><img src="assets/screens/control-centre.png" alt="Fen Control Centre on the R36S" loading="lazy"><figcaption>Control Centre · 640×480 on device</figcaption></figure>
+    <figure class="frame reveal"><img src="assets/screens/systems-grid.jpg" alt="Fen EmulationStation system views" loading="lazy"><figcaption>System views · EmulationStation</figcaption></figure>
+  </div>
+</div></section>
+
+<section id="lock"><div class="wrap">
+  <div class="reveal"><div class="kick">// 03 · lock screen</div>
+  <h2>Ten ways to lock it.</h2>
+  <p class="lead">Pick one in <b style="color:var(--g)">Display &amp; Sound → Lock Background</b>. Tap a tile to preview it.</p></div>
+  <div class="preview reveal"><img id="pv" src="assets/locks/emerald-nebula.jpg" alt="Lock background preview"><div class="clock"><div><b id="clk">--:--</b><small id="pvn">EMERALD NEBULA</small></div></div></div>
+  <div class="locks" id="locks"></div>
+</div></section>
+
+<section id="status"><div class="wrap">
+  <div class="reveal"><div class="kick">// 04 · release status</div>
+  <h2>Coming soon.</h2>
+  <p class="lead">The image isn't public yet. We're benchmarking stock vs Fen on real hardware first, and we'll only publish numbers we've actually measured.</p></div>
+  <div class="term reveal"><div class="bar"><i></i><i></i><i></i></div><pre id="term"></pre></div>
+  <div class="soon reveal">
+    <div>
+      <h3>Image drops after benchmarks.</h3>
+      <ul>
+        <li>Download link and install guide will appear here</li>
+        <li>Stock vs Fen results, measured on device</li>
+        <li>Checksums published with every release</li>
+        <li>First release is R36S / R36XX only</li>
+      </ul>
+    </div>
+    <div class="steps">
+      <div class="step done"><span>Firmware build</span><em>Done</em></div>
+      <div class="step done"><span>Repo &amp; site</span><em>Live</em></div>
+      <div class="step"><span>Benchmarks</span><em>Up next</em></div>
+      <div class="step"><span>Spare-card flash test</span><em>Pending</em></div>
+      <div class="step"><span>Public image</span><em>Coming soon</em></div>
+    </div>
+  </div>
+  <p class="legal"><b style="color:var(--amber)">No games, ROMs or copyrighted BIOS files are included, and none ever will be.</b> Use only files you've dumped from hardware you own. dArkOSX Fen is an unofficial community build on top of dArkOS and isn't affiliated with or endorsed by any console maker.</p>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div><span class="brand" style="font-size:22px">dArkOSX<span>//</span>Fen</span><br>Custom firmware for the R36S / R36XX.</div>
+  <div>Built on <a href="https://github.com/christianhaitian/dArkOS">dArkOS</a> · <a href="https://github.com/Moorzi/darkosx-fen">github.com/Moorzi/darkosx-fen</a></div>
+</div></footer>
+
+<script>
+// digital rain
+(()=>{const c=document.getElementById('rain'),x=c.getContext('2d');let w,h,cols,d,fs=16;
+const ch='アイウエオカキクケコサシスセソタチツテトナニヌネノ0123456789ABCDEF<>/\\=+*';
+function rs(){w=c.width=innerWidth;h=c.height=innerHeight;cols=Math.ceil(w/fs);d=Array(cols).fill(0).map(()=>Math.random()*-60)}
+rs();addEventListener('resize',rs);
+function f(){x.fillStyle='rgba(2,8,5,.09)';x.fillRect(0,0,w,h);x.font=fs+'px monospace';
+for(let i=0;i<cols;i++){const t=ch[Math.random()*ch.length|0];const y=d[i]*fs;
+x.fillStyle=Math.random()>.975?'#eafff0':'#39ff6a';x.fillText(t,i*fs,y);
+if(y>h&&Math.random()>.975)d[i]=0;d[i]+=.6}requestAnimationFrame(f)}f()})();
+// lock gallery
+const L=[['digital-rain','Digital Rain'],['emerald-nebula','Emerald Nebula'],['orbital-ghost','Orbital Ghost'],['deep-field','Deep Field'],['event-horizon','Event Horizon'],['circuit-noir','Circuit Noir'],['aurora-drift','Aurora Drift'],['vector-grid','Vector Grid'],['obsidian-signal','Obsidian Signal'],['ghost-wave','Ghost Wave']];
+const g=document.getElementById('locks'),pv=document.getElementById('pv'),pn=document.getElementById('pvn');
+L.forEach(([s,n],i)=>{const e=document.createElement('div');e.className='lk'+(i==1?' on':'');e.innerHTML=`<img src="assets/locks/${s}.jpg" alt="${n} lock background" loading="lazy"><span>${n}</span>`;
+e.onclick=()=>{document.querySelectorAll('.lk').forEach(k=>k.classList.remove('on'));e.classList.add('on');pv.style.opacity=0;setTimeout(()=>{pv.src=`assets/locks/${s}.jpg`;pn.textContent=n.toUpperCase();pv.style.opacity=1},250)};g.appendChild(e)});
+const ck=()=>{const d=new Date();document.getElementById('clk').textContent=d.toTimeString().slice(0,5)};ck();setInterval(ck,10000);
+// reveal + card glow
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);if(e.target.classList.contains('term'))type()}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+document.querySelectorAll('.card').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',e.clientX-r.left+'px');c.style.setProperty('--my',e.clientY-r.top+'px')}));
+// terminal
+const T=[['c','$ fen --status'],['ok','[ OK ] firmware build ............ ready'],['ok','[ OK ] first-boot wizard ......... ready'],['ok','[ OK ] lock backgrounds .......... 10 loaded'],['ok','[ OK ] samba + file browser ...... kept'],['ok','[ OK ] public image audit ........ no ROMs / no console BIOS'],['wait','[ .. ] benchmarks ................ queued'],['wait','[ .. ] release image ............. coming soon'],['c','$ _']];
+let typed=false;function type(){if(typed)return;typed=true;const p=document.getElementById('term');let i=0,j=0,html='';
+(function s(){if(i>=T.length)return;const [k,l]=T[i];j++;p.innerHTML=html+`<span class="${k}">${l.slice(0,j)}</span>`;if(j>=l.length){html+=`<span class="${k}">${l}</span>\n`;i++;j=0;setTimeout(s,220)}else setTimeout(s,14)})()}
+</script>
+</body>
+</html>
