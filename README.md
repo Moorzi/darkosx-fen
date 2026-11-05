@@ -2,13 +2,16 @@
 
 [Project website](https://moorzi.github.io/darkosx-fen/) · [Release status](https://github.com/Moorzi/darkosx-fen/releases) · [Upstream dArkOS](https://github.com/christianhaitian/dArkOS)
 
-dArkOSX is an independent Linux custom firmware build for R36S and R36XX handhelds, built **on dArkOS**. It revises EmulationStation, initial setup, lock backgrounds and frequency defaults. It is not stock dArkOS, an official upstream release, or a claim of faster emulation.
+dArkOSX is an independent Linux custom firmware build for R36S and R36XX handhelds, built **on dArkOS**. It is a **ground-up rebuild, not a skin on stock firmware**: kernel rebuilds, bug fixes, audio and MSX fixes, and changes to how the software communicates with the hardware underpin a revised EmulationStation experience. It is built for **better performance than stock dArkOS**, not merely a different appearance. This remains an independent community project, not stock dArkOS or an official upstream release.
 
 ## Image availability
 
 **Coming Soon on the project website.** An alpha release now exists, but its notes describe two `.001`/`.002` pieces while the uploaded image has seven `.part01`–`.part07` pieces. Installation guidance must be reconciled before this page recommends a download. Do not flash a partial image. Check [the release](https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha) for updates, back up your card, confirm hardware compatibility and verify the reconstructed image checksum before installation.
 
 ## What changes
+
+- **Core rebuild:** kernel rebuilds, bug fixes and revised hardware communication paths, with better performance as a central design goal.
+- **Audio and MSX:** fixes to audio behaviour and MSX support alongside the core rebuild.
 
 - **EmulationStation:** a terminal-style theme, tiled Control Centre and revised system panel.
 - **First boot:** guided settings, confirmed with A.
@@ -29,7 +32,7 @@ The [website gallery](https://moorzi.github.io/darkosx-fen/#look) adapts to phon
 
 ## Instrument readings
 
-Recorded on one R36S on **5 November 2026 (Europe/London)**. The battery was charging at roughly 48–53% capacity. Read-only probes sampled `/proc` and `/sys`; idle figures exclude the first sixty seconds of a 180-second sample. These are descriptive readings, not FPS benchmarks or evidence of an improvement over stock.
+Recorded on one R36S on **5 November 2026 (Europe/London)**. The battery was charging at roughly 48–53% capacity. Read-only probes sampled `/proc` and `/sys`; idle figures exclude the first sixty seconds of a 180-second sample. These readings document the current build. Paired stock-card benchmarks will quantify the performance gains when measured; no comparative FPS figures are available yet.
 
 | Metric | Method | Result |
 |---|---|---|
