@@ -185,7 +185,7 @@ body{background:var(--bg);color:var(--txt);font-family:STM,ui-monospace,Menlo,Co
 img,video,canvas,svg{max-width:100%;height:auto;display:block}
 a{color:var(--g);text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-#rain{position:fixed;inset:0;z-index:0;opacity:.09;pointer-events:none}
+#rain{position:fixed;inset:0;width:100%!important;height:100%!important;max-width:none!important;z-index:0;opacity:.2;pointer-events:none}
 .scan{position:fixed;inset:0;z-index:1;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.16) 0 1px,transparent 1px 3px);mix-blend-mode:multiply}
 .vig{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at center,transparent 42%,rgba(0,0,0,.88) 100%)}
 main,header,footer,nav{position:relative;z-index:2}
@@ -569,14 +569,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
 (()=>{const t=document.querySelector('.nav-toggle'),u=document.getElementById('navlinks');
 if(t&&u){t.addEventListener('click',()=>{const o=t.getAttribute('aria-expanded')==='true';t.setAttribute('aria-expanded',String(!o));u.classList.toggle('open',!o);t.setAttribute('aria-label',o?'Open menu':'Close menu')});
 u.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{t.setAttribute('aria-expanded','false');u.classList.remove('open');t.setAttribute('aria-label','Open menu')}))}})();
-/* Soft glyph rain: ~1.2–2.5 px/s; off for reduced motion only. */
+/* Soft glyph rain: slow but visible (~6–14 px/s); off for reduced motion only. */
 (()=>{const c=document.getElementById('rain'),mq=matchMedia('(prefers-reduced-motion: reduce)');
-const x=c.getContext('2d');if(!x)return;let drops=[],last=0,id=0;
-function resize(){c.width=innerWidth;c.height=innerHeight;drops=Array.from({length:Math.ceil(innerWidth/140)},(_,i)=>({x:i*140+30,y:Math.random()*innerHeight,s:1.2+Math.random()*1.3}));}
-function draw(t){const dt=Math.min((t-last)/1000,.1);last=t;x.clearRect(0,0,c.width,c.height);x.font='18px monospace';x.fillStyle='#39ff6a';
-if(!document.hidden)for(const d of drops){d.y+=d.s*dt;if(d.y>c.height+20)d.y=-20;x.fillText('01·+'[Math.floor(d.x)%4],d.x,d.y)}id=requestAnimationFrame(draw)}
-function sync(){cancelAnimationFrame(id);x.clearRect(0,0,c.width,c.height);if(!mq.matches){resize();last=performance.now();id=requestAnimationFrame(draw)}}
-addEventListener('resize',sync,{passive:true});mq.addEventListener('change',sync);sync()})();
+if(!c)return;const x=c.getContext('2d');if(!x)return;let drops=[],last=0,id=0;
+function resize(){const dpr=Math.min(devicePixelRatio||1,2);c.width=Math.floor(innerWidth*dpr);c.height=Math.floor(innerHeight*dpr);c.style.width=innerWidth+'px';c.style.height=innerHeight+'px';x.setTransform(dpr,0,0,dpr,0,0);const n=Math.max(18,Math.ceil(innerWidth/42));drops=Array.from({length:n},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,s:6+Math.random()*8,ch:'01·+'[Math.floor(Math.random()*4)]}));}
+function draw(t){const dt=Math.min((t-last)/1000,.05);last=t;x.clearRect(0,0,innerWidth,innerHeight);x.font='16px monospace';x.fillStyle='rgba(57,255,106,.85)';
+if(!document.hidden)for(const d of drops){d.y+=d.s*dt;if(d.y>innerHeight+20){d.y=-20;d.x=Math.random()*innerWidth}x.fillText(d.ch,d.x,d.y)}id=requestAnimationFrame(draw)}
+function sync(){cancelAnimationFrame(id);x.setTransform(1,0,0,1,0,0);x.clearRect(0,0,c.width,c.height);if(!mq.matches){resize();last=performance.now();id=requestAnimationFrame(draw)}}
+addEventListener('resize',sync,{passive:true});mq.addEventListener('change',sync);document.addEventListener('visibilitychange',()=>{if(!document.hidden&&!mq.matches&&!id)sync()});sync()})();
 const L=[['signal-fall','Signal Fall'],['emerald-nebula','Emerald Nebula'],['orbital-ghost','Orbital Ghost'],['deep-field','Deep Field'],['event-horizon','Event Horizon'],['circuit-noir','Circuit Noir'],['aurora-drift','Aurora Drift'],['vector-grid','Vector Grid'],['obsidian-signal','Obsidian Signal'],['ghost-wave','Ghost Wave']];
 const g=document.getElementById('locks'),pv=document.getElementById('pv'),pn=document.getElementById('pvn');
 L.forEach(([s,n],i)=>{const e=document.createElement('button');e.type='button';e.className='lk'+(i===1?' on':'');e.setAttribute('aria-pressed',i===1?'true':'false');e.setAttribute('aria-label',n+' lock background');
