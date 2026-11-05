@@ -377,7 +377,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
     <div class="card reveal"><div class="ic">◎</div><h3>Verified rootfs fixes</h3><p>Root btrfs remounts with working compression (stock’s <code>zlib:1</code> is rejected on this kernel). zram boot-order cycle fixed; IPv6 NetworkManager flood off; <code>udev-settle</code> deps removed; stray <code>continue</code> in perf scripts fixed. Paired FPS (37 titles) is below.</p></div>
     <div class="card reveal"><div class="ic">▣</div><h3>RAM Plus</h3><p><b style="color:var(--g2);font-weight:400">2 GB of extended memory</b> — virtual RAM that kicks in when onboard memory runs out. Extra headroom for demanding games like N64 and Dreamcast on a 1 GB handheld.</p></div>
 
-    <div class="card reveal"><div class="ic">⇄</div><h3>Network transfer</h3><p>Samba sharing and the web file browser stay available for Wi-Fi transfers — the same stock networking model. Change the default SSH/Samba password (<code>ark</code> / <code>ark</code>) before sharing a network.</p></div>
+    <div class="card reveal"><div class="ic">⇄</div><h3>Network transfer</h3><p>Network sharing and the web file browser stay available for Wi-Fi transfers — the same stock networking model. Change the default network-access password (<code>ark</code> / <code>ark</code>) before sharing a network.</p></div>
     <div class="card reveal"><div class="ic">⛨</div><h3>Public package</h3><p>No ROMs. Free MSX C-BIOS is included; copyrighted GB / GBC / GBA / PSX / NDS BIOS are not — supply your own where required. First-boot help explains what is needed.</p></div>
   </div>
 </div></section>
@@ -408,7 +408,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
   <div class="reveal"><div class="kick">// 03 · lock screen</div>
   <h2>Ten lock backgrounds.</h2>
   <p class="lead">Open <b style="color:var(--g)">Display &amp; Sound → Lock Background</b>. Select a tile here to preview how it will sit behind the clock.</p>
-  <p class="lead" style="margin-top:10px">Unlock is an optional <b style="color:var(--g2);font-weight:400">button-combo PIN</b> — a convenience lock, not encryption and not your Linux user-account password. SSH/Samba still use the default <code>ark</code> / <code>ark</code> credentials until you change them.</p></div>
+  <p class="lead" style="margin-top:10px">Unlock is an optional <b style="color:var(--g2);font-weight:400">button-combo PIN</b> — a convenience lock, not encryption and not your Linux user-account password. Network access still uses the default <code>ark</code> / <code>ark</code> credentials until you change them.</p></div>
   <div class="preview reveal"><picture>
     <source id="pvsrc" type="image/webp" srcset="assets/locks/emerald-nebula.webp">
     <img id="pv" src="assets/locks/emerald-nebula.jpg" alt="dArkOSX Emerald Nebula lock background preview for R36S custom firmware" width="800" height="600" loading="lazy" decoding="async" fetchpriority="low">
@@ -424,14 +424,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
   <div class="bench reveal" id="bench">
     <div class="head">
       <h3>Instrument readings</h3>
-      <p class="note">R36S specifically (not a separate R36XX validation) · 5 Nov 2026 (Europe/London) · battery charging, capacity about 48–53% · this build only. Boot comparison is time until EmulationStation is ready to browse games: Fen <b>11.42 s</b> vs stock <b>12.3 s</b> (≈1 s gap). The multi-user row is system ready for background services — not the menu. Idle stats skip the first sixty seconds.</p>
+      <p class="note">R36S specifically (not a separate R36XX validation) · 5 Nov 2026 (Europe/London) · battery charging, capacity about 48–53% · this build only. Boot + UI comparison: Fen reaches EmulationStation ready to browse games in <b>11.42 s</b> with a <b>dynamic boot logo + dynamic background</b>; stock takes <b>12.3 s</b> on the plain stock boot path. That is only ≈1 s faster — the comparison is the richer UI, not a big boot-time win. The multi-user row is system ready for background services — not the menu. Idle stats skip the first sixty seconds.</p>
     </div>
     <div class="bench-scroll">
       <table class="bench-table">
         <thead><tr><th>Metric</th><th>Method</th><th>Result</th></tr></thead>
         <tbody id="bench-body">
           <tr><td>systemd multi-user (not menu)</td><td><code>systemd-analyze</code></td><td>15.446 s (kernel 3.224 + userspace 12.221)</td></tr>
-          <tr><td>Ready to browse games (EmulationStation)</td><td>seconds after boot</td><td>Fen 11.42 s · stock 12.3 s (≈1 s)</td></tr>
+          <tr><td>Ready to browse games (EmulationStation)</td><td>seconds after boot</td><td>Fen 11.42 s with dynamic boot logo + dynamic background · stock 12.3 s, plain stock boot path (≈1 s gap)</td></tr>
           <tr><td>EmulationStation RSS (menu)</td><td><code>/proc</code> VmRSS</td><td>183 MB</td></tr>
           <tr><td>CPU policy</td><td>sysfs</td><td>ondemand · 1008–1512 MHz</td></tr>
           <tr><td>Idle SoC temperature</td><td>180 s sample, skip first 60 s</td><td>~66 °C median (charging)</td></tr>
@@ -472,7 +472,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
         <li>≤2-part zip package and matching install steps (site CTA stays Coming Soon until both parts land)</li>
         <li>Paired FPS (37 titles): published in <a href="#fps">#fps</a> — mostly a tie; Dreamcast is the standout</li>
         <li>Verify the reconstructed image against its checksum</li>
-        <li>Back up your card; change default SSH/Samba <code>ark</code> / <code>ark</code> before sharing a network</li>
+        <li>Back up your card; change default network-access credentials <code>ark</code> / <code>ark</code> before sharing a network</li>
         <li>Optional lock unlock is a button PIN — not the Linux account password</li>
       </ul>
     </div>

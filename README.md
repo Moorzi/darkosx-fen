@@ -45,7 +45,7 @@ Recorded on one R36S on **5 November 2026 (Europe/London)**. The battery was cha
 | Metric | Method | Result |
 |---|---|---|
 | systemd multi-user (not menu) | `systemd-analyze` | **15.446 s** (kernel 3.224 + userspace 12.221) |
-| Ready to browse games (EmulationStation) | seconds after boot | Fen **11.42 s** · stock **12.3 s** (≈1 s gap) |
+| Ready to browse games (EmulationStation) | seconds after boot | Fen **11.42 s** with dynamic boot logo + dynamic background · stock **12.3 s**, plain stock boot path (≈1 s gap; richer UI, not a big boot-time win) |
 | EmulationStation RSS (menu) | `/proc` VmRSS | **183 MB** |
 | CPU policy | sysfs | ondemand · 1008–1512 MHz |
 | Idle SoC temperature | 180 s sample | **~66 °C** median (charging) |
