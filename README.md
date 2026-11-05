@@ -1,77 +1,35 @@
-# dArkOSX (darkosx-fen) — dArkOS custom firmware for R36S / R36XX
+# dArkOSX — custom firmware for R36S and R36XX
 
-<p align="center"><code>YOUR HANDHELD. REPROGRAMMED.</code></p>
+[Project website](https://moorzi.github.io/darkosx-fen/) · [Release status](https://github.com/Moorzi/darkosx-fen/releases) · [Upstream dArkOS](https://github.com/christianhaitian/dArkOS)
 
-<p align="center">
-  <img alt="status: coming soon" src="https://img.shields.io/badge/status-coming%20soon-ffb347?style=for-the-badge&labelColor=0b1a10">
-  <img alt="device: R36S / R36XX" src="https://img.shields.io/badge/device-R36S%20%2F%20R36XX-39ff6a?style=for-the-badge&labelColor=0b1a10">
-  <img alt="built on dArkOS" src="https://img.shields.io/badge/built%20on-dArkOS%20(dark%20OS)-2de2c4?style=for-the-badge&labelColor=0b1a10">
-  <img alt="ROMs and console BIOS excluded" src="https://img.shields.io/badge/ROMs%20%26%20BIOS-excluded-ffb347?style=for-the-badge&labelColor=0b1a10">
-</p>
+dArkOSX is an independent Linux custom firmware build for R36S and R36XX handhelds, built **on dArkOS**. It revises EmulationStation, initial setup, lock backgrounds and frequency defaults. It is not stock dArkOS, an official upstream release, or a claim of faster emulation.
 
-<p align="center">
-  <a href="https://moorzi.github.io/darkosx-fen/"><b>Website</b></a>
-  ·
-  <a href="#what-this-is">What this is</a>
-  ·
-  <a href="#instrument-readings">Readings</a>
-  ·
-  <a href="#coming-soon">Status</a>
-  ·
-  <a href="https://github.com/christianhaitian/dArkOS">Upstream dArkOS</a>
-</p>
+## Image availability
 
-<p align="center">
-  <img src="docs/assets/locks/emerald-nebula.jpg" width="32%" alt="dArkOSX Emerald Nebula lock background for R36S">
-  <img src="docs/assets/screens/control-centre.png" width="32%" alt="dArkOSX Control Centre on R36S custom firmware">
-  <img src="docs/assets/locks/event-horizon.jpg" width="32%" alt="dArkOSX Event Horizon lock background">
-</p>
+**Coming Soon on the project website.** An alpha release now exists, but its notes describe two `.001`/`.002` pieces while the uploaded image has seven `.part01`–`.part07` pieces. Installation guidance must be reconciled before this page recommends a download. Do not flash a partial image. Check [the release](https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha) for updates, back up your card, confirm hardware compatibility and verify the reconstructed image checksum before installation.
 
----
+## What changes
 
-> [!IMPORTANT]
-> **Coming soon.** The installable image is not published yet. On-device probes for this build are recorded below. A stock-card comparison will appear only after it is measured on the same handheld. Download links and install instructions will follow that work.
+- **EmulationStation:** a terminal-style theme, tiled Control Centre and revised system panel.
+- **First boot:** guided settings, confirmed with A.
+- **Lock screen:** ten backgrounds selected under **Display & Sound → Lock Background**, saved across sleep and restart.
+- **Frequency policy:** settings within the published hardware clock range, without overvolting.
+- **File transfer:** Samba sharing and the web file browser are retained.
+- **Public package:** no ROMs or copyrighted console BIOS. Supply only files you are legally entitled to use.
 
-> [!NOTE]
-> **Naming.** Searches for **dark OS**, **darkos**, or **dArkOS** usually refer to [Christian Haitian’s upstream dArkOS](https://github.com/christianhaitian/dArkOS). **dArkOSX** (this repository, `darkosx-fen`) is a **separate custom firmware** for the **R36S / R36XX** built *on* that base. It is not an official dArkOS release and does not replace upstream.
+These describe the current build. The first release targets R36S and R36XX; the recorded device readings below are specifically from an R36S, not a separate R36XX validation.
 
-## What this is
+## Interface previews
 
-**dArkOSX** (`darkosx-fen`) is custom firmware for the **R36S** and **R36XX** retro handhelds. It rests on [dArkOS](https://github.com/christianhaitian/dArkOS) — the community Linux handheld OS often discovered under the colloquial query “dark OS” — and keeps the network-transfer tools that community already uses.
+[![dArkOSX Control Centre captured on R36S](docs/assets/screens/control-centre.webp)](docs/assets/screens/control-centre.png)
 
-What changes is the surface you meet every day: EmulationStation, the first-boot path, the lock screen, and the defaults that govern frequency policy. The aim is revision, not reinvention. Claims about performance wait on measurement.
+[![dArkOSX EmulationStation system views](docs/assets/screens/systems-grid.webp)](docs/assets/screens/systems-grid.jpg)
 
-If you want **stock dArkOS**, use the [upstream repository](https://github.com/christianhaitian/dArkOS). If you want this revised R36S / R36XX experience, stay here.
-
-## What ships
-
-| | |
-|---|---|
-| **Front end** | EmulationStation rebuilt with a terminal-leaning theme, a tile Control Centre, and a clearer system panel |
-| **First power-on** | A short guided wizard; confirm with A and continue |
-| **Lock backgrounds** | Ten original compositions (several celestial), selected under *Display & Sound → Lock Background* |
-| **Measured policy** | Frequency defaults within the published clock ceiling; no overvolting |
-| **Network transfer** | Samba share and web file browser retained |
-| **Public package** | No ROMs and no copyrighted console BIOS |
-
-## Lock backgrounds
-
-<p>
-  <img src="docs/assets/locks/digital-rain.jpg" width="19%" alt="Digital Rain lock background">
-  <img src="docs/assets/locks/emerald-nebula.jpg" width="19%" alt="Emerald Nebula lock background">
-  <img src="docs/assets/locks/orbital-ghost.jpg" width="19%" alt="Orbital Ghost lock background">
-  <img src="docs/assets/locks/deep-field.jpg" width="19%" alt="Deep Field lock background">
-  <img src="docs/assets/locks/event-horizon.jpg" width="19%" alt="Event Horizon lock background">
-  <img src="docs/assets/locks/circuit-noir.jpg" width="19%" alt="Circuit Noir lock background">
-  <img src="docs/assets/locks/aurora-drift.jpg" width="19%" alt="Aurora Drift lock background">
-  <img src="docs/assets/locks/vector-grid.jpg" width="19%" alt="Vector Grid lock background">
-  <img src="docs/assets/locks/obsidian-signal.jpg" width="19%" alt="Obsidian Signal lock background">
-  <img src="docs/assets/locks/ghost-wave.jpg" width="19%" alt="Ghost Wave lock background">
-</p>
+The [website gallery](https://moorzi.github.io/darkosx-fen/#look) adapts to phone and desktop screens. Its lock-background selector previews Signal Fall, Emerald Nebula, Orbital Ghost, Deep Field, Event Horizon, Circuit Noir, Aurora Drift, Vector Grid, Obsidian Signal and Ghost Wave.
 
 ## Instrument readings
 
-Recorded on one R36S running this build, 5 Nov 2026 (Europe/London). Battery was **charging** at about **48–53%** capacity. Probes read `/proc` and `/sys` only. Idle figures skip the first sixty seconds of a 180-second sample. **Stock dArkOS comparison is pending** (no spare stock card was available this session).
+Recorded on one R36S on **5 November 2026 (Europe/London)**. The battery was charging at roughly 48–53% capacity. Read-only probes sampled `/proc` and `/sys`; idle figures exclude the first sixty seconds of a 180-second sample. These are descriptive readings, not FPS benchmarks or evidence of an improvement over stock.
 
 | Metric | Method | Result |
 |---|---|---|
@@ -84,50 +42,28 @@ Recorded on one R36S running this build, 5 Nov 2026 (Europe/London). Battery was
 | System RAM | MemTotal | 895 MB |
 | Stock dArkOS comparison | paired spare card | pending |
 
-Summary also on the [website status section](https://moorzi.github.io/darkosx-fen/#status).
+## dArkOSX vs dArkOS vs darkos
 
-## Coming soon
+“Dark OS”, “darkos” and “dArkOS” can lead to different projects:
 
-```
-[ OK ] firmware build ............ complete
-[ OK ] first-boot path ........... ready
-[ OK ] lock backgrounds .......... 10
-[ OK ] network transfer .......... retained
-[ .. ] stock dArkOS card pair .... pending
-[ .. ] public image .............. coming soon
-```
-
-- **Download:** added with the first public image
-- **Install guide:** published with the download
-- **Checksums:** beside every release artefact
-- **Hardware:** R36S / R36XX for the first release
-
-## Related projects
-
-| Project | Role |
+| Project | Purpose and relationship |
 |---|---|
-| [christianhaitian/dArkOS](https://github.com/christianhaitian/dArkOS) | Upstream handheld OS (dArkOS / “dark OS”) |
-| [Moorzi/darkosx-fen](https://github.com/Moorzi/darkosx-fen) | This custom firmware (dArkOSX) for R36S / R36XX |
-| [moorzi.github.io/darkosx-fen](https://moorzi.github.io/darkosx-fen/) | Project site |
+| [christianhaitian/dArkOS](https://github.com/christianhaitian/dArkOS) | Upstream Linux handheld firmware; use it for stock dArkOS downloads and documentation. |
+| [Moorzi/darkosx-fen](https://github.com/Moorzi/darkosx-fen) | This repository: dArkOSX, an independent R36S / R36XX custom firmware build based on dArkOS. |
+| [ahmad1abbadi/darkos](https://github.com/ahmad1abbadi/darkos) | A separate Wine-on-Android project, not this Linux handheld firmware. |
 
+## Outstanding validation
 
+- Reconcile image parts, checksums and installation guidance.
+- Measure a stock-card comparison on the same handheld before publishing comparative results.
+- Publish only observed performance figures, with their test conditions.
 
-## FAQ
+## Website
 
-### What is dArkOSX / darkosx-fen?
-Custom firmware for the **R36S** and **R36XX**, built on [dArkOS](https://github.com/christianhaitian/dArkOS). It revises EmulationStation, first-boot setup, lock backgrounds, and everyday defaults. It is **not** an official dArkOS release.
+GitHub Pages serves `docs/` on `main`; `docs/.nojekyll` must remain. The page uses local fonts and responsive WebP previews, with full-size capture links. Sparse background glyphs move at 2–4 pixels per second on desktop; animation is disabled on phones and for reduced-motion preferences. Metadata, canonical URL, structured data, robots and sitemap describe this project without implying upstream affiliation. Search rankings are not guaranteed.
 
-### Is this the same as dArkOS / “dark OS”?
-No. Searches for **dark OS**, **darkos**, or **dArkOS** usually mean upstream dArkOS. **dArkOSX** (`darkosx-fen`) is a separate custom firmware layer for R36S / R36XX that starts from that base. For stock dArkOS, use the [upstream repository](https://github.com/christianhaitian/dArkOS).
+## Legal and credits
 
-### Which devices are supported?
-The first public release targets **R36S** and **R36XX** only.
+No games, ROMs or copyrighted console BIOS are included. Use only material you are legally entitled to use. dArkOSX is not affiliated with or endorsed by Christian Haitian, upstream dArkOS maintainers, the Android darkos project or any console manufacturer.
 
-### Are ROMs or console BIOS included?
-No. Bring dumps from hardware you own.
-
-## Legal
-
-**No games, ROMs, or copyrighted BIOS files are included, and none will be.** Use only dumps taken from hardware you own. Requests for ROMs or BIOS files will be closed.
-
-dArkOSX is an unofficial community build atop [dArkOS](https://github.com/christianhaitian/dArkOS). It is not affiliated with or endorsed by Christian Haitian, dArkOS maintainers, or any console manufacturer. Site fonts: VT323 and Share Tech Mono (SIL Open Font License; see `docs/assets/fonts/`).
+VT323 and Share Tech Mono are distributed under the SIL Open Font License; see `docs/assets/fonts/`.
