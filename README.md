@@ -15,6 +15,7 @@ NDS retail BIOS are stripped; free MSX C-BIOS is included. No ROMs or copyrighte
 ## What changes
 
 - **Core rebuild:** kernel work, bug fixes and hardware communication paths form the ground-up, performance-focused rebuild programme. Paired stock benchmarks are pending.
+- **Overflow memory:** 2 GB swap on the ROMs partition after zram — extra headroom for N64, Dreamcast and other heavy cores when 1 GB of RAM isn’t enough.
 - **MSX out of the box:** free C-BIOS ships in the image so MSX loads without adding BIOS. Copyrighted GB/GBC/GBA/PSX/NDS BIOS stay user-supplied.
 - **Audio work:** part of the same rebuild programme.
 - **Verified image details:** NDS retail BIOS stripped; free `drastic_bios` retained; A/B swap off by default; lock-background selection-save fix included. Mowgli is excluded from v1.
