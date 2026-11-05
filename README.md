@@ -110,6 +110,22 @@ Summary also on the [website status section](https://moorzi.github.io/darkosx-fe
 | [Moorzi/darkosx-fen](https://github.com/Moorzi/darkosx-fen) | This custom firmware (dArkOSX) for R36S / R36XX |
 | [moorzi.github.io/darkosx-fen](https://moorzi.github.io/darkosx-fen/) | Project site |
 
+
+
+## FAQ
+
+### What is dArkOSX / darkosx-fen?
+Custom firmware for the **R36S** and **R36XX**, built on [dArkOS](https://github.com/christianhaitian/dArkOS). It revises EmulationStation, first-boot setup, lock backgrounds, and everyday defaults. It is **not** an official dArkOS release.
+
+### Is this the same as dArkOS / “dark OS”?
+No. Searches for **dark OS**, **darkos**, or **dArkOS** usually mean upstream dArkOS. **dArkOSX** (`darkosx-fen`) is a separate custom firmware layer for R36S / R36XX that starts from that base. For stock dArkOS, use the [upstream repository](https://github.com/christianhaitian/dArkOS).
+
+### Which devices are supported?
+The first public release targets **R36S** and **R36XX** only.
+
+### Are ROMs or console BIOS included?
+No. Bring dumps from hardware you own.
+
 ## Legal
 
 **No games, ROMs, or copyrighted BIOS files are included, and none will be.** Use only dumps taken from hardware you own. Requests for ROMs or BIOS files will be closed.

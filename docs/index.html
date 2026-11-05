@@ -19,12 +19,17 @@
 <meta property="og:title" content="dArkOSX — dArkOS custom firmware for R36S / R36XX">
 <meta property="og:description" content="Custom firmware for the R36S and R36XX built on dArkOS (dark OS). Your handheld. Reprogrammed. Coming soon.">
 <meta property="og:image" content="https://moorzi.github.io/darkosx-fen/assets/locks/emerald-nebula.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="600">
+<meta property="og:image:alt" content="dArkOSX Emerald Nebula lock background on R36S custom firmware">
 <meta property="og:image:alt" content="dArkOSX lock screen preview on R36S custom firmware">
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="dArkOSX — dArkOS custom firmware for R36S / R36XX">
 <meta name="twitter:description" content="darkosx-fen: custom firmware for R36S / R36XX built on dArkOS. Coming soon.">
 <meta name="twitter:image" content="https://moorzi.github.io/darkosx-fen/assets/locks/emerald-nebula.jpg">
+<meta name="twitter:image:alt" content="dArkOSX Emerald Nebula lock background for R36S / R36XX">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -34,16 +39,26 @@
       "@id": "https://moorzi.github.io/darkosx-fen/#website",
       "url": "https://moorzi.github.io/darkosx-fen/",
       "name": "dArkOSX",
-      "alternateName": ["darkosx-fen", "dArkOSX Fen", "dark OS R36S", "dArkOS custom firmware"],
+      "alternateName": [
+        "darkosx-fen",
+        "dArkOSX Fen",
+        "dark OS R36S",
+        "dArkOS custom firmware"
+      ],
       "description": "Custom firmware for the R36S and R36XX handhelds, built on dArkOS.",
       "inLanguage": "en-GB",
-      "publisher": {"@id": "https://github.com/Moorzi#org"}
+      "publisher": {
+        "@id": "https://github.com/Moorzi#org"
+      }
     },
     {
       "@type": "SoftwareApplication",
       "@id": "https://moorzi.github.io/darkosx-fen/#app",
       "name": "dArkOSX",
-      "alternateName": ["darkosx-fen", "dArkOSX Fen"],
+      "alternateName": [
+        "darkosx-fen",
+        "dArkOSX Fen"
+      ],
       "applicationCategory": "GameApplication",
       "operatingSystem": "Linux",
       "softwareVersion": "0.1.0-alpha",
@@ -62,7 +77,9 @@
         "priceCurrency": "USD",
         "availability": "https://schema.org/PreOrder"
       },
-      "author": {"@id": "https://github.com/Moorzi#org"}
+      "author": {
+        "@id": "https://github.com/Moorzi#org"
+      }
     },
     {
       "@type": "Organization",
@@ -73,13 +90,63 @@
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "dArkOSX", "item": "https://moorzi.github.io/darkosx-fen/"},
-        {"@type": "ListItem", "position": 2, "name": "GitHub repository", "item": "https://github.com/Moorzi/darkosx-fen"}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "dArkOSX",
+          "item": "https://moorzi.github.io/darkosx-fen/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "GitHub repository",
+          "item": "https://github.com/Moorzi/darkosx-fen"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://moorzi.github.io/darkosx-fen/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is dArkOSX / darkosx-fen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "dArkOSX (repository darkosx-fen) is custom firmware for the R36S and R36XX handhelds. It is built on dArkOS and revises EmulationStation, first-boot setup, lock backgrounds, and everyday defaults. It is not an official dArkOS release."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is dArkOSX the same as dArkOS or dark OS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Searches for dark OS, darkos, or dArkOS usually mean Christian Haitian\u2019s upstream dArkOS project. dArkOSX is a separate custom firmware layer for R36S/R36XX that starts from that base. For stock dArkOS, use https://github.com/christianhaitian/dArkOS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which devices does dArkOSX support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The first public release targets the R36S and R36XX retro handhelds only."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the public image include ROMs or console BIOS files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The public package excludes ROMs and copyrighted console BIOS. You supply dumps from hardware you own."
+          }
+        }
       ]
     }
   ]
 }
 </script>
+<link rel="preload" href="assets/fonts/VT323-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/fonts/ShareTechMono-Regular.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23020805'/%3E%3Cpath d='M12 50 L20 14 L32 30 L44 14 L52 50 L32 40 Z' fill='none' stroke='%2339ff6a' stroke-width='4' stroke-linejoin='round'/%3E%3C/svg%3E">
 <style>
 @font-face{font-family:VT;src:url(assets/fonts/VT323-Regular.ttf) format("truetype");font-display:swap}
@@ -193,6 +260,8 @@ h2{font-family:VT;font-weight:400;font-size:clamp(34px,8vw,58px);color:#eafff0;l
 .bench-table tr:nth-child(even) td{background:rgba(57,255,106,.03)}
 .bench-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .legal{font-size:13px;color:var(--mut);border-left:2px solid var(--amber);padding:8px 0 8px 14px;margin-top:28px;max-width:42rem;line-height:1.55}
+.skip-link{position:absolute;left:-999px;top:0;background:var(--g);color:#021;padding:10px 14px;z-index:50;border-radius:0 0 6px 0}
+.skip-link:focus{left:0}
 footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-size:13px}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .75s,transform .75s}
@@ -227,6 +296,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#overview">Skip to content</a>
 <canvas id="rain" aria-hidden="true"></canvas>
 <div class="scan" aria-hidden="true"></div><div class="vig" aria-hidden="true"></div>
 
@@ -281,8 +351,20 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px}
   <h2>Taken from the glass.</h2>
   <p class="lead">Photographs of a production R36S running the present build. Colour and layout are as the device renders them at 640×480.</p></div>
   <div class="shots">
-    <figure class="frame reveal"><img src="assets/screens/control-centre.png" alt="Control Centre on an R36S" width="640" height="480" loading="lazy"><figcaption>Control Centre · captured on device</figcaption></figure>
-    <figure class="frame reveal"><img src="assets/screens/systems-grid.jpg" alt="System list in EmulationStation" width="640" height="480" loading="lazy"><figcaption>System views · EmulationStation</figcaption></figure>
+    <figure class="frame reveal">
+      <picture>
+        <source type="image/webp" srcset="assets/screens/control-centre.webp">
+        <img src="assets/screens/control-centre.png" alt="dArkOSX Control Centre on an R36S handheld running custom firmware built on dArkOS" width="640" height="480" loading="lazy" decoding="async">
+      </picture>
+      <figcaption>Control Centre · R36S · dArkOSX</figcaption>
+    </figure>
+    <figure class="frame reveal">
+      <picture>
+        <source type="image/webp" srcset="assets/screens/systems-grid.webp">
+        <img src="assets/screens/systems-grid.jpg" alt="dArkOSX EmulationStation system list on R36S / R36XX custom firmware" width="960" height="480" loading="lazy" decoding="async">
+      </picture>
+      <figcaption>System views · EmulationStation · R36S / R36XX</figcaption>
+    </figure>
   </div>
 </div></section>
 
@@ -290,7 +372,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px}
   <div class="reveal"><div class="kick">// 03 · lock screen</div>
   <h2>Ten quiet backdrops.</h2>
   <p class="lead">Open <b style="color:var(--g)">Display &amp; Sound → Lock Background</b>. Select a tile here to preview how it will sit behind the clock.</p></div>
-  <div class="preview reveal"><img id="pv" src="assets/locks/emerald-nebula.jpg" alt="Lock background preview" width="960" height="540"><div class="clock"><div><b id="clk">--:--</b><small id="pvn">EMERALD NEBULA</small></div></div></div>
+  <div class="preview reveal"><picture>
+    <source id="pvsrc" type="image/webp" srcset="assets/locks/emerald-nebula.webp">
+    <img id="pv" src="assets/locks/emerald-nebula.jpg" alt="dArkOSX Emerald Nebula lock background preview for R36S custom firmware" width="800" height="600" decoding="async">
+  </picture><div class="clock"><div><b id="clk">--:--</b><small id="pvn">EMERALD NEBULA</small></div></div></div>
   <div class="locks" id="locks" role="listbox" aria-label="Lock background options"></div>
 </div></section>
 
@@ -375,9 +460,9 @@ if(y>h&&Math.random()>.992)d[i]=0;d[i]+=.11}requestAnimationFrame(f)}
 if(!matchMedia('(prefers-reduced-motion:reduce)').matches)requestAnimationFrame(f)})();
 const L=[['digital-rain','Digital Rain'],['emerald-nebula','Emerald Nebula'],['orbital-ghost','Orbital Ghost'],['deep-field','Deep Field'],['event-horizon','Event Horizon'],['circuit-noir','Circuit Noir'],['aurora-drift','Aurora Drift'],['vector-grid','Vector Grid'],['obsidian-signal','Obsidian Signal'],['ghost-wave','Ghost Wave']];
 const g=document.getElementById('locks'),pv=document.getElementById('pv'),pn=document.getElementById('pvn');
-L.forEach(([s,n],i)=>{const e=document.createElement('button');e.type='button';e.className='lk'+(i===1?' on':'');e.setAttribute('role','option');e.setAttribute('aria-selected',i===1?'true':'false');e.setAttribute('aria-label',n);
-e.innerHTML=`<img src="assets/locks/${s}.jpg" alt="" loading="lazy" width="320" height="240"><span>${n}</span>`;
-e.addEventListener('click',()=>{document.querySelectorAll('.lk').forEach(k=>{k.classList.remove('on');k.setAttribute('aria-selected','false')});e.classList.add('on');e.setAttribute('aria-selected','true');pv.style.opacity=0;setTimeout(()=>{pv.src=`assets/locks/${s}.jpg`;pn.textContent=n.toUpperCase();pv.style.opacity=1},220)});
+L.forEach(([s,n],i)=>{const e=document.createElement('button');e.type='button';e.className='lk'+(i===1?' on':'');e.setAttribute('role','option');e.setAttribute('aria-selected',i===1?'true':'false');e.setAttribute('aria-label',n+' lock background');
+e.innerHTML=`<picture><source type="image/webp" srcset="assets/locks/${s}.webp"><img src="assets/locks/${s}.jpg" alt="dArkOSX ${n} lock background for R36S / R36XX" loading="lazy" decoding="async" width="320" height="240"></picture><span>${n}</span>`;
+e.addEventListener('click',()=>{document.querySelectorAll('.lk').forEach(k=>{k.classList.remove('on');k.setAttribute('aria-selected','false')});e.classList.add('on');e.setAttribute('aria-selected','true');pv.style.opacity=0;const ps=document.getElementById('pvsrc');setTimeout(()=>{if(ps)ps.srcset=`assets/locks/${s}.webp`;pv.src=`assets/locks/${s}.jpg`;pv.alt=`dArkOSX ${n} lock background preview for R36S custom firmware`;pn.textContent=n.toUpperCase();pv.style.opacity=1},220)});
 g.appendChild(e)});
 const ck=()=>{const d=new Date();document.getElementById('clk').textContent=d.toTimeString().slice(0,5)};ck();setInterval(ck,10000);
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);if(e.target.classList.contains('term'))type()}}),{threshold:.12});
