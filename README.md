@@ -2,7 +2,7 @@
 
 [Project website](https://moorzi.github.io/darkosx-fen/) · [Alpha release](https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha) · [Built on dArkOS](https://github.com/christianhaitian/dArkOS)
 
-**dArkOSX** gives your **R36S or R36XX** a refreshed look, smoother everyday use, and better performance where it counts. Built on **dArkOS**, it brings a redesigned menu, a tiled Control Centre, dynamic boot visuals, **RAM Plus**, MSX out of the box, and an optional lock screen with a **device PIN** — a feature no other handheld OS we know of ships. Fixes and improvements under the hood too, not just a new theme.
+dArkOSX turns your **R36S or R36XX** into something that feels finished the moment it wakes — a refreshed look, smoother everyday use, and stronger play on demanding games. Built on **dArkOS**, Fen brings a redesigned menu, a tiled Control Centre, **dynamic boot** visuals, **RAM Plus**, **MSX out of the box**, and an optional lock screen with a **device PIN** you will not find on other handheld OSes. The polish on the surface is backed by real system work underneath.
 
 **Fen** is this build’s codename. Independent community project — not an official dArkOS release.
 
