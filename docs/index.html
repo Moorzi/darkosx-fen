@@ -185,7 +185,7 @@ body{background:var(--bg);color:var(--txt);font-family:STM,ui-monospace,Menlo,Co
 img,video,canvas,svg{max-width:100%;height:auto;display:block}
 a{color:var(--g);text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-#rain{position:fixed;inset:0;z-index:0;opacity:.11;pointer-events:none}
+#rain{position:fixed;inset:0;z-index:0;opacity:.09;pointer-events:none}
 .scan{position:fixed;inset:0;z-index:1;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.16) 0 1px,transparent 1px 3px);mix-blend-mode:multiply}
 .vig{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at center,transparent 42%,rgba(0,0,0,.88) 100%)}
 main,header,footer,nav{position:relative;z-index:2}
@@ -294,7 +294,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px}
   .locks{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 @media(max-width:720px){
-  #rain{display:none}
   .nav-toggle{display:inline-flex}
   nav ul{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;padding:8px var(--pad) 14px;background:rgba(2,8,5,.97);border-bottom:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.45)}
   nav ul.open{display:flex}
@@ -570,10 +569,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
 (()=>{const t=document.querySelector('.nav-toggle'),u=document.getElementById('navlinks');
 if(t&&u){t.addEventListener('click',()=>{const o=t.getAttribute('aria-expanded')==='true';t.setAttribute('aria-expanded',String(!o));u.classList.toggle('open',!o);t.setAttribute('aria-label',o?'Open menu':'Close menu')});
 u.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{t.setAttribute('aria-expanded','false');u.classList.remove('open');t.setAttribute('aria-label','Open menu')}))}})();
-/* Sparse glyph drift: 2–4 pixels per second, disabled on phones and reduced motion. */
-(()=>{const c=document.getElementById('rain'),mq=matchMedia('(prefers-reduced-motion: reduce), (max-width: 720px)');
+/* Soft glyph rain: ~1.2–2.5 px/s; off for reduced motion only. */
+(()=>{const c=document.getElementById('rain'),mq=matchMedia('(prefers-reduced-motion: reduce)');
 const x=c.getContext('2d');if(!x)return;let drops=[],last=0,id=0;
-function resize(){c.width=innerWidth;c.height=innerHeight;drops=Array.from({length:Math.ceil(innerWidth/160)},(_,i)=>({x:i*160+40,y:Math.random()*innerHeight,s:2+Math.random()*2}));}
+function resize(){c.width=innerWidth;c.height=innerHeight;drops=Array.from({length:Math.ceil(innerWidth/140)},(_,i)=>({x:i*140+30,y:Math.random()*innerHeight,s:1.2+Math.random()*1.3}));}
 function draw(t){const dt=Math.min((t-last)/1000,.1);last=t;x.clearRect(0,0,c.width,c.height);x.font='18px monospace';x.fillStyle='#39ff6a';
 if(!document.hidden)for(const d of drops){d.y+=d.s*dt;if(d.y>c.height+20)d.y=-20;x.fillText('01·+'[Math.floor(d.x)%4],d.x,d.y)}id=requestAnimationFrame(draw)}
 function sync(){cancelAnimationFrame(id);x.clearRect(0,0,c.width,c.height);if(!mq.matches){resize();last=performance.now();id=requestAnimationFrame(draw)}}
