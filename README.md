@@ -14,7 +14,8 @@ NDS retail BIOS are stripped; free MSX C-BIOS is included. No ROMs or copyrighte
 
 ## What changes
 
-- **Core rebuild:** kernel work, bug fixes and hardware communication paths form the ground-up, performance-focused rebuild programme. Paired stock benchmarks are pending.
+- **Core rebuild:** kernel work, bug fixes and hardware communication paths form the ground-up, performance-focused rebuild programme.
+- **Paired FPS (37 titles):** most systems ~tie (median Fen +0.4%); Dreamcast Crazy Taxi 2 +27%; not a blanket faster-than-stock claim. Full table: [`docs/COMPARE.md`](docs/COMPARE.md).
 - **RAM Plus:** 2 GB of extended / virtual memory when onboard RAM runs out — extra headroom for demanding games (N64, Dreamcast) on a 1 GB handheld.
 - **MSX out of the box:** free C-BIOS ships in the image so MSX loads without adding BIOS. Copyrighted GB/GBC/GBA/PSX/NDS BIOS stay user-supplied.
 - **Audio work:** part of the same rebuild programme.
