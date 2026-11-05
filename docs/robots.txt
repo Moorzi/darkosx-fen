@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://moorzi.github.io/darkosx-fen/sitemap.xml

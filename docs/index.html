@@ -3,12 +3,83 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>dArkOSX — Custom firmware for the R36S and R36XX</title>
-<meta name="description" content="dArkOSX is a custom firmware build for the R36S and R36XX handhelds. It preserves the community base, then revises the front end, first-boot path, and everyday defaults. Coming soon.">
+<title>dArkOSX (darkosx-fen) — dArkOS Custom Firmware for R36S / R36XX | Dark OS Handheld</title>
+<meta name="description" content="dArkOSX (darkosx-fen) is custom firmware for the R36S and R36XX handhelds, built on dArkOS (often searched as dark OS or darkos). A revised EmulationStation, guided first boot, lock backgrounds, and measured defaults. Coming soon — not affiliated with upstream dArkOS.">
+<meta name="keywords" content="dArkOSX, darkosx-fen, dArkOS, dark OS, darkos, R36S, R36XX, custom firmware, EmulationStation, retro handheld, ArkOS alternative build">
+<meta name="author" content="Moorzi">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#020805">
-<meta property="og:title" content="dArkOSX — Coming Soon">
-<meta property="og:description" content="Custom firmware for the R36S and R36XX. Your handheld. Reprogrammed.">
+<link rel="canonical" href="https://moorzi.github.io/darkosx-fen/">
+<link rel="sitemap" type="application/xml" href="https://moorzi.github.io/darkosx-fen/sitemap.xml">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="dArkOSX">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://moorzi.github.io/darkosx-fen/">
+<meta property="og:title" content="dArkOSX — dArkOS custom firmware for R36S / R36XX">
+<meta property="og:description" content="Custom firmware for the R36S and R36XX built on dArkOS (dark OS). Your handheld. Reprogrammed. Coming soon.">
 <meta property="og:image" content="https://moorzi.github.io/darkosx-fen/assets/locks/emerald-nebula.jpg">
+<meta property="og:image:alt" content="dArkOSX lock screen preview on R36S custom firmware">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="dArkOSX — dArkOS custom firmware for R36S / R36XX">
+<meta name="twitter:description" content="darkosx-fen: custom firmware for R36S / R36XX built on dArkOS. Coming soon.">
+<meta name="twitter:image" content="https://moorzi.github.io/darkosx-fen/assets/locks/emerald-nebula.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://moorzi.github.io/darkosx-fen/#website",
+      "url": "https://moorzi.github.io/darkosx-fen/",
+      "name": "dArkOSX",
+      "alternateName": ["darkosx-fen", "dArkOSX Fen", "dark OS R36S", "dArkOS custom firmware"],
+      "description": "Custom firmware for the R36S and R36XX handhelds, built on dArkOS.",
+      "inLanguage": "en-GB",
+      "publisher": {"@id": "https://github.com/Moorzi#org"}
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://moorzi.github.io/darkosx-fen/#app",
+      "name": "dArkOSX",
+      "alternateName": ["darkosx-fen", "dArkOSX Fen"],
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Linux",
+      "softwareVersion": "0.1.0-alpha",
+      "description": "dArkOSX (repository darkosx-fen) is a custom firmware build for the R36S and R36XX retro handhelds. It is based on dArkOS and is not a replacement for, or official release of, upstream dArkOS. It revises EmulationStation, first-boot setup, lock backgrounds, and everyday defaults.",
+      "url": "https://moorzi.github.io/darkosx-fen/",
+      "downloadUrl": "https://github.com/Moorzi/darkosx-fen",
+      "codeRepository": "https://github.com/Moorzi/darkosx-fen",
+      "isBasedOn": {
+        "@type": "SoftwareApplication",
+        "name": "dArkOS",
+        "url": "https://github.com/christianhaitian/dArkOS"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/PreOrder"
+      },
+      "author": {"@id": "https://github.com/Moorzi#org"}
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://github.com/Moorzi#org",
+      "name": "Moorzi",
+      "url": "https://github.com/Moorzi"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "dArkOSX", "item": "https://moorzi.github.io/darkosx-fen/"},
+        {"@type": "ListItem", "position": 2, "name": "GitHub repository", "item": "https://github.com/Moorzi/darkosx-fen"}
+      ]
+    }
+  ]
+}
+</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23020805'/%3E%3Cpath d='M12 50 L20 14 L32 30 L44 14 L52 50 L32 40 Z' fill='none' stroke='%2339ff6a' stroke-width='4' stroke-linejoin='round'/%3E%3C/svg%3E">
 <style>
 @font-face{font-family:VT;src:url(assets/fonts/VT323-Regular.ttf) format("truetype");font-display:swap}
@@ -167,6 +238,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px}
     <li><a href="#look">Gallery</a></li>
     <li><a href="#lock">Lock</a></li>
     <li><a href="#status">Status</a></li>
+    <li><a href="#about-name">Naming</a></li>
     <li><a href="https://github.com/Moorzi/darkosx-fen">GitHub</a></li>
   </ul>
 </div></nav>
@@ -175,7 +247,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px}
   <div class="pill"><i></i>Coming Soon · v0.1 alpha</div>
   <h1><span class="glitch" data-t="dArkOSX">dArk<span class="x">OSX</span></span></h1>
   <div class="tag">Your handheld. Reprogrammed.<span class="cursor" aria-hidden="true"></span></div>
-  <p class="sub">A carefully revised firmware for the R36S and R36XX. The community foundation remains; the interface, first-boot experience, and day-to-day defaults are rewritten with restraint and precision.</p>
+  <p class="sub">dArkOSX — published as <b style="color:var(--g2);font-weight:400">darkosx-fen</b> — is custom firmware for the R36S and R36XX, built on dArkOS (the handheld OS often found under searches for “dark OS” or darkos). The upstream foundation remains; the interface, first-boot path, and day-to-day defaults are rewritten with restraint and precision. It is not an official dArkOS release.</p>
   <div class="cta">
     <a class="btn disabled" href="#status" aria-disabled="true" title="The image has not been released">Image · Coming soon</a>
     <a class="btn" href="https://github.com/Moorzi/darkosx-fen">Repository</a>
@@ -193,7 +265,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px}
 <section id="overview"><div class="wrap">
   <div class="reveal"><div class="kick">// 01 · overview</div>
   <h2>Substance before spectacle.</h2>
-  <p class="lead">This build does not chase novelty for its own sake. It keeps what the community already trusts, then improves the parts you meet every time you power on: menus, setup, lock screen, and the quiet choices behind performance.</p></div>
+  <p class="lead">This build does not chase novelty for its own sake. Relative to stock dArkOS on the same R36S / R36XX hardware, it keeps what the community already trusts, then improves the parts you meet every time you power on: menus, setup, lock screen, and the quiet choices behind performance.</p></div>
   <div class="grid">
     <div class="card reveal"><div class="ic">&gt;_</div><h3>Front end</h3><p>EmulationStation is rebuilt with a terminal-leaning theme, a tile Control Centre, and a clearer system panel. Navigation stays familiar; the presentation is new.</p></div>
     <div class="card reveal"><div class="ic">01</div><h3>First power-on</h3><p>A short wizard walks through the essentials on first boot. Confirm with A and continue. No hand-editing of configuration files is required.</p></div>
@@ -268,6 +340,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px}
       <div class="step"><span>Public image</span><em>Coming soon</em></div>
     </div>
   </div>
+  
+  <div class="reveal" id="about-name" style="margin-top:36px;border:1px solid var(--line);border-radius:10px;padding:clamp(18px,4vw,24px);background:rgba(3,12,7,.55)">
+    <div class="kick">// 05 · naming</div>
+    <h2 style="font-size:clamp(28px,6vw,40px)">dArkOSX, darkosx-fen, and dArkOS.</h2>
+    <p class="lead" style="max-width:46rem">People searching for <b style="color:var(--txt);font-weight:400">dark OS</b>, <b style="color:var(--txt);font-weight:400">darkos</b>, or <b style="color:var(--txt);font-weight:400">dArkOS</b> usually mean the excellent upstream project by Christian Haitian. <b style="color:var(--g);font-weight:400">dArkOSX</b> (repository <code>darkosx-fen</code>) is a separate custom firmware layer for the R36S and R36XX that starts from that base. If you want stock dArkOS, use the upstream repository. If you want this revised handheld experience, you are in the right place.</p>
+    <p class="lead" style="max-width:46rem;margin-top:12px"><a href="https://github.com/christianhaitian/dArkOS">Upstream dArkOS on GitHub</a> · <a href="https://github.com/Moorzi/darkosx-fen">This project: Moorzi/darkosx-fen</a></p>
+  </div>
+
   <p class="legal"><b style="color:var(--amber)">No games, ROMs, or copyrighted BIOS files are included, and none will be.</b> Supply only dumps taken from hardware you own. This is an unofficial community build atop dArkOS; it is not affiliated with or endorsed by any console manufacturer.</p>
 </div></section>
 </main>
