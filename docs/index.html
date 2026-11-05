@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>dArkOSX — R36S &amp; R36XX Custom Firmware Built on dArkOS</title>
-<meta name="description" content="dArkOSX: a ground-up R36S and R36XX firmware rebuild based on dArkOS, built for better performance through kernel, audio, MSX and hardware communication work.">
+<meta name="description" content="dArkOSX: a ground-up R36S and R36XX firmware rebuild based on dArkOS. Kernel, hardware communication, audio — and MSX that works out of the box with free C-BIOS.">
 <meta name="keywords" content="dArkOSX, darkosx-fen, dArkOS, dark OS, darkos, R36S, R36XX, custom firmware, EmulationStation, retro handheld, ArkOS alternative build">
 <meta name="author" content="Moorzi">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_GB">
 <meta property="og:url" content="https://moorzi.github.io/darkosx-fen/">
 <meta property="og:title" content="dArkOSX — dArkOS custom firmware for R36S / R36XX">
-<meta property="og:description" content="A ground-up R36S and R36XX firmware rebuild based on dArkOS, built for better performance. Kernel, audio, MSX and hardware communication work. Image Coming Soon.">
+<meta property="og:description" content="A ground-up, performance-focused R36S / R36XX rebuild based on dArkOS. MSX works out of the box with free C-BIOS. Image Coming Soon.">
 <meta property="og:image" content="https://moorzi.github.io/darkosx-fen/assets/locks/emerald-nebula.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="800">
@@ -26,7 +26,7 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="dArkOSX — dArkOS custom firmware for R36S / R36XX">
-<meta name="twitter:description" content="dArkOSX: a ground-up R36S / R36XX rebuild based on dArkOS, built for better performance. Image Coming Soon.">
+<meta name="twitter:description" content="dArkOSX: a ground-up, performance-focused R36S / R36XX rebuild. MSX works out of the box with free C-BIOS. Image Coming Soon.">
 <meta name="twitter:image" content="https://moorzi.github.io/darkosx-fen/assets/locks/emerald-nebula.jpg">
 <meta name="twitter:image:alt" content="dArkOSX Emerald Nebula lock background for R36S / R36XX">
 <script type="application/ld+json">
@@ -57,7 +57,7 @@
       "applicationCategory": "GameApplication",
       "operatingSystem": "Linux",
       "softwareVersion": "0.1.0-alpha",
-      "description": "dArkOSX (repository darkosx-fen) is a custom firmware build for the R36S and R36XX retro handhelds. It is based on dArkOS and is not a replacement for, or official release of, upstream dArkOS. Its ground-up rebuild programme encompasses kernel work, bug fixes, audio and MSX improvements, and hardware communication paths, aimed at better performance than stock.",
+      "description": "dArkOSX (repository darkosx-fen) is a custom firmware build for the R36S and R36XX retro handhelds. It is based on dArkOS and is not a replacement for, or official release of, upstream dArkOS. Its ground-up rebuild programme encompasses kernel work, bug fixes, audio and hardware communication paths, plus free MSX C-BIOS so MSX works out of the box. Paired stock performance benchmarks are pending.",
       "url": "https://moorzi.github.io/darkosx-fen/",
       "codeRepository": "https://github.com/Moorzi/darkosx-fen",
       "isBasedOn": {
@@ -84,7 +84,7 @@
           "name": "What is dArkOSX?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "dArkOSX is an independent, ground-up R36S and R36XX firmware rebuild based on dArkOS. It includes a rebuilt stack encompassing kernel work, bug fixes, hardware communication paths, and audio and MSX work aimed at a faster handheld, alongside its revised interface."
+            "text": "dArkOSX is an independent, ground-up R36S and R36XX firmware rebuild based on dArkOS. It includes a rebuilt stack encompassing kernel work, bug fixes, hardware communication paths and audio work, plus free MSX C-BIOS so MSX works out of the box, alongside its revised interface."
           }
         },
         {
@@ -100,7 +100,15 @@
           "name": "Is dArkOSX faster than stock dArkOS?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "dArkOSX is built for better performance than stock dArkOS, with a ground-up rebuild that reaches beyond the interface into the kernel and hardware communication paths. A paired stock-card benchmark will quantify the difference when measured; the current readings are from this build only."
+            "text": "dArkOSX is a ground-up, performance-focused rebuild that reaches beyond the interface into the kernel and hardware communication paths. Paired stock performance benchmarks are pending; current readings are from this build only. One concrete fix vs stock: MSX works out of the box with free C-BIOS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does MSX work without adding BIOS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes on this build — free C-BIOS is included, so MSX loads out of the box. Stock dArkOS MSX typically does not, because it ships without that BIOS. Copyrighted BIOS for other systems are not included."
           }
         },
         {
@@ -314,7 +322,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
   <div class="pill"><i></i>Coming Soon · v0.1 alpha</div>
   <h1><span class="glitch" data-t="dArkOSX">dArk<span class="x">OSX</span></span></h1>
   <div class="tag">Built on dArkOS. Made for your handheld.<span class="cursor" aria-hidden="true"></span></div>
-  <p class="sub">A ground-up firmware rebuild for the R36S and R36XX, based on dArkOS and built for better performance than stock. The rebuild targets kernel, hardware communication, audio and MSX improvements beneath the new interface. The current image includes free MSX C-BIOS, guided first boot and ten saved lock backgrounds. This is an independent community build, not an official upstream release.</p>
+  <p class="sub">A ground-up, performance-focused rebuild for the R36S and R36XX — from kernel and hardware communication to audio. <b style="color:var(--g2);font-weight:400">MSX works out of the box</b> with free C-BIOS (stock does not include the BIOS MSX needs). Guided first boot and ten saved lock backgrounds ship too. Independent community build, not an official upstream release.</p>
   <div class="cta">
     <a class="btn disabled" href="#status" aria-disabled="true" title="Image download guidance is being checked">Image · Coming soon</a>
     <a class="btn" href="https://github.com/Moorzi/darkosx-fen">Repository</a>
@@ -332,14 +340,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
 <section id="overview"><div class="wrap">
   <div class="reveal"><div class="kick">// 01 · overview</div>
   <h2>Rebuilt from the kernel up.</h2>
-  <p class="lead">dArkOSX is a ground-up rebuild based on dArkOS, not a skin on stock firmware. The work includes a rebuilt stack encompassing kernel work, bug fixes, hardware communication paths, and audio and MSX work aimed at a faster handheld. Better performance than stock is a core goal of the rebuild, alongside the revised EmulationStation interface and setup experience. Paired stock-card benchmarks will quantify the gains when measured.</p></div>
+  <p class="lead">dArkOSX is a ground-up rebuild based on dArkOS, not a skin on stock firmware. The work reaches kernel, bug fixes, hardware communication paths and audio, with a performance-focused aim. <b style="color:var(--g2);font-weight:400">MSX works out of the box</b> because this image ships free C-BIOS — stock MSX does not. Paired stock performance benchmarks are pending. The revised EmulationStation interface and setup experience sit on top of that stack.</p></div>
   <div class="grid">
     <div class="card reveal"><div class="ic">&gt;_</div><h3>Front end</h3><p>A terminal-style EmulationStation theme adds a tiled Control Centre and a revised system panel while retaining familiar navigation.</p></div>
     <div class="card reveal"><div class="ic">01</div><h3>First power-on</h3><p>A guided first-boot wizard presents the initial settings. Use A to confirm each step.</p></div>
     <div class="card reveal"><div class="ic">◐</div><h3>Lock backgrounds</h3><p>Choose from ten backgrounds under Display &amp; Sound. The selection is saved across sleep and restart.</p></div>
-    <div class="card reveal"><div class="ic">⚡</div><h3>Performance foundations</h3><p>The rebuild targets kernel, hardware communication, audio and MSX improvements for a faster handheld. Free MSX C-BIOS is included in the current image. Paired stock, FPS and battery-drain tests remain pending.</p></div>
+    <div class="card reveal"><div class="ic">⚡</div><h3>MSX, ready to play</h3><p>Free C-BIOS ships in the image, so MSX works out of the box. Stock does not include the BIOS MSX needs. Copyrighted GB / GBC / GBA / PSX / NDS BIOS stay user-supplied; first-boot help lists what is missing.</p></div>
+    <div class="card reveal"><div class="ic">◎</div><h3>Performance foundations</h3><p>Ground-up work on kernel, hardware communication and audio. Paired stock performance benchmarks are pending — no stock FPS claims until those numbers land.</p></div>
     <div class="card reveal"><div class="ic">⇄</div><h3>Network transfer</h3><p>Samba sharing and the web file browser are retained for file transfers over Wi-Fi.</p></div>
-    <div class="card reveal"><div class="ic">⛨</div><h3>Public package</h3><p>The public package excludes ROMs and copyrighted console BIOS. Supply only files you are legally entitled to use.</p></div>
+    <div class="card reveal"><div class="ic">⛨</div><h3>Public package</h3><p>No ROMs. Free MSX C-BIOS is included; copyrighted GB / GBC / GBA / PSX / NDS BIOS are not — supply your own where required. First-boot help explains what is needed.</p></div>
   </div>
 </div></section>
 
@@ -433,7 +442,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--g2);outline-offset:
 
   <p class="legal"><b style="color:var(--amber)">No games, ROMs, or copyrighted BIOS files are included, and none will be.</b> Supply only dumps taken from hardware you own. This is an unofficial community build atop dArkOS; it is not affiliated with or endorsed by any console manufacturer.</p>
 </div></section>
-<section id="faq"><div class="wrap"><div class="kick">Questions and answers</div><h2>Before you choose a build.</h2><h3 style="margin-top:24px">What is dArkOSX?</h3><p class="lead">dArkOSX is an independent, ground-up R36S and R36XX firmware rebuild based on dArkOS. It includes a rebuilt stack encompassing kernel work, bug fixes, hardware communication paths, and audio and MSX work aimed at a faster handheld, alongside its revised interface.</p><h3 style="margin-top:24px">Is dArkOSX the same as dArkOS or dark OS?</h3><p class="lead">No. dArkOS is the upstream Linux handheld firmware. dArkOSX is a separate community build based on it, not an official upstream release. The similarly named Android darkos project is unrelated.</p><h3 style="margin-top:24px">Is dArkOSX faster than stock dArkOS?</h3><p class="lead">dArkOSX is built for better performance than stock dArkOS, with a ground-up rebuild that reaches beyond the interface into the kernel and hardware communication paths. A paired stock-card benchmark will quantify the difference when measured; the current readings are from this build only.</p><h3 style="margin-top:24px">Can I download the R36S / R36XX image?</h3><p class="lead">An alpha release exists with seven image parts and checksums. The website keeps the image marked Coming Soon pending approval to promote the download; its instructions also need reconciliation with the uploaded part names.</p></div></section>
+<section id="faq"><div class="wrap"><div class="kick">Questions and answers</div><h2>Before you choose a build.</h2><h3 style="margin-top:24px">What is dArkOSX?</h3><p class="lead">dArkOSX is an independent, ground-up R36S and R36XX firmware rebuild based on dArkOS. It includes kernel work, bug fixes, hardware communication paths and audio work, plus free MSX C-BIOS so MSX works out of the box, alongside its revised interface.</p><h3 style="margin-top:24px">Is dArkOSX the same as dArkOS or dark OS?</h3><p class="lead">No. dArkOS is the upstream Linux handheld firmware. dArkOSX is a separate community build based on it, not an official upstream release. The similarly named Android darkos project is unrelated.</p><h3 style="margin-top:24px">Is dArkOSX faster than stock dArkOS?</h3><p class="lead">It is a ground-up, performance-focused rebuild (kernel and hardware paths included). Paired stock performance benchmarks are pending, so we are not claiming measured stock wins yet. One concrete difference already ships: MSX works out of the box with free C-BIOS.</p><h3 style="margin-top:24px">Does MSX work without adding BIOS?</h3><p class="lead">Yes on this build — free C-BIOS is included, so MSX loads out of the box. Stock dArkOS MSX typically does not, because it ships without that BIOS. Copyrighted BIOS for other systems (GB, GBC, GBA, PSX, NDS and similar) are not included.</p><h3 style="margin-top:24px">Can I download the R36S / R36XX image?</h3><p class="lead">An alpha release exists with seven image parts and checksums. The website keeps the image marked Coming Soon pending approval to promote the download; its instructions also need reconciliation with the uploaded part names.</p></div></section>
 
 <section id="feedback"><div class="wrap">
   <div class="reveal"><div class="kick">// 06 · feedback</div>
@@ -492,7 +501,7 @@ const ck=()=>{const d=new Date();document.getElementById('clk').textContent=d.to
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);if(e.target.classList.contains('term'))type()}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
 document.querySelectorAll('.card').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')},{passive:true}));
-document.getElementById('term').textContent='Build status\n\nR36S instrument readings: recorded\nStock-card comparison: pending\nImage guidance: being checked\nPerformance-focused rebuild: kernel, hardware paths, audio and MSX work\nPaired performance benchmarks: to follow';
+document.getElementById('term').textContent='Build status\n\nR36S instrument readings: recorded\nStock-card comparison: pending\nMSX out of the box: free C-BIOS shipped\nImage guidance: being checked\nPerformance-focused rebuild: kernel, hardware paths, audio\nPaired performance benchmarks: to follow';
 
 (()=>{const repo='Moorzi/darkosx-fen';
 const titleEl=document.getElementById('fb-title');
