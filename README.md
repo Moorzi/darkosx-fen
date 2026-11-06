@@ -1,8 +1,8 @@
-# dArkOSX — a fresher experience for R36S and R36XX
+# dArkOSX (dark OS) — a fresher experience for R36S and R36XX
 
-[Project website](https://moorzi.github.io/darkosx-fen/) · [Release](https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha) · [Built on dArkOS](https://github.com/christianhaitian/dArkOS)
+[Project website](https://moorzi.github.io/darkosx-fen/) · [Latest release](https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha) · [Built on dArkOS](https://github.com/christianhaitian/dArkOS)
 
-dArkOSX turns your **R36S or R36XX** into something that feels finished the moment it wakes — a refreshed look, smoother everyday use, and stronger play on demanding games. Built on **dArkOS**, Fen brings a redesigned menu, a tiled Control Centre, **dynamic boot** visuals, **RAM Plus**, **MSX out of the box**, and an optional lock screen with a **device PIN** you will not find on other handheld OSes. The polish on the surface is backed by real system work underneath.
+**dArkOSX** (also searched as **dark OS** / **darkosx**) turns your **R36S or R36XX** into something that feels finished the moment it wakes — a refreshed look, smoother everyday use, and stronger play on demanding games. Built on **dArkOS**, Fen brings a redesigned menu, a tiled Control Centre, **dynamic boot** visuals, **RAM Plus**, **MSX out of the box**, and an optional lock screen with a **device PIN** you will not find on other handheld OSes. The polish on the surface is backed by real system work underneath.
 
 **Fen** is this build’s codename. Independent community project — not an official dArkOS release.
 
@@ -10,11 +10,11 @@ Feedback: [site comments](https://moorzi.github.io/darkosx-fen/#feedback)
 
 ## Get dArkOSX
 
-The finished Fen image is live — a verified **two-part** download on [GitHub](https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha) and via **Download image** on the [project website](https://moorzi.github.io/darkosx-fen/). Read the release notes and **back up your memory card** before installing.
+The finished Fen image is live — a verified **two-part** download on the [latest release](https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha) and via **Download image** on the [project website](https://moorzi.github.io/darkosx-fen/). Read the release notes and **back up your memory card** before installing.
 
 ### Install from GitHub
 
-1. Download both `dArkOSX-Fen_R36S_v0.1.0-alpha.img.xz.zip.001` and `.002`, plus `PARTS.sha256`, `SHA256SUMS`, and the zip / xz `.sha256` files.
+1. From the [latest release](https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha), download both zip parts (`.001` and `.002`), plus `PARTS.sha256`, `SHA256SUMS`, and the zip / xz `.sha256` files.
 2. **Join** the parts (`cat …001 …002 > …img.xz.zip` on Linux/macOS, or `copy /b …001+…002 …img.xz.zip` on Windows).
 3. **Verify** the joined zip hash, unzip to `.img.xz`, verify that hash, then decompress to `.img`.
 4. **Flash** with [balenaEtcher](https://etcher.balena.io/) or `dd` (double-check the target device).
@@ -56,7 +56,7 @@ More on the [website gallery](https://moorzi.github.io/darkosx-fen/#look), inclu
 
 ## Names that sound similar
 
-- **dArkOSX** (this project) — independent custom firmware for R36S / R36XX, published as [Moorzi/darkosx-fen](https://github.com/Moorzi/darkosx-fen).
+- **dArkOSX** / **dark OS** (this project) — independent custom firmware for R36S / R36XX, published as [Moorzi/darkosx-fen](https://github.com/Moorzi/darkosx-fen).
 - **dArkOS** — the upstream handheld firmware this build is based on ([christianhaitian/dArkOS](https://github.com/christianhaitian/dArkOS)).
 - **darkos** (Android) — a different Wine-on-Android project; not this handheld firmware.
 
