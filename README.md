@@ -1,14 +1,12 @@
 # dArkOSX-Fen (dark OS) for R36S / R36XX
 
-**dArkOSX-Fen** (also searched as **dark OS** / **darkosx**) is a community build of custom firmware for **genuine R36S** handhelds (**RK3326**), based on [dArkOS](https://github.com/christianhaitian/dArkOS). Built and tested on a genuine R36S. R36XX owners can try it, but it is not separately validated yet.
-
-It is meant to feel finished the second it wakes: dynamic boot, a redesigned EmulationStation theme, guided first-boot setup, optional lock screen with a **device PIN**, free MSX C-BIOS, RAM Plus, and Wi-Fi file transfer.
+**dArkOSX-Fen** (also searched as **dark OS** / **darkosx**) is a community build of custom firmware for **genuine R36S / R36XX** handhelds (**RK3326**), based on [dArkOS](https://github.com/christianhaitian/dArkOS). It is meant to feel finished the second it wakes: dynamic boot, a redesigned EmulationStation theme, guided first-boot setup, optional lock screen with a **device PIN**, free MSX C-BIOS, RAM Plus, and Wi-Fi file transfer.
 
 - **Site:** https://moorzi.github.io/darkosx-fen/
 - **Download / release:** https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha
 - **Feedback:** https://github.com/Moorzi/darkosx-fen/issues
 
-Genuine R36S, typically V21 / V22-ish. Clones usually want RE or a clone-specific build. Independent community project. Not an official dArkOS release.
+Genuine V21 / V22-ish units only. Clones usually want RE or a clone-specific build. Independent community project. Not an official dArkOS release.
 
 ## What's in it
 
@@ -110,10 +108,6 @@ These are two different steps:
 - Free **MSX C-BIOS** is included, so MSX works out of the box
 - Copyrighted BIOS for other systems (GB / GBC / GBA / PSX / NDS and similar) is **not** included. Supply your own where needed. First-boot help lists what is still missing
 
-## Hardware note
-
-Built and tested on a **genuine R36S**. R36XX is not separately validated yet. Clones usually want RE or a clone-specific build.
-
 ## Interface previews
 
 [![dArkOSX-Fen Control Centre on R36S](docs/assets/screens/control-centre.webp)](docs/assets/screens/control-centre.png)
@@ -124,7 +118,7 @@ More on the [website gallery](https://moorzi.github.io/darkosx-fen/#look), inclu
 
 ## Names that sound similar
 
-- **dArkOSX-Fen** / **dArkOSX** / **dark OS** (this project): independent custom firmware built and tested on genuine R36S, published as [Moorzi/darkosx-fen](https://github.com/Moorzi/darkosx-fen)
+- **dArkOSX-Fen** / **dArkOSX** / **dark OS** (this project): independent custom firmware for genuine R36S / R36XX, published as [Moorzi/darkosx-fen](https://github.com/Moorzi/darkosx-fen)
 - **dArkOS**: the upstream handheld firmware this build is based on ([christianhaitian/dArkOS](https://github.com/christianhaitian/dArkOS))
 - **darkos** (Android): a different Wine-on-Android project; not this handheld firmware
 
