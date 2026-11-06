@@ -1,71 +1,128 @@
-# dArkOSX (dark OS) — a fresher experience for R36S and R36XX
+# dArkOSX-Fen (dark OS) for R36S / R36XX
 
-[Project website](https://moorzi.github.io/darkosx-fen/) · [Latest release](https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha) · [Built on dArkOS](https://github.com/christianhaitian/dArkOS)
+**dArkOSX-Fen** (also searched as **dark OS** / **darkosx**) is a community build of custom firmware for **genuine R36S / R36XX** handhelds (**RK3326**), based on [dArkOS](https://github.com/christianhaitian/dArkOS). It is meant to feel finished the second it wakes: dynamic boot, a redesigned EmulationStation theme, guided first-boot setup, optional lock screen with a **device PIN**, free MSX C-BIOS, RAM Plus, and Wi-Fi file transfer.
 
-**dArkOSX** (also searched as **dark OS** / **darkosx**) turns your **R36S or R36XX** into something that feels finished the moment it wakes — a refreshed look, smoother everyday use, and stronger play on demanding games. Built on **dArkOS**, Fen brings a redesigned menu, a tiled Control Centre, **dynamic boot** visuals, **RAM Plus**, **MSX out of the box**, and an optional lock screen with a **device PIN** you will not find on other handheld OSes. The polish on the surface is backed by real system work underneath.
+- **Site:** https://moorzi.github.io/darkosx-fen/
+- **Download / release:** https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha
+- **Feedback:** https://github.com/Moorzi/darkosx-fen/issues
 
-**Fen** is this build’s codename. Independent community project — not an official dArkOS release.
+Genuine V21 / V22-ish units only. Clones usually want RE or a clone-specific build. Independent community project. Not an official dArkOS release.
 
-Feedback: [site comments](https://moorzi.github.io/darkosx-fen/#feedback)
+## What's in it
 
-## Get dArkOSX
+- Dynamic boot logo and background instead of the plain stock path
+- Redesigned EmulationStation theme and tiled Control Centre
+- Guided first-boot setup (Wi-Fi, basics, optional device PIN)
+- Optional lock screen with a device PIN and ten backgrounds
+- MSX ready out of the box. Free **C-BIOS** ships in the image
+- Heavier systems get real attention (Dreamcast especially; PlayStation and N64 in good shape). Lighter classics stay silky
+- **RAM Plus** when the built-in 1 GB fills up on demanding titles
+- Wi-Fi file transfer and the web file browser stay. Change the default `ark` / `ark` credentials before sharing a network
 
-The finished Fen image is live — a verified **two-part** download on the [latest release](https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha) and via **Download image** on the [project website](https://moorzi.github.io/darkosx-fen/). Read the release notes and **back up your memory card** before installing.
+## Download
 
-### Install from GitHub
+**Required:** only the two zip parts from the [v0.1.0-alpha release](https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha):
 
-1. From the [latest release](https://github.com/Moorzi/darkosx-fen/releases/tag/v0.1.0-alpha), download both zip parts (`.001` and `.002`), plus `PARTS.sha256`, `SHA256SUMS`, and the zip / xz `.sha256` files.
-2. **Join** the parts (`cat …001 …002 > …img.xz.zip` on Linux/macOS, or `copy /b …001+…002 …img.xz.zip` on Windows).
-3. **Verify** the joined zip hash, unzip to `.img.xz`, verify that hash, then decompress to `.img`.
-4. **Flash** with [balenaEtcher](https://etcher.balena.io/) or `dd` (double-check the target device).
-5. Change the default `ark` / `ark` Wi-Fi credentials before sharing a network. Optional lock uses a **device PIN**.
+1. `dArkOSX-Fen_R36S_v0.1.0-alpha.img.xz.zip.001`
+2. `dArkOSX-Fen_R36S_v0.1.0-alpha.img.xz.zip.002`
 
-Full join / verify / flash wording also lives on the [website status section](https://moorzi.github.io/darkosx-fen/#install).
+**Optional, recommended:** `PARTS.sha256`, `SHA256SUMS`, `dArkOSX-Fen_R36S_v0.1.0-alpha.img.xz.zip.sha256`, and `dArkOSX-Fen_R36S_v0.1.0-alpha.img.xz.sha256`. You can skip the hash files and still join and flash. Verifying is the safer path.
 
-**No games, ROMs, or copyrighted console BIOS are included.** Retail Nintendo DS BIOS files have been removed. **MSX** includes free **C-BIOS**, so it works out of the box. Other systems that need copyrighted BIOS stay user-supplied.
+**Back up your microSD first. Flashing wipes the card.**
 
-## What’s different?
+## Install
 
-### Looks and everyday use
+### 1. Join the two parts
 
-A dynamic boot logo and background lead into a refreshed EmulationStation menu, with a terminal-inspired theme, a tiled Control Centre, and a redesigned system panel. A guided first-boot setup walks you through the basics.
+Linux / macOS:
 
-Fen reaches the games menu **faster** than stock while showing those dynamic visuals — stock stays on the plain boot path.
+```bash
+cat dArkOSX-Fen_R36S_v0.1.0-alpha.img.xz.zip.001 \
+    dArkOSX-Fen_R36S_v0.1.0-alpha.img.xz.zip.002 \
+  > dArkOSX-Fen_R36S_v0.1.0-alpha.img.xz.zip
+```
 
-### Demanding games
+Windows (Command Prompt):
 
-Fen is **faster** on demanding titles — especially **Dreamcast** — with **PlayStation** and **Nintendo 64** ahead too. Lighter classics stay silky; the heavy games are where Fen shines.
+```bat
+copy /b dArkOSX-Fen_R36S_v0.1.0-alpha.img.xz.zip.001+dArkOSX-Fen_R36S_v0.1.0-alpha.img.xz.zip.002 dArkOSX-Fen_R36S_v0.1.0-alpha.img.xz.zip
+```
 
-**RAM Plus** adds extra working memory when the handheld’s built-in 1 GB fills up — useful for heavy games like N64 and Dreamcast. It is not extra physical RAM.
+### 2. Verify (optional, recommended)
 
-### Lock screen and device PIN
+Linux:
 
-No other handheld OS we know of ships a lock screen like this. Turn on the optional lock screen, pick from **ten backgrounds** under **Display & Sound → Lock Background**, and set a **device PIN** with a button combo when you want to keep casual eyes off the menu. Your background choice stays across sleep and restart.
+```bash
+sha256sum -c dArkOSX-Fen_R36S_v0.1.0-alpha.img.xz.zip.sha256
+```
 
-### Wi-Fi file transfer
+macOS:
 
-Wi-Fi file sharing and the web file browser stay available, same as the community expects. Change the default `ark` / `ark` credentials before sharing a network.
+```bash
+shasum -a 256 -c dArkOSX-Fen_R36S_v0.1.0-alpha.img.xz.zip.sha256
+```
+
+Windows (PowerShell). Compare the output to the hash in the `.sha256` file:
+
+```powershell
+Get-FileHash .\dArkOSX-Fen_R36S_v0.1.0-alpha.img.xz.zip -Algorithm SHA256
+```
+
+### 3. Unzip, decompress, flash
+
+Linux / macOS:
+
+```bash
+unzip dArkOSX-Fen_R36S_v0.1.0-alpha.img.xz.zip
+# optional: sha256sum -c dArkOSX-Fen_R36S_v0.1.0-alpha.img.xz.sha256
+# macOS:   shasum -a 256 -c dArkOSX-Fen_R36S_v0.1.0-alpha.img.xz.sha256
+xz -dk dArkOSX-Fen_R36S_v0.1.0-alpha.img.xz
+
+# Flash with balenaEtcher, or:
+sudo dd if=dArkOSX-Fen_R36S_v0.1.0-alpha.img of=/dev/sdX bs=4M status=progress conv=fsync
+# Double-check /dev/sdX. Wrong device wipes the wrong disk.
+```
+
+Windows: unzip with 7-Zip or File Explorer, decompress the `.xz` with 7-Zip, then flash the `.img` with [balenaEtcher](https://etcher.balena.io/).
+
+### 4. First boot
+
+- Match your board and panel in the boot selector so you do not black-screen
+- Change the default Wi-Fi login (`ark` / `ark`) before sharing a network
+- Optional lock screen: set a **device PIN** and pick a lock background under Display & Sound
+
+## Checksums
+
+| What | SHA256 |
+| --- | --- |
+| Joined zip | `a33669acf574397fd61fef80510ecfa26e3376ecbf8b5d0d36c56e36bc5820f0` |
+| `.img.xz` | `f6b2d88577405e0e880d542b22df9db55f7b50850394e5f0b07cdb439a3fc6d5` |
+| Each part | see `PARTS.sha256` |
+
+## BIOS honesty
+
+- **No ROMs** are included
+- Free **MSX C-BIOS** is included, so MSX works out of the box
+- Copyrighted BIOS for other systems (GB / GBC / GBA / PSX / NDS and similar) is **not** included. Supply your own where needed. First-boot help lists what is still missing
 
 ## Interface previews
 
-[![dArkOSX Control Centre captured on R36S](docs/assets/screens/control-centre.webp)](docs/assets/screens/control-centre.png)
+[![dArkOSX-Fen Control Centre on R36S](docs/assets/screens/control-centre.webp)](docs/assets/screens/control-centre.png)
 
-[![dArkOSX EmulationStation system views](docs/assets/screens/systems-grid.webp)](docs/assets/screens/systems-grid.jpg)
+[![dArkOSX-Fen EmulationStation system views](docs/assets/screens/systems-grid.webp)](docs/assets/screens/systems-grid.jpg)
 
 More on the [website gallery](https://moorzi.github.io/darkosx-fen/#look), including lock-background previews.
 
 ## Names that sound similar
 
-- **dArkOSX** / **dark OS** (this project) — independent custom firmware for R36S / R36XX, published as [Moorzi/darkosx-fen](https://github.com/Moorzi/darkosx-fen).
-- **dArkOS** — the upstream handheld firmware this build is based on ([christianhaitian/dArkOS](https://github.com/christianhaitian/dArkOS)).
-- **darkos** (Android) — a different Wine-on-Android project; not this handheld firmware.
-
-## Notes
-
-Recorded checks so far are on an **R36S** (not a separate R36XX validation). Battery-life testing is still pending. Detailed stopwatch and frame-rate tables stay private; public copy stays qualitative.
+- **dArkOSX-Fen** / **dArkOSX** / **dark OS** (this project): independent custom firmware for genuine R36S / R36XX, published as [Moorzi/darkosx-fen](https://github.com/Moorzi/darkosx-fen)
+- **dArkOS**: the upstream handheld firmware this build is based on ([christianhaitian/dArkOS](https://github.com/christianhaitian/dArkOS))
+- **darkos** (Android): a different Wine-on-Android project; not this handheld firmware
 
 ## Legal and credits
 
-No games, ROMs, or copyrighted console BIOS are included. Use only material you are legally entitled to use. dArkOSX is not affiliated with or endorsed by Christian Haitian, upstream dArkOS maintainers, the Android darkos project, or any console manufacturer.
+No games, ROMs, or copyrighted console BIOS are included. Use only material you are legally entitled to use. dArkOSX-Fen is a community build on dArkOS and is not affiliated with or endorsed by upstream dArkOS maintainers, the Android darkos project, or any console manufacturer.
+
+Thanks to the dArkOS project for the upstream base this build stands on.
 
 VT323 and Share Tech Mono are under the SIL Open Font License; see `docs/assets/fonts/`.
